@@ -16,5 +16,23 @@
   </dependencies>
   <modules>
     <module>overAll</module>
+    <module>chichikProj</module>
+    <module>vingenterProj</module>
+    <module>demkoProj</module>
+    <module>zhilaProj</module>
+    <module>zhurbaProj</module>
+    <module>kozachkovProj</module>
+    <module>levitskiiProj</module>
+    <module>mokliakProj</module>
+    <module>naumiakProj</module>
+    <module>petrinaProj</module>
+    <module>teslenkoProj</module>
+    <module>sameliukProj</module>
+    <module>chaikaProj</module>
+    <module>cherkezProj</module>
+    <module>chernoivanovaProj</module>
+    <module>shylinaProj</module>
+    <module>velichkoProj</module>
+    <module>bikovProj</module>
   </modules>
 </project>
