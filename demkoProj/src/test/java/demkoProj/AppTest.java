@@ -21,7 +21,7 @@ public class AppTest
     }
 
     /**
-     * @return the suite of tests being tested
+     * @return the suite of tests being tested   beste
      */
     public static Test suite()
     {
