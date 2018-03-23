@@ -5,7 +5,7 @@ import junit.framework.TestCase;
 import junit.framework.TestSuite;
 
 /**
- * Unit test for simple App.
+ * Unit test for simple App. Test test test!!!!
  */
 public class AppTest 
     extends TestCase
@@ -21,7 +21,7 @@ public class AppTest
     }
 
     /**
-     * @return the suite of tests being tested
+     * @return the suite of tests being tested   beste
      */
     public static Test suite()
     {
