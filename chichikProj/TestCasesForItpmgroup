@@ -22,3 +22,18 @@ Steps:
 Expected result: Displays 'Авторизация' on the login box
 
 
+#3 Summary: Create new deal
+
+Steps:
+1. Go to http://v3.test.itpmgroup.com/login
+2. Enter valid login into 'email' field
+3. Enter valid password into 'password' field
+4. Click 'Вход' button
+5. Go to 'Словари'
+6. Go to 'Стороны сделок'
+7. Click '+'(New) button
+8. Fill up fields: 'Pro cust name', 'Pro cust address', 'Pro cust phone'
+9. Check boxes: 'Private person', 'Is our firm'
+10. Click 'Создать' button
+
+Expected result: Displays Providers list with created provider.
