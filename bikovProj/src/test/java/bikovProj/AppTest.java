@@ -11,7 +11,7 @@ public class AppTest
     extends TestCase
 {
     /**
-     * Create the test case
+     * Create the test case for testing 2018-03-22 and one more
      *
      * @param testName name of the test case
      */
