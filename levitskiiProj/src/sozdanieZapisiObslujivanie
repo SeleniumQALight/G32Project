@@ -1,0 +1,7 @@
+Summary: создание записи о произведенном обслуживании
+STR:
+1. Перейти на http://v3.test.itpmgroup.com/dictionary/service
+2. Нажать на крестик в правой верхней части
+3. Заполнить поля или выбрать из выпадающего списка на странице http://v3.test.itpmgroup.com/dictionary/service/edit
+4. Нажать на кнопку "Создать"
+ER: Новая запись про обслуживание создалась на странице http://v3.test.itpmgroup.com/dictionary/service
