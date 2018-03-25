@@ -1,0 +1,9 @@
+#1 Summary: Valid login to the application
+
+Steps:
+1. Go to http://v3.test.itpmgroup.com/login
+2. Enter valid login into 'email' field
+3. Enter valid password into 'password' field
+4. Click 'Вход' button
+
+Expected result: Displays avatar and username in the top right corner
