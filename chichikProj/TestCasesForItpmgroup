@@ -7,3 +7,18 @@ Steps:
 4. Click 'Вход' button
 
 Expected result: Displays avatar and username in the top right corner
+
+
+#2 Summary: User logs out from the appliation
+
+Steps:
+1. Go to http://v3.test.itpmgroup.com/login
+2. Enter valid login into 'email' field
+3. Enter valid password into 'password' field
+4. Click 'Вход' button
+5. Click on avatar in the top right corner
+6. Click 'Выход' button on the flyout
+
+Expected result: Displays 'Авторизация' on the login box
+
+
