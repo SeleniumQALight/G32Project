@@ -1,0 +1,63 @@
+TC #1
+
+Summary: User registration.
+
+Steps to reproduce:
+  1. Enter valid values in field "Email" .
+  2. Enter valid values in field  "Password".
+  3. Click the button "Вход".
+
+ Expected result:
+ Under each field appears text "Поле не может быть пустым".
+
+ __________________________________________________________________________________
+
+ TC #2
+
+ Summary: User registration.
+
+ Steps to reproduce:
+   1. Enter valid values in field "Email" .
+   2. Enter valid values in field  "Password".
+   3. Click the button "Вход".
+
+  Expected result:
+   Registration completed successfully (go to the main page of the site).
+
+   ____________________________________________________________________________________
+
+ TC #3
+
+ Summary: Add spare part.
+
+ Steps to reproduce:
+   1. In left panel choice "Словари" => "Запчасти".
+   2. Click  button "+".
+
+  Expected result:
+   Open page with form for filling in the fields  the new spare parts.
+
+   ____________________________________________________________________________________________
+
+
+ TC #4
+
+ Summary: View report.
+
+ Steps to reproduce:
+   1. In left panel choice "Отчет" .
+
+  Expected result:
+   Open page with reports.
+
+   _______________________________________________________________________________________
+
+    TC #5
+
+    Summary: View installation of spare parts.
+
+    Steps to reproduce:
+      1. In left panel choice "Установка" .
+
+     Expected result:
+      Open page with installation of spare parts.
