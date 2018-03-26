@@ -1,0 +1,7 @@
+SUMMARY: User Login. Check when pass invalid email and correct password.
+
+Steps to reproduce: 1.Enter invalid email.
+                    2.Enter correct password.
+                    3.Click on Login Button.
+
+Expected result: User should not log in and should be shown proper error message.
