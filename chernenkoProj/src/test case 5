@@ -1,0 +1,8 @@
+SUMMARY: User Login. Check keeping email blank.
+
+Steps to reproduce: 1.Do not enter email.
+                    2.Enter correct password.
+                    3.Click on Login Button.
+
+Expected result: should be shown error message "field email : empty" and
+                 Avatar should not be present on home page.
