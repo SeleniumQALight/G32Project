@@ -1,0 +1,75 @@
+#1 Summary: Valid login to the application
+
+Steps:
+1. Go to http://v3.test.itpmgroup.com/login
+2. Enter valid login into 'email' field
+3. Enter valid password into 'password' field
+4. Click 'Вход' button
+
+Expected result: Displays avatar and username in the top right corner
+-----------------------------------------------
+
+#2 Summary: User logs out from the application
+
+Steps:
+1. Go to http://v3.test.itpmgroup.com/login
+2. Enter valid login into 'email' field
+3. Enter valid password into 'password' field
+4. Click 'Вход' button
+5. Click on avatar in the top right corner
+6. Click 'Выход' button on the flyout
+
+Expected result: Displays 'Авторизация' on the login box
+-----------------------------------------------
+
+#3 Summary: Create new deal
+
+Steps:
+1. Go to http://v3.test.itpmgroup.com/login
+2. Enter valid login into 'email' field
+3. Enter valid password into 'password' field
+4. Click 'Вход' button
+5. Go to 'Сделки' on the left panel
+7. Click '+'(Add) button
+8. Select values from 'Deal date' drop-down list: date, month, year, hours, minutes
+9. Select value from 'Тип сделки' drop-down list
+10. Select value from 'Покупатель' drop-down list
+11. Select value from 'Поставщик' drop-down list
+12. Click 'Создать' button
+
+Expected result: Displays Deals landing page with created deal in the list
+-----------------------------------------------
+
+#4 Summary: Create new installation
+
+Steps:
+1. Go to http://v3.test.itpmgroup.com/login
+2. Enter valid login into 'email' field
+3. Enter valid password into 'password' field
+4. Click 'Вход' button
+5. Go to 'Установка' on the left panel
+6. Click '+'(Add) button
+7. Select value from 'Installation date' drop-down lists: date, month, year, hours, minutes
+8. Select value from 'Аппарат' drop-down list
+9. Select value from 'Сотрудник' drop-down list
+10. Click 'Создать' button
+
+Expected result: Displays Installation landing page with created installation
+-----------------------------------------------
+
+#5 Summary: Create new service
+
+Steps:
+1. Go to http://v3.test.itpmgroup.com/login
+2. Enter valid login into 'email' field
+3. Enter valid password into 'password' field
+4. Click 'Вход' button
+5. Go to 'Обслуживание' on the left panel
+6. Click '+'(Add) button
+7. Fill up fields: 'Service changes', 'Service operations'
+8. Select value from 'Service date' drop-down lists: date, month, year, hours, minutes
+9. Select value from 'Аппарат' drop-down list
+10. Select value from 'Сотрудник' drop-down list
+11. Click 'Создать' button
+
+Expected result: Displays Service landing page with created service
