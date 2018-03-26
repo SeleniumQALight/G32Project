@@ -1,0 +1,9 @@
+Summary: создание записи о произведенном обслуживании с незаполненными полями
+STR:
+1. Перейти на http://v3.test.itpmgroup.com/dictionary/service
+2. Нажать на крестик в правой верхней части
+3. Не заполнять поля на странице http://v3.test.itpmgroup.com/dictionary/service/edit
+4. Нажать на кнопку "Создать"
+ER:
+1. Появилась подсказка "Заполните это поле"
+2. Новая запись про обслуживание не создалась на странице http://v3.test.itpmgroup.com/dictionary/service
