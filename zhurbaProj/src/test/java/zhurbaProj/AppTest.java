@@ -5,7 +5,7 @@ import junit.framework.TestCase;
 import junit.framework.TestSuite;
 
 /**
- * Unit test for simple App. Test2203. One more changes.
+ * Unit test for simple App. My Homework in SRC directory.
  */
 public class AppTest 
     extends TestCase
