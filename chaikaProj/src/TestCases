@@ -1,5 +1,3 @@
-Test Cases.
-Test Case #1.
 TC #1.
 Summary: Data input into the list of devices.
 Preconditions:
@@ -9,11 +7,12 @@ STR:
 1.In the main menu go to the page "Словари".
 2.In the main menu go to the page "Аппарат".
 3.Click the "+" button.
-4.In the field "Apparat number" input the data.
-5.In the field "Apparat comment" input the data.
+4.In the field "Apparat number" input "26032018".
+5.In the field "Apparat comment" input "NewApparat".
 6.Click the "Создать" button.
 ER:
-The data on the new device has been added to the "Список аппаратов" list.
+The new device "Номер: 26032018; Коммментарий: NewApparat"
+has been added to the "Список аппаратов" list.
 
 TC #2.
 Summary: Data input into the list of "Сотрудники".
@@ -24,12 +23,13 @@ STR:
 1.In the main menu go to the page "Словари".
 2.In the main menu go to the page "Сотрудники".
 3.Click the "+" button.
-4.In the field "Worker surname" input the data.
-5.In the field "Worker name" input the data.
-6.In the field "Worker phone" input the data.
+4.In the field "Worker surname" input "Naugthon".
+5.In the field "Worker name" input "Patric".
+6.In the field "Worker phone" input "+13237194081".
 7.Click the "Создать" button.
 ER:
-The data on the new device has been added to the "Список сотрудников" list.
+The new collaborator "Сотрудник:Naugthon Patric; Телефон:+13237194081"
+has been added to the "Список сотрудников" list.
 
 TC #3.
 Summary: Data input into the list of "Запчасти".
@@ -40,11 +40,12 @@ STR:
 1.In the main menu go to the page "Словари".
 2.In the main menu go to the page "Запчасти".
 3.Click the "+" button.
-4.In the field "Spare name" input the data.
-5.In the field "Тип детали" input the data.
+4.In the field "Spare name" input "SuperSpare".
+5.In the field "Тип детали" input "INS-Del".
 6.Click the "Создать" button.
 ER:
-The data on the new device has been added to the "Список запчастей" list.
+The new spare part "Наименование:SuperSpare; Тип:INS-Del"
+has been added to the "Список запчастей" list.
 
 TC #4.
 Summary: Data input into the list of "Стороны сделок".
@@ -55,13 +56,14 @@ STR:
 1.In the main menu go to the page "Словари".
 2.In the main menu go to the page "Стороны сделок".
 3.Click the "+" button.
-4.In the field "Pro cust name" input the data.
-5.In the field "Pro cust address" input the data.
-6.In the field "Pro cust phone" input the data.
+4.In the field "Pro cust name" input "QATestLab".
+5.In the field "Pro cust address" input "Kyiv".
+6.In the field "Pro cust phone" input "0001112233".
 7.Click check box "Private person".
 8.Click the "Создать" button.
 ER:
-The data on the new device has been added to the "Список контрагентов" list.
+The  new counterparty "Наименование:QATestLab; Адрес:Kyiv; Телефон:0001112233; Физ.лицо:1"
+has been added to the "Список контрагентов" list.
 
 TC #5.
 Summary: Data input into the list of "Типы сделок".
@@ -72,7 +74,8 @@ STR:
 1.In the main menu go to the page "Словари".
 2.In the main menu go to the page "Типы сделок".
 3.Click the "+" button.
-4.In the field "Deal type name" input the data.
+4.In the field "Deal type name" input "Type name not known".
 5.Click the "Создать" button.
 ER:
-The data on the new device has been added to the "Список типов" list.
+The new deal type name "Type name not known"
+has been added to the "Список типов" list.
