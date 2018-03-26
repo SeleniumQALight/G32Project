@@ -4,4 +4,5 @@ Steps to reproduce: 1.Enter valid email.
                     2.Enter incorrect password.
                     3.Click on Login Button.
 
-Expected result: User should not log in and should be shown proper error message.
+Expected result: should be shown error message "field password : incorrect" and
+                 Avatar should not be present on home page.
