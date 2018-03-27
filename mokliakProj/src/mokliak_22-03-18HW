@@ -1,0 +1,60 @@
+TC#1
+Summary: Elements check on authorization page
+STR:
+1. Open web site http://v3.test.itpmgroup.com/login
+2. Observe page UI elements
+
+ER:
+- contains header "Учет запчастей"
+- "email" and "password" fields
+- "Вход" button
+- hyperlinks "Напомнить пароль" and "Зарегистрироваться"
+
+TC#2
+Summary: Logging in functionality
+Preconditions: web page opened http://v3.test.itpmgroup.com/login
+STR:
+1. In "email" field enter "Student"
+2. In "Password" field enter "909090"
+3. Press "Вход" button
+
+ER: log in successful; displayed "Student1" user
+
+TC#3
+Summary: Adding new spare item
+Preconditions:
+1. User logged in http://v3.test.itpmgroup.com/login
+2. List of content in "Словари" expanded
+STR:
+1. Select  "Запчасти"
+2. Top right corner: press on "+" button
+3. In "spare name" enter "Clutch"
+4. Open "Тип детали" expanded list
+5. Select "Механика"
+6. Press "Создать" button
+
+ER: displayed "Запчасти" list; "Clutch" added with "Тип: Механика"
+
+TC#4
+Summary: Saving process behavior if one field left empty
+Preconditions:
+1. User logged in http://v3.test.itpmgroup.com/login
+2. List of content in "Словари" expanded
+STR:
+1. Select  "Аппарат"
+2. Top right corner: press on "+" button
+3. In "Apparat number" enter "155"
+4. Field "Apparat comment" leave empty
+5. Press "Создать" button
+
+ER: In empty field appeared message: "Заполните это поле"
+
+TC#5
+Summary: Logging out functionality
+Precondition:
+1. User logged in http://v3.test.itpmgroup.com/login
+STR:
+1. In top right corner press on Student1
+2. Press Выход button
+
+ER: user logged out; displays authorization page with "Вход" button

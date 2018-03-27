@@ -1,0 +1,98 @@
+Д/З 9
+
+Test Case 1
+Summary:        На странице «Учет запчастей» проверить активность полей боковой панели меню.
+Precondition: 	Зайти на страницу  http://v3.test.itpmgroup.com  и авторизоваться под
+                логином и паролем Student, 909090 и осуществить выход на главную страницу
+                http://v3.test.itpmgroup.com/dashboard
+Steps:
+                1.	На странице http://v3.test.itpmgroup.com/dashboard поочередно сделать
+                клики на элементы боковой панели меню.
+Expected result:
+Словари – 		открывается аккордеон опций
+Аппарат –	 	переход на страницу  http://v3.test.itpmgroup.com/dictionary/apparat
+Сотрудники - 		переход на страницу  http://v3.test.itpmgroup.com/dictionary/workers
+Типы запчастей -	переход на страницу  http://v3.test.itpmgroup.com/dictionary/spare_type
+Запчасти - 		переход на страницу  http://v3.test.itpmgroup.com/dictionary/spares
+Стороны сделок - 	переход на страницу http://v3.test.itpmgroup.com/dictionary/providers
+Типы сделок - 		переход на страницу  http://v3.test.itpmgroup.com/dictionary/deal_type
+Обслуживание -	 переход на страницу  http://v3.test.itpmgroup.com/dictionary/service
+Установка - 		переход на страницу  http://v3.test.itpmgroup.com/dictionary/installation
+Сделки -		 переход на страницу  http://v3.test.itpmgroup.com/deal
+Отчет - 			переход на страницу  http://v3.test.itpmgroup.com/statistic
+Главная – 		возврат на страницу  http://v3.test.itpmgroup.com/dashboard
+
+
+Test Case 2
+Summary:         На странице «Аппарат» проверить функцию добавления строки в список аппаратов.
+Precondition: 	Зайти на страницу  http://v3.test.itpmgroup.com  и авторизоваться под логином
+                и паролем Student, 909090 и осуществить выход на главную страницу
+                http://v3.test.itpmgroup.com/dashboard.
+Steps:
+1.	Кликнуть на кнопку «Словари» на боковой панели меню чтобы открылся список опций.
+2.	Кликнуть на опцию «Аппарат» и зайти на страницу http://v3.test.itpmgroup.com/dictionary/apparat
+3.	Кликнуть на голубую квадратную иконку с плюсиком в правом верхнем углу и зайти на страницу
+    «Редактирование» http://v3.test.itpmgroup.com/dictionary/apparat/edit.
+4.	В текстовое поле Apparat number ввести данные, например, «15» .
+5.	В текстовое поле Apparat comment ввести данные, например, «Сломан датчик».
+6.	Нажать на кнопку «Создать»
+7.	Используя ползунок в полосе прокрутки спуститься в конец списка и убедиться,
+    что созданная строка присутствует.
+Expected result:
+        Созданная строка отображается в конце списка: «15» – вколонке «Номер»,
+        «Сломан датчик» - в колонке «Комментарий».
+
+
+Test Case 3
+Summary:        На странице редактирования «Обслуживание»
+		        http://v3.test.itpmgroup.com/dictionary/service/edit
+                проверить наличие добавленного в Библиотеку в опцию «Аппарат» нового элемента списка
+                в открывающемся drop-down списке в текстовом поле Аппарат.
+Precondition: 	Зайти на страницу http://v3.test.itpmgroup.com  и авторизоваться под логином
+                и паролем Student, 909090 и осуществить выход на главную страницу
+                http://v3.test.itpmgroup.com/dashboard.
+                На странице http://v3.test.itpmgroup.com/dictionary/apparat/edit в меню «Словари»
+                в опции «Аппарат» создать новую строку списка, например, «15 Сломан датчик»
+Steps:
+1.	Кликнуть на кнопку «Обслуживание» на боковой панели меню чтобы открылся список опций
+ и зайти на страницу «Список работ» http://v3.test.itpmgroup.com/dictionary/service
+2.	Кликнуть на голубую квадратную иконку с плюсиком в правом верхнем углу и зайти на страницу
+ «Редактирование» http://v3.test.itpmgroup.com/dictionary/service/edit.
+3.	Кликнуть в текстовое поле с названием «Аппарат».
+4.	Зайти в конец открывшегося drop-down списка и выбрать последний элемент.
+Expected result:
+    Текстовое поле Аппарат содержит новые данные данные «Сломан датчик» .
+
+
+Test Case 4
+Summary:        На странице «Аппарат» проверить функцию удаления учетной записи из списка аппаратов.
+Precondition: 	Зайти на страницу http://v3.test.itpmgroup.com  и авторизоваться под логином
+                и паролем Student, 909090 и осуществить выход на главную страницу
+                http://v3.test.itpmgroup.com/dashboard.
+Steps:
+1.	Кликнуть на кнопку «Словари» на боковой панели меню чтобы открылся список опций.
+2.	Кликнуть на опцию «Аппарат» и зайти на страницу http://v3.test.itpmgroup.com/dictionary/apparat.
+3.	Двойным щелчком кликнуть на любую учетную запись в списке аппаратов и зайти на страницу «Редактирование»
+    http://v3.test.itpmgroup.com/dictionary/apparat/edit.
+4.	Нажать на красную кнопку справа «Удалить».
+Expected result:
+                Происходит удаление строки и возврат на страницу
+                http://v3.test.itpmgroup.com/dictionary/apparat.
+
+
+Test Case 5
+Summary:  На странице «Аппарат» проверить функцию редактирования учетной записи из списка аппаратов.
+Precondition: 	Зайти на страницу http://v3.test.itpmgroup.com  и авторизоваться под логином и
+                паролем Student, 909090 и осуществить выход на главную страницу
+                 http://v3.test.itpmgroup.com/dashboard.
+Steps:
+1.	Кликнуть на кнопку «Словари» на боковой панели меню чтобы открылся список опций.
+2.	Кликнуть на опцию «Аппарат» и зайти на страницу http://v3.test.itpmgroup.com/dictionary/apparat.
+3.	Двойным щелчком кликнуть на любую учетную запись в списке аппаратов и зайти на страницу
+    «Редактирование» http://v3.test.itpmgroup.com/dictionary/apparat/edit.
+4.	В текстовое поле Apparat number изменить данные.
+5.	В текстовое поле Apparat comment редактировать данные, внеся любые изменения.
+6.	Нажать на синюю кнопку слева «Сохранить».
+Expected result:
+                Происходит сохранение новых данных и возврат на страницу
+                http://v3.test.itpmgroup.com/dictionary/apparat.

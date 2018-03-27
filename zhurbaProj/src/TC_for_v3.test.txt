@@ -1,0 +1,184 @@
+#=====================================
+TC_POS_001 - Login/Logout.
+
+001.1 	Go to http://v3.test.itpmgroup.com
+ER: 	The page with Login form was opened successfully.
+
+001.2.1	Enter Login: Student
+001.2.2 Enter password: 909090.
+001.2.3 Click on the button "Вход".
+ER:		Was opened page with header "Главная"
+		and with sub-header "Добро пожаловать в систему учета запчастей!".
+
+001.3.1	Open user menu (Top Right).
+001.3.2	Click on the button "Выход".
+ER: 	The page with Login form was opened successfully.
+
+#=====================================
+TC_POS_002 - Opening sections.
+
+002.1 	Go to http://v3.test.itpmgroup.com
+ER: 	The page with Login form was opened successfully.
+
+002.2.1	Enter Login: Student
+002.2.2 Enter password: 909090.
+002.2.3 Click on the button "Вход".
+ER:		Was opened page with header "Главная"
+		and with sub-header "Добро пожаловать в систему учета запчастей!".
+
+002.3.1	Open a sections "Словари".
+002.3.2	Open a sub-sections	"Аппарат".
+ER:		On the right area was opened the page with header "Аппарат".
+		On the page is contained the values list.
+		
+002.4.1	Open a sections "Обслуживание".
+ER:		On the right area was opened the page with header "Обслуживание".
+		On the page is contained the values list.
+		
+002.5.1	Open a sections "Установка".
+ER:		On the right area was opened the page with header "Установка".
+		On the page is contained the values list.
+		
+002.6.1	Open a sections "Сделки".
+ER:		On the right area was opened the page with header "Сделки".
+		On the page is contained the values list.
+
+002.7.1	Open a sections "Отчет".
+ER:		On the right area was opened the page with header "Отчет о продажах".
+		On the page is contained the diagram and below the values list.
+
+002.8.1	Open user menu (Top Right).
+002.8.2	Click on the button "Выход".
+ER: 	The page with Login form was opened successfully.		
+
+#=====================================
+TC_POS_003 - Report and Adding new objects.
+
+003.1 	Go to http://v3.test.itpmgroup.com
+ER: 	The page with Login form was opened successfully.
+
+003.2.1	Enter Login: Student
+003.2.2 Enter password: 909090.
+003.2.3 Click on the button "Вход".
+ER:		Was opened page with header "Главная"
+		and with sub-header "Добро пожаловать в систему учета запчастей!".
+
+003.3.1	Open a sections "Словари".
+003.3.2	Open a sub-sections	"Список сделок".
+003.3.3 Click on the button "Add" (+).
+ER:		Was opened the page with header "Словарь" and sub-header "Редактирование".
+		The field "Deal type name" is available for text entry.
+
+003.4.1	Enter the text into the field "Deal type name": Test Deal #1 [current date].
+003.4.2	Click on the button "Создать".
+003.4.3	Find in the list a record with value "Test Deal #1 [current date]".
+ER:		The record with value "Test Deal #1 [current date]" was found.
+
+003.5.1	Open a sections "Обслуживание".	
+003.5.2 Click on the button "Add" (+)
+ER:		Was opened the page with header "Словарь" and sub-header "Редактирование".
+		There are following fields: "Service changese", "Service operations", "Service date", "Аппарат", "Сотрудник".
+
+003.6.1	Fill in following fields. 
+		Service changese: "Test Service"
+		Service operations: "Test oper"
+		Service date:	Current Date/Time
+		Аппарат:	choose some from the list
+		Сотрудник:	choose some from the list
+003.6.2	Click on the button "Создать".
+003.6.3	Find in the list a record with values those were entered on the previous step.
+ER:		On the right area was opened the page with header "Обслуживание" and sub-header "Список работ".
+		The record with values was found.
+		
+003.7.1	Open a sections "Установка".	
+003.7.2 Click on the button "Add" (+)
+ER:		Was opened the page with header "Словарь" and sub-header "Редактирование".
+		There are following fields: "Installation date", "Аппарат", "Сотрудник".
+		
+003.8.1	Fill in following fields. 
+		Installation date:	Current Date/Time
+		Аппарат:	choose some from the list
+		Сотрудник:	choose some from the list
+003.8.2	Click on the button "Создать".
+003.8.3	Find in the list a record with values those were entered on the previous step.
+ER:		On the right area was opened the page with header "Обслуживание" and sub-header "Список работ".
+		The record with values was found.
+		
+003.9.1 Open a sections "Сделки".	
+003.9.2 Click on the button "Add" (+)
+ER:		Was opened the page with header "Словарь" and sub-header "Редактирование".
+		There are following fields: "Deal date", "Тип сделки", "Покупатель", "Поставщик".
+
+003.10.1	Fill in following fields. 
+			Deal date:	Current Date/Time
+			Тип сделки:	Test Deal #1 [current date]  		//(was created on step 003.4)
+			Покупатель:	choose some from the list
+			Поставщик:	choose some from the list
+003.10.2	Click on the button "Создать".
+003.10.3	Find in the list a record with values those were entered on the previous step.
+ER:			On the right area was opened the page with header "Сделки" and sub-header "Список сделок".
+			The record with values was found.
+			
+003.11.1	Open a sections "Отчет".
+ER:			On the right area was opened the page with header "Отчет о продажах".
+			On the page is contained the diagram and below the values list.
+
+003.12.1	Find in the list a record with values those were entered on the step 003.10.1.
+ER:			The record with values was found.
+
+003.13.1	Open user menu (Top Right).
+003.13.2	Click on the button "Выход".
+ER: 		The page with Login form was opened successfully.
+
+#=====================================
+TC_POS_004 - User profile.
+
+004.1 	Go to http://v3.test.itpmgroup.com
+ER: 	The page with Login form was opened successfully.
+
+004.2.1	Enter Login: Student
+004.2.2 Enter password: 909090.
+004.2.3 Click on the button "Вход".
+ER:		Was opened page with header "Главная"
+		and with sub-header "Добро пожаловать в систему учета запчастей!".
+		
+004.3.1	Open user menu (Top Right).
+004.3.2	Click on the button "Профиль".
+ER:		Was opened the page with User's data.
+		There are following fields: "Адрес email", "Пользователь", "Логин", "Пароль", "Подтверждение пароля".
+
+004.4.1 Change value in the field "Пользователь" to "Student1".
+004.4.2	Click on the button "Сохранить".
+ER:		The change was applied successfully.
+		User's name on the page (Top Right) is Student1.
+
+004.5.1 Change value in the field "Пользователь" to "Student".
+004.5.2	Click on the button "Сохранить".
+ER:		The change was applied successfully.
+		User's name on the page (Top Right) is Student.		
+
+004.6.1	Open user menu (Top Right).
+004.6.2	Click on the button "Выход".
+ER: 	The page with Login form was opened successfully.
+
+#=====================================
+TC_POS_005 - Hiding left panel
+
+005.1 	Go to http://v3.test.itpmgroup.com
+ER: 	The page with Login form was opened successfully.
+
+005.2.1	Enter Login: Student
+005.2.2 Enter password: 909090.
+005.2.3 Click on the button "Вход".
+ER:		Was opened page with header "Главная"
+		and with sub-header "Добро пожаловать в систему учета запчастей!".
+		
+005.3.1 Click to button for hide a left panel.
+ER:		The left panel was hidden.
+
+005.4.1 Click to button for hide a left panel.
+ER:		The left panel was shown.
+
+005.5.1	Open user menu (Top Right).
+005.5.2	Click on the button "Выход".
+ER: 	The page with Login form was opened successfully.
