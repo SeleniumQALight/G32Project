@@ -5,9 +5,9 @@ import junit.framework.TestCase;
 import junit.framework.TestSuite;
 
 /**
- * Unit test for simple App. test2227
+ * Unit test for simple App. test27-03
  */
-public class AppTest 
+public class AppTest
     extends TestCase
 {
     /**
