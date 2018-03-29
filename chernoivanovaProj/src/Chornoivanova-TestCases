@@ -82,3 +82,5 @@ Steps:
 
 Expected result:
 Получаем валидационное сообщение "Please fill in this field" к полю <Service changes>
+
+
