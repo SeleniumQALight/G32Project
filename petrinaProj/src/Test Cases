@@ -1,0 +1,53 @@
+Test Cases
+
+Veryfiy Login functionality with correct username and pass
+
+1 Navigate to  http://v3.test.itpmgroup.com
+2 Enter username; Student
+3 Enter Password; 909090
+4 Click on Submit button;
+
+ER Home page opens
+
+
+
+Veryfiy Login functionality with incorrect username
+1 Navigate to  http://v3.test.itpmgroup.com
+2 Enter username; Mariia;
+3 Enter Password; 909090;
+4 Click on Submit button;
+
+Error message displayed
+
+
+Veryfiy Login functionality with incorrect password
+1 Navigate to  http://v3.test.itpmgroup.com
+2 Enter username; Student;
+3 Enter Password; 111111;
+4 Click on Submit button;
+
+Error message displayed
+
+Check if the "Add" button works 
+1 Navigate to  http://v3.test.itpmgroup.com
+2 Enter username; Mariia;
+3 Enter Password; 909090;
+4 Click on Submit button;
+5 Click on button "Словари";
+6 Click on button "Аппарат";
+7 Click on button "Add" button; 
+
+ER Fild "Редактирование" is opens
+
+
+Check if the "Обслуживание" button works 
+1 Navigate to  http://v3.test.itpmgroup.com
+2 Enter username; Mariia;
+3 Enter Password; 909090
+4 Click on Submit button;
+5 Click on button "Обслуживание";
+
+ER The form "Обслуживание" opens
+
+
+
