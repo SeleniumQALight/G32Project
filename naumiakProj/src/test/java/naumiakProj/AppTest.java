@@ -7,7 +7,7 @@ import junit.framework.TestSuite;
 /**
  * Unit test for simple App. testLilia  45856
  */
-public class AppTest 
+public class AppTest //add new changes
     extends TestCase
 {
     /**
