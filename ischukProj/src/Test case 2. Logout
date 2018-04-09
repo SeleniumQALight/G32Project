@@ -1,0 +1,14 @@
+Summary: Log out
+Precondition:
+login "Student"
+Password "909090"
+STR:
+1. Open website by link http://v3.test.itpmgroup.com/login
+2. Fill login field
+3. Fill Password field
+3. Click on the  "Вход" button
+4. Click on the user icon
+5. Click on the "Выход" button
+ER:
+Login form is present
+url = http://v3.test.itpmgroup.com/login
