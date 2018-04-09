@@ -1,0 +1,7 @@
+SUMMARY: Clicking on the text 'Главная' on the main menu
+         should back to the main page.
+Precondition: Load site, have existing user (login, password).
+STR: 1.Click on main menu on 'Отчет'.
+     2.Click on main menu on 'Сделки'.
+     3.Click on main menu on 'Главная'.
+ER: Should be present heading 'Главная' on the main page.
