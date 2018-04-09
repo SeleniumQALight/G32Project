@@ -3,7 +3,8 @@ Summary: Edit User name
 Precondition:
 login = "Student"
 password = "909090"
-user_name = "Student2"
+user_name2 = "Student2"
+user_name1 = "Student"
 
 STR:
 1. Open website by link http://v3.test.itpmgroup.com/login
@@ -13,7 +14,14 @@ STR:
 4. Click on the user icon
 5. Click on the "Профиль" Button
 6. Clear the "Пользователь" field
-7. Enter user_name in the "Пользователь" field
+7. Enter user_name2 in the "Пользователь" field
 8. Click on the "Сохранить" button
 
-ER: User name on the icon of user is "Student2"
+ER:
+User name on the icon of user is "Student2"
+
+
+Postcondition:
+1. Clear the "Пользователь" field
+2. Enter user_name1 in the "Пользователь" field
+3. Click on the "Сохранить" button
