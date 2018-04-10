@@ -1,0 +1,9 @@
+SUMMARY: Availability to add of the new subject to dictionary 'Запчасти'
+
+Precondition:  Load site, have existing user (login, password), main menu 'Словари'.
+
+STR: 1.Click on text 'Запчасти' on the main page.
+     2.Click on the Button '+' on the page with name 'Запчасти'.
+
+ER: Should be present text '', field 'Spare name' , field 'Spare Type',
+    Button Submit 'Создать' on the page with name 'Редактирование'.

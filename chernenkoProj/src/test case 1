@@ -1,8 +1,8 @@
 SUMMARY: User Login. Check when pass correct email and correct password.
 
-Steps to reproduce: 1.Enter valid email.
-                    2.Enter correct password.
-                    3.Click on Login Button.
+Steps to reproduce: 1.Enter valid email in the field 'email'.
+                    2.Enter correct password in the field 'password"'.
+                    3.Click on Submit Button 'Вход'.
 
-Expected result: Avatar should be present on home page and
-                 url "http://v3.test.itpmgroup.com/account".
+Expected result: Avatar and "Student1" should be present on the main page 'Главная'.
+

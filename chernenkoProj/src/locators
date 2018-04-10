@@ -1,0 +1,11 @@
+# LoginPage
+Login.Form.Name.Zapis=xpath(".//b[contains(text(),'Учет запчастей')]")
+Login.Form.Table=xpath(".//*[@class='login-box-body']")
+Login.Authorization.Zapis=xpath(".//p[@class='login-box-msg']")
+Login.Email.Input=xpath(".//p[@class='login-box-msg']")
+Login.Password.Input=xpath(".//input[@id='password']")
+Login.Form.Authorization.Action=xpath(".//form[@action='/login_check']")
+Login.Button.Enter.Zapis=xpath(".//button[@type='submit']")
+Login.RememberOfPassword.Button.Zapis=xpath(".//a[@href='#']")
+Login.Registration.Button.Zapis=xpath(".//a[@href='register.html']")
+
