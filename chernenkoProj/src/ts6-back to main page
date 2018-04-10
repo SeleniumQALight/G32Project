@@ -2,7 +2,7 @@ SUMMARY: Clicking on the text 'Главная' on the main menu
          should back to the main page.
 
 Precondition: Load site by URL:http://v3.test.itpmgroup.com/login ,
-              have existing user (login 'Student', password '909090').
+              have existing user (login 'Student', password '909090')
 
 STR: 1.Click on main menu on 'Отчет'.
      2.Click on main menu on 'Сделки'.

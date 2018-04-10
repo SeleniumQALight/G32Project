@@ -1,6 +1,6 @@
 SUMMARY: User Log out.
 
-Precondition: login 'Student', Password '909090'
+Precondition: login 'Student', Password '909090'.
 
 Steps to reproduce: 1.Open site by URL:http://v3.test.itpmgroup.com/login.
                     2.Enter valid email in the field 'email'.

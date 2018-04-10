@@ -1,6 +1,6 @@
 SUMMARY: User Login. Check when pass correct email and correct password.
 
-Precondition: login 'Student', Password '909090'
+Precondition: login 'Student', Password '909090'.
 
 Steps to reproduce: 1.Open site by URL:http://v3.test.itpmgroup.com/login.
                     2.Enter login in the in the field 'email'.
