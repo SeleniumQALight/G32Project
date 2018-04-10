@@ -1,8 +1,0 @@
-SUMMARY: User Login. Check when pass correct email and correct password.
-
-Steps to reproduce: 1.Enter valid email.
-                    2.Enter correct password.
-                    3.Click on Login Button.
-
-Expected result: Avatar should be present on home page and
-                 url "http://v3.test.itpmgroup.com/account".

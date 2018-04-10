@@ -1,0 +1,12 @@
+SUMMARY: User Login. Check when pass correct email and correct password.
+
+Precondition: login 'Student', Password '909090'.
+
+Steps to reproduce: 1.Open site by URL:http://v3.test.itpmgroup.com/login.
+                    2.Enter login in the in the field 'email'.
+                    3.Enter password in the field 'password'.
+                    4.Click Submit Button 'Вход'.
+
+Expected result: Avatar should be present on the right corner of the main page 'Главная'
+                 and url should be changed to http://v3.test.itpmgroup.com/.
+

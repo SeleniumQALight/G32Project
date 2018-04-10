@@ -1,0 +1,12 @@
+SUMMARY: User Login. Check when pass invalid email and correct password.
+
+Precondition: invalid login 'Student1', correct password '909090'.
+
+Steps to reproduce: 1.Open site by URL:http://v3.test.itpmgroup.com/login
+                    2.Enter invalid login in the field 'email'.
+                    3.Enter correct password in the field 'password'.
+                    4.Click Submit Button 'Вход'.
+
+Expected result: url should not be changed and
+                 Login form should  be present on the login page..
+
