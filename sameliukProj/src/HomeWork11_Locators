@@ -1,0 +1,38 @@
+#Home
+Home.Sidebar-menu.Dashboard=xpath(“.//a[@href=’/dashboard’]”)
+Home.Sidebar-menu.Dictionary=xpath(“.//*[@id='dictionary']”)
+Home.Sidebar-menu. Dictionary.Apparat=xpath(“.//a[@href='/dictionary/apparat'] ”)
+Home.Sidebar-menu. Dictionary.Workers=xpath(“.//a[@href='/dictionary/workers'] ”)
+Home.Sidebar-menu. Dictionary. Spare_type=xpath(“.//a[@href='/dictionary/spare_type'] ”)
+Home.Sidebar-menu. Dictionary.Spares=xpath(“.//a[@href='/dictionary/spares'] ”)
+Home.Sidebar-menu. Dictionary.Providers=xpath(“.//a[@href='/dictionary/providers'] ”)
+Home.Sidebar-menu. Dictionary.Deal_type=xpath(“.//a[@href='/dictionary/deal_type'] ”)
+Home.Sidebar-menu. Dictionary.Service=xpath(“.//a[@href='/dictionary/service'] ”)
+Home.Sidebar-menu. Dictionary.Installation=xpath(“.//a[@href='/dictionary/installation'] ”)
+Home.Sidebar-menu. Dictionary.Deal=xpath(“.//a[@href='/deal'] ”)
+Home.Sidebar-menu.Dashboard=xpath(“.//a[@href='/statistic'] ”)
+
+#Apparat
+Apparat.Button.Add=xpath(“.//a[@href=’http://v3.test.itpmgroup.com/dictionary/apparat/edit’]”)
+Apparat.Table.Record=xpath(“.//tr[.//td[contains(text(),'Сломан датчик')]] ”)
+Apparat.Table.Record=xpath(“.//tr[.//td[contains(text(),'Первый автомат(не работает)')]] ”)
+Apparat.Table.Record=xpath(“.//tr[.//td[contains(text(),'Третий автомат')]] ”)
+Apparat.Table.Record=xpath(“.//tr[.//td[contains(text(),'Седьмой автомат')]] ”)
+Apparat.Table.Record=xpath(“.//tr[.//td[contains(text(),'dfd')]] ”)
+Apparat.Table.Record=xpath(“.//tr[.//td[contains(text(),'QA Test Edited')]] ”)
+Apparat.Table.Record=xpath(“.//tr[.//td[2]] ”)
+
+#ApparatEdit
+ApparatEdit.Number.input.=xpath(“.//input[@id='apparat_apparatNumber'] ”)
+ApparatEdit.Comment.input.=xpath(“.//input[@id='apparat_apparatComment'] ”)
+ApparatEdit.Button.Create.=xpath(“.//*[@name='add'] ”)
+
+#Service
+Service.Button.Add=xpath(“.//a[@href=’http://v3.test.itpmgroup.com/dictionary/service/edit’] ”)
+#ServiceEdit
+ServiceEdit.Apparat.input=xpath(“.//select[@id='service_apparat_apparat'] ”)
+ServiceEdit.Apparat.selectElement=xpath(“.//*[text()='Сломан датчик'] ”)
+
+#ApparatEditRecord
+ApparatEditRecord.Button.Save=xpath(“.//button[@type='submit' and @name='save'] ”)
+ApparatEditRecord.Button.Delete=xpath(“.//button[@name='delete'] ”)
