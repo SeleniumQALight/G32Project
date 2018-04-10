@@ -1,0 +1,12 @@
+SUMMARY: Availability to add of the new subject to dictionary 'Запчасти'
+
+Precondition:  Load site by URL:http://v3.test.itpmgroup.com/login ,
+               have existing user (login 'Student', password '909090').
+
+
+STR: 1.Click on main menu 'Словари'.
+     2.Click on text 'Запчасти' on the main page.
+     3.Click on the Button '+' on the page with name 'Запчасти'.
+
+ER: Should be present  field 'Spare name' , field 'Spare Type',
+    Button Submit 'Создать' on the page with name 'Редактирование'.

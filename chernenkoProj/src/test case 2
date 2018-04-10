@@ -1,9 +1,0 @@
-SUMMARY: User Login. Check when pass invalid email and correct password.
-
-Steps to reproduce: 1.Enter invalid email in the field 'email'.
-                    2.Enter correct password in the field 'password'.
-                    3.Click Submit Button 'Вход'.
-
-Expected result: should be shown error message 'field email : incorrect' and
-                 Avatar should not be present on the main page.
-

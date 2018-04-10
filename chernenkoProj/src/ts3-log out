@@ -1,0 +1,13 @@
+SUMMARY: User Log out.
+
+Precondition: login 'Student', Password '909090'
+
+Steps to reproduce: 1.Open site by URL:http://v3.test.itpmgroup.com/login.
+                    2.Enter valid email in the field 'email'.
+                    3.Enter correct password in the field 'password'.
+                    4.Click Submit Button 'Вход'.
+                    5.Click on the user avatar
+                    6.Click Submit Button 'Выход'.
+
+Expected result: should be URL:http://v3.test.itpmgroup.com/login and
+                 Login form should  be present on the login page.
