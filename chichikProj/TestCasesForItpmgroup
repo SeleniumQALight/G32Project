@@ -6,7 +6,7 @@ Steps:
 3. Enter valid password into 'password' field
 4. Click 'Вход' button
 
-Expected result: Displays avatar and username in the top right corner
+Expected result: Displays avatar in the top right corner
 -----------------------------------------------
 
 #2 Summary: User logs out from the application

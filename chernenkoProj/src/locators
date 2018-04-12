@@ -1,11 +1,27 @@
 # LoginPage
-Login.Form.Name.Zapis=xpath(".//b[contains(text(),'Учет запчастей')]")
-Login.Form.Table=xpath(".//*[@class='login-box-body']")
-Login.Authorization.Zapis=xpath(".//p[@class='login-box-msg']")
-Login.Email.Input=xpath(".//p[@class='login-box-msg']")
+Login.Form.Name.Text=xpath(".//b")
+Login.Authorization.Text=xpath(".//p")
+Login.Email.Input=xpath(".//input[@name='_username']")
 Login.Password.Input=xpath(".//input[@id='password']")
-Login.Form.Authorization.Action=xpath(".//form[@action='/login_check']")
-Login.Button.Enter.Zapis=xpath(".//button[@type='submit']")
-Login.RememberOfPassword.Button.Zapis=xpath(".//a[@href='#']")
-Login.Registration.Button.Zapis=xpath(".//a[@href='register.html']")
+Login.Form.Authorization.Action=xpath(".//form")
+Login.Button.Submit=xpath(".//button")
+Login.RememberOfPassword.Button=xpath(".//a[@href='#']")
+Login.Registration.Button=xpath(".//a[@href='register.html']")
 
+# MainPage
+Main.Avatar.Img.Right=xpath(".//img[@class="user-image"]")
+Main.Button.Logout=xpath("//a[@href='/logout']")
+Main.Menu.Text.Reporting=xpath(".//*[text()='Отчет']")"
+Main.Menu.Text.Treaty=xpath(".//*[text()='Сделки']")"
+Main.Menu.Text.ToHome=xpath(".//a[@href='/']")
+
+# DictionaryPage
+Dict.Menu.Spares=xpath(".//a[@href='/dictionary/spares']")
+Dict.Menu.Button.Add=xpath(".//a[@class='btn btn-info btn-sm']")
+Dict.Page.Name=xpath(".//*/h1[contains(text(),'Запчасти')]")
+
+# EditSparesPage
+EditSpares.Page.Name=xpath(".//h3[contains(text(),'Редактирование')]")
+EditSpares.Input.Name=xpath(".//input[@id="spares_spareName"]")
+EditSpares.Select.Type=xpath(".//select")
+EditSpares.Button.Create=xpath(".//button")
