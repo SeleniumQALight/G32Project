@@ -31,7 +31,7 @@ public class LogIn {
         webDriver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         webDriver.get("http://v3.test.itpmgroup.com");
         webDriver.findElement(By.name("_username")).sendKeys("Student");
-        webDriver.findElement(By.id("password")).sendKeys("909090");
+        webDriver.findElement(By.id("password")).sendKeys("906090");
         webDriver.findElement(By.tagName("button")).click();
         Assert.assertTrue("Avatar is not present",
                 isAvatarPresent()
