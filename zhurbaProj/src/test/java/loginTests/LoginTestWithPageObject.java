@@ -6,6 +6,6 @@ import parentTest.ParentTest;
 public class LoginTestWithPageObject extends ParentTest{
     @Test
     public void validLogIn (){
-
+    loginPage.openPage();
     }
 }
