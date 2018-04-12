@@ -20,7 +20,7 @@ public class ParentTest {
         System.setProperty("webdriver.chrome.driver", chrome.getAbsolutePath());
         webDriver = new ChromeDriver();
         webDriver.manage().window().maximize();
-        webDriver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+        webDriver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         loginPage = new LoginPage(webDriver);
     }
 

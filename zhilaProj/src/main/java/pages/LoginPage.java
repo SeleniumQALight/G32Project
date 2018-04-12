@@ -1,23 +1,36 @@
 package pages;
 
-import org.apache.http.util.Asserts;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class LoginPage extends ParentPage {
-    WebDriver webDriver;
 
     public LoginPage(WebDriver webDriver) {
-        this.webDriver = webDriver;
+        super(webDriver);
     }
+
 
     public void openPage(){
         try{
             webDriver.get("http://v3.test.itpmgroup.com");
-        }catch (Exception e) {
+            logger.info("Login page was opened");
+        }catch (Exception e)
+        {
             logger.error("Can not open LoginPage");
             Assert.fail("Can not open LoginPage");
         }
 
+    }
+
+    public void enterLogin(String login){
+        WebElement inputLogin = webDriver.findElement(By.name("_username"));
+        actionWithOurElements.enterTextInToElement(inputLogin,login);
+    }
+
+    public void enterPassword(String password){
+        WebElement inputLogin = webDriver.findElement(By.id("password"));
+        actionWithOurElements.enterTextInToElement(inputLogin,password);
     }
 }
