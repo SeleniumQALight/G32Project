@@ -41,7 +41,8 @@ public class LogIn {
     private boolean isAvatarPresent() {
         try {
            return webDriver.findElement(By.xpath(".//div[@class='pull-left image']//img[@class='img-circle']")).isDisplayed();
-        } catch (Exception e){
+        } catch (Exception e)
+        {
         } return false;
     }
 }
