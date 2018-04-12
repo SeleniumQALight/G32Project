@@ -1,4 +1,4 @@
-SUMMARY: Clicking on the text 'Главная' on the main menu
+SUMMARY: Clicking on the text 'Домой' on the main menu
          should back to the main page.
 
 Precondition: Load site by URL:http://v3.test.itpmgroup.com/login ,
@@ -6,6 +6,6 @@ Precondition: Load site by URL:http://v3.test.itpmgroup.com/login ,
 
 STR: 1.Click on main menu on 'Отчет'.
      2.Click on main menu on 'Сделки'.
-     3.Click on main menu on 'Главная'.
+     3.Click on main menu on 'Домой'.
 
-ER: Should be present heading 'Главная' on the main page.
+ER: Should be URL:http://v3.test.itpmgroup.com
