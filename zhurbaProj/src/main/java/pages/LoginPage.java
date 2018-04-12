@@ -1,13 +1,14 @@
 package pages;
 
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class LoginPage extends ParentPage {
-    WebDriver webDriver;
 
     public LoginPage(WebDriver webDriver) {
-        this.webDriver = webDriver;
+        super (webDriver);
     }
 
     public void openPage() {
@@ -18,5 +19,10 @@ public class LoginPage extends ParentPage {
             logger.error("Login Page was NOT opened.");
             Assert.fail("Login Page was NOT opened.");
         }
+    }
+
+    public void enterLogin(String login){
+        WebElement inputLogin = webDriver.findElement(By.name("_username"));
+        actionsWithOurElements.enterTextInToElement(inputLogin, login);
     }
 }
