@@ -5,6 +5,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import static org.openqa.selenium.By.*;
+
 public class LoginPage extends ParentPage{
 
 
@@ -22,7 +24,16 @@ public class LoginPage extends ParentPage{
         }
     }
     public void enterLogin(String login){
-        WebElement inputLogin = webDriver.findElement(By.name("_username"));
+        WebElement inputLogin = webDriver.findElement(name("_username"));
         actionWithOurElements.enterTextInToElement(inputLogin, login);
     }
+
+    public void enterPassword(String password){
+        WebElement inputPassword = webDriver.findElement(name("_password"));
+        actionWithOurElements.enterTextInToElement(inputPassword, password);
+    }
+    public  void clickButton(){
+        webDriver.findElement(By.tagName("button")).click();
+    }
+
 }

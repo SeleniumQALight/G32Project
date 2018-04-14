@@ -19,6 +19,8 @@ public class ActionWithOurElements {
             webElement.clear();
             webElement.sendKeys(text);
             logger.info(text + " was inputted into element");
+            webElement.click();
+            logger.info("Button was click");
         } catch (Exception e) {
             logger.error("Can not element");
             Assert.fail("Can not element");
