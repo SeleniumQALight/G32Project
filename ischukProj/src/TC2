@@ -1,5 +1,5 @@
  Summary  Log in website
-Precondition Open web site,The login form is present according to requirements, log in  ( login(MisterX), password(123456))
+Precondition Open web site,The login form is present according to requirements, log in  ( login(Student), password(909090))
 
 STR
 	1. Fill in the text field "login"
