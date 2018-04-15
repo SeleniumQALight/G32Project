@@ -26,14 +26,12 @@ public class ActionsWithOurElements {
     }
 
     public void clickOntoTheButton(WebElement webElement) {
-        String buttonInfo1 = webElement.getTagName();
-        String buttonInfo2 = webElement.getText();
         try {
             webElement.click();
-            logger.info("The button " + "<" + buttonInfo1 + ":" + buttonInfo2 + ">" +" was clicked SUCCESSFULLY.");
+            logger.info("The button was clicked SUCCESSFULLY.");
         } catch (Exception e) {
-            logger.error("Can't click onto the button.<" + buttonInfo1 + ":" + buttonInfo2 + ">");
-            Assert.fail("Can't click onto the button.<" + buttonInfo1 + ":" + buttonInfo2 + ">");
+            logger.error("Can't click onto the button.");
+            Assert.fail("Can't click onto the button.");
         }
 
 
