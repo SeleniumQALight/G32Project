@@ -18,10 +18,24 @@ public class ActionsWithOurElements {
         try {
             webElement.clear();
             webElement.sendKeys(text);
-            logger.info("\"" + text + "\"" + " was inputted into element");
+            logger.info("\"" + text + "\"" + " was inputted into element SUCCESSFULLY.");
         } catch (Exception e) {
             logger.error("Can't work with element.");
             Assert.fail("Can't work with element.");
         }
+    }
+
+    public void clickOntoTheButton(WebElement webElement) {
+        String buttonInfo1 = webElement.getTagName();
+        String buttonInfo2 = webElement.getText();
+        try {
+            webElement.click();
+            logger.info("The button " + "<" + buttonInfo1 + ":" + buttonInfo2 + ">" +" was clicked SUCCESSFULLY.");
+        } catch (Exception e) {
+            logger.error("Can't click onto the button.<" + buttonInfo1 + ":" + buttonInfo2 + ">");
+            Assert.fail("Can't click onto the button.<" + buttonInfo1 + ":" + buttonInfo2 + ">");
+        }
+
+
     }
 }
