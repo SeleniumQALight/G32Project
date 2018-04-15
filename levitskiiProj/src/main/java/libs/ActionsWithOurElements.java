@@ -26,9 +26,8 @@ public class ActionsWithOurElements {
         }
 
     }
-    public void clickButtonVhod (WebElement webElement){
+    public void clickOnElement (WebElement webElement){
         try {
-            webElement.clear();
             webElement.click();
             logger.info("Button VHOD clicked");
         }catch (Exception e) {

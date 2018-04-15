@@ -31,6 +31,6 @@ public class LogInPage extends ParentPage{
         }
         public void clickButton (){
         WebElement buttonVhod = webDriver.findElement(By.tagName("button"));
-        actionsWithOurElements.clickButtonVhod(buttonVhod);
+        actionsWithOurElements.clickOnElement(buttonVhod);
         }
 }

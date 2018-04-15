@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
 
 public class ParentTest {
     WebDriver webDriver;
-    protected LogInPage LogInPage;
+    protected LogInPage logInPage;
 
     @Before
     public void setUp() {
@@ -23,7 +23,7 @@ public class ParentTest {
         webDriver.manage().window().maximize();
         webDriver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 
-        LogInPage = new LogInPage(webDriver);
+        logInPage = new LogInPage(webDriver);
     }
     @After
     public void tearDown(){
