@@ -1,0 +1,12 @@
+1. Summary  Registration for new user in Google Chrome
+Precondition Open web site,
+ The login form is present according to requirements
+STR
+	1. Click on "Зарегитсрироваться"
+	2. Fill in the text field "Адрес email"
+	2. Fill in the text field "Пользователь"
+	3. Fill in the text field "Логин"
+	4. Fill in the text field "Пароль"
+	5. Fill in the text field " Подтверждение пароля"
+	4. Click "Submit"
+ER new user profile

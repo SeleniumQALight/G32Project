@@ -1,0 +1,9 @@
+Summary
+Precondition Open web site,The login form is present according to requirements, log in  (  login(Student), password(909090)),
+enter in website, maine page view, Ckick on tab  "Словари"
+STR
+	2. Click on main menu on "Аппарат"
+	3. Click on first row  in the list
+	4. in row "Apparat number" enter 555444
+	5. Click on "Сохранить"
+ER view in first row  in the list "Apparat number"  555444
