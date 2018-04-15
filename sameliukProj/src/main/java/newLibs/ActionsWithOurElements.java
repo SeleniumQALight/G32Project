@@ -14,15 +14,20 @@ public class ActionsWithOurElements {
         logger = Logger.getLogger(getClass());
     }
 
-    public  void enterTextIntoElement (WebElement webElement, String text){
-        try{
+    public void enterTextIntoElement(WebElement webElement, String text) {
+        try {
             webElement.clear();
             webElement.sendKeys(text);
             logger.info(text + " was inputted into element");
-        }catch (Exception e){
+            webElement.click();
+            logger.info("submitButton Вход was clicked");
+        } catch (Exception e) {
             logger.error("Can not work with element");
             Assert.fail("Can not work with element");
         }
+    }
 
+    public void click(WebElement webElement) {
+        webElement.click();
     }
 }

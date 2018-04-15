@@ -1,16 +1,14 @@
 package loginTests;
 
-import org.junit.After;
 import org.junit.Test;
-import pages.LoginPage;
-import parentTest.PaentTest;
+import parentTest.ParentTest;
 
-public class LoginTestWithPageObject extends PaentTest {
+public class LoginTestWithPageObject extends ParentTest {
     @Test
-    public void validLogin(){
-loginPage.openPage();
+    public void validLogin() {
+        loginPage.openPage();
         loginPage.enerLogin("Student");
+        loginPage.enterPassword("909090");
+        loginPage.submitAuthorisation();
     }
-
-
 }

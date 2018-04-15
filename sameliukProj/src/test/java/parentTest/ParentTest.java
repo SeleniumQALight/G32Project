@@ -9,7 +9,7 @@ import pages.LoginPage;
 import java.io.File;
 import java.util.concurrent.TimeUnit;
 
-public class PaentTest {
+public class ParentTest {
     WebDriver webDriver;
     protected LoginPage loginPage;
 
@@ -23,6 +23,7 @@ public class PaentTest {
 
         loginPage = new LoginPage(webDriver);
     }
+
     @After
     public void testDown() {
         webDriver.quit();
