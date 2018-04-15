@@ -25,5 +25,12 @@ public class LogInPage extends ParentPage{
             WebElement inputLogin = webDriver.findElement(By.name("_username"));
             actionsWithOurElements.enterTextIntoElement(inputLogin, login);
         }
-
+        public void enterPassword (String password){
+            WebElement inputPassword = webDriver.findElement(By.id("password"));
+            actionsWithOurElements.enterTextIntoElement(inputPassword, password);
+        }
+        public void clickButton (){
+        WebElement buttonVhod = webDriver.findElement(By.tagName("button"));
+        actionsWithOurElements.clickButtonVhod(buttonVhod);
+        }
 }

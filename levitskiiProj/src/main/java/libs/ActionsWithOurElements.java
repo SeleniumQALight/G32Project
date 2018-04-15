@@ -24,5 +24,17 @@ public class ActionsWithOurElements {
         logger.error("Can not work with element");
             Assert.fail("Can not work with element");
         }
+
+    }
+    public void clickButtonVhod (WebElement webElement){
+        try {
+            webElement.clear();
+            webElement.click();
+            logger.info("Button VHOD clicked");
+        }catch (Exception e) {
+            logger.error("Can not work with element");
+            Assert.fail("Can not work with element");
+
+        }
     }
 }
