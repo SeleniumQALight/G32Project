@@ -8,5 +8,6 @@ public class LoginTestWithPageObject extends ParentTest {
     @Test
     public void validLogin (){
         loginPage.openPage();
+        loginPage.enterLogin("Student");
     }
 }
