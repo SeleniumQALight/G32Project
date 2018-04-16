@@ -2,6 +2,7 @@ package libs;
 
 import org.apache.log4j.Logger;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -18,20 +19,20 @@ public class ActionWithOurElements {
         try {
             webElement.clear();
             webElement.sendKeys(text);
-            logger.info(text + " Was inputted into Element");
+            logger.info(text + " was inputted into element");
         } catch (Exception e) {
-            logger.error(webElement + " Can not find element");
-            Assert.fail(webElement + " Can not find element");
+            logger.error("Can not element");
+            Assert.fail("Can not element");
         }
     }
 
-    public void clickToButton(WebElement button) {
+    public void clickOnElement(WebElement webElement) {
         try {
-            button.click();
-            logger.info(button + " was clicked");
+            webElement.click();
+            logger.info("Button was click");
         } catch (Exception e) {
-            logger.error("Can not find button " + button);
-            Assert.fail("Can not find button " + button);
+            logger.error("Can not element");
+            Assert.fail("Can not element");
         }
     }
 }

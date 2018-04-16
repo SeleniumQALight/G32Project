@@ -14,7 +14,7 @@ public class LoginPage extends ParentPage {
     public void openPage() {
         try {
             webDriver.get("http://v3.test.itpmgroup.com");
-            logger.info("Login Page was opened successfully.");
+            logger.info("Login Page was opened SUCCESSFULLY.");
         } catch (Exception e) {
             logger.error("Login Page was NOT opened.");
             Assert.fail("Login Page was NOT opened.");
@@ -24,5 +24,15 @@ public class LoginPage extends ParentPage {
     public void enterLogin(String login){
         WebElement inputLogin = webDriver.findElement(By.name("_username"));
         actionsWithOurElements.enterTextInToElement(inputLogin, login);
+    }
+
+    public void enterPassword(String password){
+        WebElement inputPassword = webDriver.findElement(By.id("password"));
+        actionsWithOurElements.enterTextInToElement(inputPassword, password);
+    }
+
+    public void clickOntoBxod(){
+        WebElement findTheButton = webDriver.findElement(By.tagName("button"));
+        actionsWithOurElements.clickOntoTheButton(findTheButton);
     }
 }
