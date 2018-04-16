@@ -13,7 +13,6 @@ import java.util.concurrent.TimeUnit;
 
 public class LogIn {
     WebDriver webDriver;
-
     @Before
     public void setUp() {
         File file = new File("./src/drivers/chromedriver.exe");
