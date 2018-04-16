@@ -18,10 +18,22 @@ public class ActionsWithOurElements {
         try {
             webElement.clear();
             webElement.sendKeys(text);
-            logger.info("\"" + text + "\"" + " was inputted into element");
+            logger.info("\"" + text + "\"" + " was inputted into element SUCCESSFULLY.");
         } catch (Exception e) {
             logger.error("Can't work with element.");
             Assert.fail("Can't work with element.");
         }
+    }
+
+    public void clickOntoTheButton(WebElement webElement) {
+        try {
+            webElement.click();
+            logger.info("The button was clicked SUCCESSFULLY.");
+        } catch (Exception e) {
+            logger.error("Can't click onto the button.");
+            Assert.fail("Can't click onto the button.");
+        }
+
+
     }
 }
