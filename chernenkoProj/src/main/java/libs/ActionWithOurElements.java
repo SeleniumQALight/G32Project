@@ -25,4 +25,9 @@ public class ActionWithOurElements {
             Assert.fail("can not with Element");
         }
     }
+
+    public void click(WebElement webElement) {
+        webElement.click();
+    }
+
 }
