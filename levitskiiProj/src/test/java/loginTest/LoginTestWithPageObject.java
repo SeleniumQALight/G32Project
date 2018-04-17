@@ -13,7 +13,7 @@ public class LoginTestWithPageObject extends ParentTest{
         logInPage.enterPass("909090");
         logInPage.clickSubmitButton();
 
-        Assert.assertTrue("Avatar is not present", homePage.isAvatarPresent() );
+        checkAC("Avatar is not present", homePage.isAvatarPresent(), true );
     }
 }
 
