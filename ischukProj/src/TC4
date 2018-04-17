@@ -1,0 +1,8 @@
+Summary Button "Домой" should back to the main page of website
+Precondition Open web site,The login form is present according to requirements, log in (  login(Student), password(909090)),
+enter in website, maine page view
+STR
+	1. Click on main menu on "Словари"
+	2. Click on main menu on "Аппарат"
+	3. Click on button "Домой"
+ER view of main page of website
