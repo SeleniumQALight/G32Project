@@ -20,8 +20,7 @@ public class ActionsWithOurElements {
                 webElement.sendKeys(text);
                 logger.info(text + " was inputted into element");
             }catch (Exception e){
-                logger.error("Can not work with element");
-                Assert.fail("Can not work with element");
+                printErrorAndStopTest();
             }
         }
 
@@ -30,8 +29,20 @@ public class ActionsWithOurElements {
                 webElement.click();
                 logger.info("Button VHOD was clicked");
             }catch (Exception e){
-                logger.error("Can not click the button");
-                Assert.fail("Can not click the button");
+                printErrorAndStopTest();
             }
         }
+
+    private void printErrorAndStopTest() {
+        logger.error("Can not work with element");
+        Assert.fail("Can not work with element");
+    }
+
+    public boolean isElementPresent(WebElement webElement) {
+        try{
+            return webElement.isDisplayed() && webElement.isEnabled();
+        }catch(Exception e){
+            return false;
+        }
+    }
 }
