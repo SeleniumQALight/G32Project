@@ -36,10 +36,10 @@ public class ParentTest {
     }
 
     protected void checkAC (String message, boolean actual, boolean expected){
-        if (!(actual = expected)){
+        if (!(actual == expected)){
         logger.error("AC failed: " + message);
         }
-        Assert.assertEquals(message,actual, expected );
+        Assert.assertEquals(message,expected, actual );
 
     }
 }

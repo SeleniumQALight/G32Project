@@ -42,4 +42,12 @@ public class LogInPage extends ParentPage{
    //     WebElement buttonSubmit = webDriver.findElement(By.tagName("button"));
         actionsWithOurElements.clickOnElement(buttonSubmit);
         }
+
+    public void userLogIn(String logIn, String pass) {
+        openPage();
+        enterLogin(logIn);
+        enterPass(pass);
+        clickSubmitButton();
+    }
 }
+
