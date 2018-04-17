@@ -29,7 +29,7 @@ public class ActionsWithOurElements {
     public void clickOnElement (WebElement webElement){
         try {
             webElement.click();
-            logger.info("Button VHOD clicked");
+            logger.info("Button was clicked");
         }catch (Exception e) {
             logger.error("Can not work with element");
             Assert.fail("Can not work with element");
