@@ -21,8 +21,7 @@ public class ActionWithOurElements {
             logger.info(text + " was inputted into text");
 
         }catch (Exception e){
-            logger.error("can not with Element");
-            Assert.fail("can not with Element");
+            printErrorAndStopTest();
         }
     }
 
@@ -31,9 +30,29 @@ public class ActionWithOurElements {
             webElement.click();
             logger.info("Element was clicked");
         }catch (Exception e){
-            logger.error("can not with Element");
-            Assert.fail("can not with Element");
+            printErrorAndStopTest();
         }
     }
 
+    public void clickOnElement(WebElement webElement) {
+        try{
+            webElement.click();
+            logger.info("Element was clicked");
+        }catch (Exception e){
+            printErrorAndStopTest();
+        }
+    }
+
+    private void printErrorAndStopTest() {
+        logger.error("can not with Element");
+        Assert.fail("can not with Element");
+    }
+
+    public boolean isElementPresent(WebElement webElement) {
+        try{
+            return webElement.isDisplayed() && webElement.isEnabled();
+        }catch (Exception e){
+            return false;
+        }
+    }
 }
