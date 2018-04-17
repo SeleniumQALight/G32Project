@@ -25,4 +25,15 @@ public class ActionWithOurElements {
             Assert.fail("can not with Element");
         }
     }
+
+    public void click(WebElement webElement) {
+        try {
+            webElement.click();
+            logger.info("Element was clicked");
+        }catch (Exception e){
+            logger.error("can not with Element");
+            Assert.fail("can not with Element");
+        }
+    }
+
 }
