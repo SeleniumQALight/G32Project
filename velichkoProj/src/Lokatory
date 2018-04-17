@@ -1,0 +1,15 @@
+Login.
+
+Autorization.Email.input=xpath ( .//input[@name='_username'] ).
+Autorization.Password.input=xpath ( .//input[@id='password'] ).
+Autorization.Button.Вход=xpath ( .//button[@type='submit'] ).
+
+
+Glossary.
+
+Glossary.Enter.=xpath ( .//i[@class="fa fa-angle-left pull-right"] )
+Glossary.Spares.href=xpath ( .//a[@ href="/dictionary/spares"] )
+Glossary.Add.=xpath  ( .//i[@ class="fa fa-plus"] )
+Glossary.SpareName.input=xpath ( .//input[@ id="spares_spareName"] )
+Glossary.SpareType.select=xpath ( .//select[@ id="spares_spareType"] )
+Glossary.Button.Add.=xpath  ( .//button [@name="add"] )

@@ -1,0 +1,6 @@
+Summary  Available in tab "Словари" sub functions  "Аппарат", "Сотрудники" , "Типы запчестей" , "Запчасти" , "Стороны сделок", "Типы сделок"
+Precondition Open web site,The login form is present according to requirements, log in  ( login(Student), password(909090)),
+enter in website, maine page view
+STR
+	1. Click on main menu on "Словари"
+ER  view of  sub function "Аппарат", "Сотрудники" , "Типы запчестей" , "Запчасти" , "Стороны сделок", "Типы сделок"

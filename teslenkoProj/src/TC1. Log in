@@ -1,0 +1,15 @@
+
+Summary: Log in
+
+Precondition:
+login = "Student"
+password = "909090"
+
+STR:
+1. Open website by link http://v3.test.itpmgroup.com/login
+2. Enter login in the "login" field
+3. Enter password in the "password" field
+3. Click on the  "Вход" button
+
+ER: url change to http://v3.test.itpmgroup.com/
+    icon of user is present

@@ -1,0 +1,8 @@
+ Summary  Log in website
+Precondition Open web site,The login form is present according to requirements, log in  ( login(Student), password(909090))
+
+STR
+	1. Fill in the text field "login"
+	2. Fill in the text field "Password"
+	3. Click on "Вход"
+ER view of main page of website
