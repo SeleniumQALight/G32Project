@@ -27,7 +27,7 @@ public class ActionsWithOurElements {
     }
 
 
-    public void clickByElement(WebElement webElement){
+    public void clickOnElement(WebElement webElement){
         try {
             webElement.click();
             logger.info("element was clicked");

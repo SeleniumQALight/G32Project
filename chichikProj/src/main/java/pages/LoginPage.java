@@ -1,6 +1,5 @@
 package pages;
 
-import org.apache.http.util.Asserts;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -30,14 +29,14 @@ public class LoginPage extends parentPage{
         actionsWithOurElements.enterTextIntoElement(inputLogIn, login);
     }
 
-    public void enterPassword(String password){
-        WebElement inputPassword = webDriver.findElement(By.name("_password"));
-        actionsWithOurElements.enterTextIntoElement(inputPassword, password);
+    public void enterPass(String pass){
+        WebElement inputPass = webDriver.findElement(By.name("_password"));
+        actionsWithOurElements.enterTextIntoElement(inputPass, pass);
 
     }
 
     public void clickSubmitButton(){
         WebElement clickSubmit = webDriver.findElement(By.xpath(".//button[@type='submit']"));
-        actionsWithOurElements.clickByElement(clickSubmit);
+        actionsWithOurElements.clickOnElement(clickSubmit);
     }
 }

@@ -1,7 +1,6 @@
 package loginTests;
 
 import org.junit.Test;
-import pages.LoginPage;
 import parentTest.ParentTest;
 
 public class LoginTestWithPageObject extends ParentTest {
@@ -10,7 +9,7 @@ public class LoginTestWithPageObject extends ParentTest {
     public void validLogIn(){
         loginPage.openPage();
         loginPage.enterLogIn("Student");
-        loginPage.enterPassword("909090");
+        loginPage.enterPass("909090");
         loginPage.clickSubmitButton();
 
     }
