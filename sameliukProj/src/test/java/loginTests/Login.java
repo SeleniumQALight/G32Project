@@ -30,9 +30,8 @@ public class Login {
         webDriver.findElement(By.id("password")).sendKeys("90909");
         webDriver.findElement(By.tagName("Button")).click();
 
-        Assert.assertTrue("Avatat is notpresent",
+        Assert.assertTrue("Avatar is not present",
                 isAvatarPresent());
-
     }
 
     @After
