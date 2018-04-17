@@ -12,5 +12,15 @@ public class LoginTestWithPageObject extends ParentTest {
         loginPage.enterPass("909090");
         loginPage.clickSubmitButton();
 
+        checkAcceptanceCriteria("avatar is not present", homePage.isAvatarPresent(), true);
+
+
+    }
+
+    @Test
+    public void invalidLogin(){
+        loginPage.userLogIn("Student", "906090");
+
+        checkAcceptanceCriteria("avatar should not be present", homePage.isAvatarPresent(), false);
     }
 }

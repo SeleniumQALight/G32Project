@@ -14,6 +14,11 @@ public class ActionsWithOurElements {
         logger = Logger.getLogger(getClass());
     }
 
+    /**
+     * Method enter text to any Element
+     * @param webElement
+     * @param text
+     */
     public void enterTextIntoElement(WebElement webElement, String text){
         try {
             webElement.clear();
@@ -21,20 +26,39 @@ public class ActionsWithOurElements {
             logger.info(text + " was inputted into elements");
 
         }catch (Exception e){
-            logger.error("Cannot work with element");
-            Assert.fail("Cannot work with element");
+            printErrorAndStopTest();
         }
     }
 
 
+    /**
+     * Method click by any Element
+     * @param webElement
+     */
     public void clickOnElement(WebElement webElement){
         try {
             webElement.click();
             logger.info("element was clicked");
         }catch (Exception e){
-            logger.error("Cannot work with element");
-            Assert.fail("Cannot work with element");
+            printErrorAndStopTest();
 
+        }
+    }
+
+    /**
+     * Method for error exceptions
+     */
+    private void printErrorAndStopTest() {
+        logger.error("Cannot work with element");
+        Assert.fail("Cannot work with element");
+    }
+
+    public boolean isElementPresent(WebElement webElement) {
+        try {
+            return webElement.isDisplayed() && webElement.isEnabled();
+
+        }catch (Exception e){
+            return false;
         }
     }
 }
