@@ -24,4 +24,10 @@ public class ActionsWithOurElements {
             Assert.fail("Can't work with element");
         }
     }
+
+    public void pressButton(WebElement webElement) {
+        webElement.click();
+        logger.info("Login button was pressed");
+    }
+
 }

@@ -24,8 +24,8 @@ public class ParentTest {
         loginPage = new LoginPage(webDriver);
     }
 
-    @After
-    public void tearDown() {
-        webDriver.quit();
-    }
+//    @After
+//    public void tearDown() {
+//        webDriver.quit();
+//    }
 }

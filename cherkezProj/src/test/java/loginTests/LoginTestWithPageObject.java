@@ -10,5 +10,6 @@ public class LoginTestWithPageObject extends ParentTest {
         loginPage.openPage();
         loginPage.enterLogin("Student");
         loginPage.enterPassword("909090");
+        loginPage.pressLoginButton();
     }
 }
