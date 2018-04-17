@@ -1,11 +1,17 @@
 package pages;
 
 import org.junit.Assert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 public class LoginPage extends ParentPage {
+    @FindBy(name ="_username")
+    private WebElement inputLogin;
+    @FindBy(id= "password")
+    private WebElement inputPassword;
+    @FindBy (tagName ="button")
+    private WebElement clickSubmitButton;
 
     public LoginPage(WebDriver webDriver) {
         super(webDriver);
@@ -21,21 +27,24 @@ public class LoginPage extends ParentPage {
             logger.error("Can not open LoginPage");
             Assert.fail("Can not open LoginPage");
         }
-
     }
 
     public void enterLogin(String login){
-        WebElement inputLogin = webDriver.findElement(By.name("_username"));
         actionWithOurElements.enterTextInToElement(inputLogin,login);
     }
 
     public void enterPassword(String password){
-        WebElement inputPassword = webDriver.findElement(By.id("password"));
         actionWithOurElements.enterTextInToElement(inputPassword,password);
     }
 
-    public void pressSubmit(){
-        WebElement clickButton = webDriver.findElement(By.tagName("button"));
-        actionWithOurElements.clickToButton(clickButton);
+    public void clickSubmitButton(){
+        actionWithOurElements.clickOnElement(clickSubmitButton);
+    }
+
+    public void userLogin(String login, String password) {
+        openPage();
+        enterLogin(login);
+        enterPassword(password);
+        clickSubmitButton();
     }
 }
