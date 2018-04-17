@@ -29,4 +29,15 @@ public class LoginPage extends parentPage{
         WebElement inputLogIn = webDriver.findElement(By.name("_username"));
         actionsWithOurElements.enterTextIntoElement(inputLogIn, login);
     }
+
+    public void enterPassword(String password){
+        WebElement inputPassword = webDriver.findElement(By.name("_password"));
+        actionsWithOurElements.enterTextIntoElement(inputPassword, password);
+
+    }
+
+    public void clickSubmitButton(){
+        WebElement clickSubmit = webDriver.findElement(By.xpath(".//button[@type='submit']"));
+        actionsWithOurElements.clickByElement(clickSubmit);
+    }
 }
