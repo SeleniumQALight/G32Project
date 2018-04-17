@@ -4,8 +4,18 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 public class LoginPage extends ParentPage{
+
+    @FindBy(name = "_username")
+    private WebElement inputLogin;
+
+    @FindBy(id = "password")
+    private WebElement inputPass;
+
+    @FindBy (tagName = "button")
+    private WebElement buttonSubmit;
 
     public LoginPage (WebDriver webDriver) {
         super(webDriver);
@@ -22,7 +32,18 @@ public class LoginPage extends ParentPage{
     }
 
     public void enterLogin (String login){
-        WebElement inputLogin = webDriver.findElement(By.name("_username"));
+       // WebElement inputLogin = webDriver.findElement(By.name("_username")); ne nyzen,poskolky est anotacia
         actionsWithOurElements.enterTextIntoElement(inputLogin, login);
     }
+
+    public void enterPass (String pass) {
+        //WebElement inputPass = webDriver.findElement(By.id("password"));  ne nyzen,poskolky est anotacia
+        actionsWithOurElements.enterTextIntoElement(inputPass, pass);
+    }
+
+    public void clickSubmitButton () {
+        //WebElement buttonSubmit = webDriver.findElement(By.tagName("button"));  ne nyzen,poskolky est anotacia
+        actionsWithOurElements.clickOnElement(buttonSubmit);
+    }
+
 }
