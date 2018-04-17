@@ -30,6 +30,7 @@ public class ActionsWithOurElements {
     public void clickByElement(WebElement webElement){
         try {
             webElement.click();
+            logger.info("element was clicked");
         }catch (Exception e){
             logger.error("Cannot work with element");
             Assert.fail("Cannot work with element");
