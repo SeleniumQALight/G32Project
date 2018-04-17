@@ -4,8 +4,15 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 public class LoginPage extends ParentPage {
+    @FindBy (name = "_username")
+    private WebElement inputLogin;
+    @FindBy (id = "password")
+    private WebElement inputPassword;
+    @FindBy (tagName = "button")
+    private WebElement submitButton;
 
 
     public LoginPage(WebDriver webDriver) {
@@ -25,17 +32,23 @@ public class LoginPage extends ParentPage {
     }
 
     public void enerLogin(String login) {
-        WebElement inputLogin = webDriver.findElement(By.name("_username"));
+      //  WebElement inputLogin = webDriver.findElement(By.name("_username"));
         actionsWithOurElements.enterTextIntoElement(inputLogin, login);
     }
 
     public void enterPassword(String password) {
-        WebElement inputPassword = webDriver.findElement(By.name("_password"));
+       // WebElement inputPassword = webDriver.findElement(By.name("_password"));
         actionsWithOurElements.enterTextIntoElement(inputPassword, password);
     }
 
     public void submitAuthorisation() {
-        WebElement submitButton = webDriver.findElement(By.xpath(".//button[@type='submit'] "));
+       // WebElement submitButton = webDriver.findElement(By.xpath(".//button[@type='submit'] "));
         actionsWithOurElements.click(submitButton);
+    }
+    public void userLogin(String login, String password) {
+        openPage();
+        enerLogin(login);
+        enterPassword(password);
+        submitAuthorisation();
     }
 }
