@@ -9,7 +9,15 @@ public class LoginTestWithPageObject extends ParentTest {
     public  void  validLogIn(){
         loginPage.openPage();
         loginPage.enterLogin("Student");
-        loginPage.enterPassword("909090");
-        loginPage.clickButton();
+        loginPage.enterPass("909090");
+        loginPage.clickSubmitButton();
+
+        checkAC("Avatar is not present", homePage.isAvatarPresent(), true);
+    }
+    @Test
+    public void invalidLogIn(){
+        loginPage.userLogin("Student", "909090");
+
+        checkAC("Avatar should not be present", homePage.isAvatarPresent(), false);
     }
 }

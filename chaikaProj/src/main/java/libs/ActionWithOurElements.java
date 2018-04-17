@@ -21,18 +21,29 @@ public class ActionWithOurElements {
             webElement.sendKeys(text);
             logger.info(text + " was inputted into element");
         } catch (Exception e) {
-            logger.error("Can not element");
-            Assert.fail("Can not element");
+            printErrorAndStopTest();
         }
     }
 
     public void clickOnElement(WebElement webElement) {
         try {
             webElement.click();
-            logger.info("Button was click");
+            logger.info("Button was clicked");
         } catch (Exception e) {
-            logger.error("Can not element");
-            Assert.fail("Can not element");
+            printErrorAndStopTest();
+        }
+    }
+
+    private void printErrorAndStopTest() {
+        logger.error("Can not element");
+        Assert.fail("Can not element");
+    }
+
+    public boolean isElementPresent(WebElement webElement) {
+        try {
+            return  webElement.isDisplayed() && webElement.isEnabled();
+        }catch (Exception e){
+            return false;
         }
     }
 }
