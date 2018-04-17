@@ -37,4 +37,12 @@ public class ActionsWithOurElements {
         logger.error("Cannot work with element");
         Assert.fail("Cannot work with element");
     }
+
+    public boolean isElementPresent(WebElement webElement) {
+        try {
+            return webElement.isDisplayed() && webElement.isEnabled();
+        }catch (Exception e){
+            return false;
+        }
+    }
 }

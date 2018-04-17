@@ -1,10 +1,12 @@
 package parentTest;
 
+import org.apache.log4j.Logger;
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import pages.HomePage;
 import pages.LoginPage;
 
 import java.io.File;
@@ -13,6 +15,8 @@ import java.util.concurrent.TimeUnit;
 public class ParentTest {
     WebDriver webDriver;
     protected LoginPage loginPage;
+    protected HomePage homePage;
+    Logger logger = Logger.getLogger(getClass());
 
     @Before
     public void setUp() {
@@ -23,8 +27,19 @@ public class ParentTest {
         webDriver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 
         loginPage = new LoginPage (webDriver);
+        homePage = new HomePage(webDriver);
     }
     @After
-    public void tearDown(){webDriver.quit();}
+    public void tearDown(){
+        webDriver.quit();
+    }
+
+    protected void checkAC (String message, boolean actualRes, boolean expectedRes){
+        if (!(actualRes == expectedRes)) {
+            logger.error("AC failed:" + message);
+        }
+        Assert.assertEquals(message,expectedRes,actualRes);
+
+    }
 
 }
