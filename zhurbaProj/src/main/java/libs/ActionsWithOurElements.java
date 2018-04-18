@@ -31,12 +31,19 @@ public class ActionsWithOurElements {
         } catch (Exception e) {
             printErrorAndStopTest();
         }
-
-
     }
 
     private void printErrorAndStopTest() {
         logger.error("Can't work with element.");
         Assert.fail("Can't work with element.");
     }
+
+    public boolean isElementPresent(WebElement webElement) {
+        try {
+            return webElement.isDisplayed() && webElement.isEnabled();
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
 }
