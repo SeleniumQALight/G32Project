@@ -45,4 +45,11 @@ public class LoginPage extends ParentPage {
 //        WebElement buttonSubmit = webDriver.findElement(By.tagName("button"));                                        -- declared in annotation '@FindBy'
         actionsWithOurElements.clickOnElement(buttonSubmit);
     }
+
+    public void userLogin(String login, String password) {
+        openPage();
+        enterLogin(login);
+        enterPassword(password);
+        clickSubmitButton();
+    }
 }

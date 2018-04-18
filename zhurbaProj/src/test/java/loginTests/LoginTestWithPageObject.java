@@ -14,4 +14,11 @@ public class LoginTestWithPageObject extends ParentTest {
 
         checkAC("Avatar is NOT present", homePage.isAvatarPresent(), true);
     }
+
+    @Test
+    public void invalidLogIn(){
+        loginPage.userLogin("Student", "909190");
+
+        checkAC("Avatar should not be present", homePage.isAvatarPresent(), true);
+    }
 }
