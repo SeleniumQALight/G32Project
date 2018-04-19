@@ -18,7 +18,7 @@ public class LoginPage extends ParentPage {
     private WebElement buttonSubmit;
 
     public LoginPage(WebDriver webDriver) {
-        super (webDriver);
+        super (webDriver, "/logon");
     }
 
     public void openPage() {
@@ -46,7 +46,7 @@ public class LoginPage extends ParentPage {
         actionsWithOurElements.clickOnElement(buttonSubmit);
     }
 
-    public void userLogin(String login, String password) {
+    public void userLogIn(String login, String password) {
         openPage();
         enterLogin(login);
         enterPassword(password);
