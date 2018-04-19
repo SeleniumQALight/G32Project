@@ -4,6 +4,7 @@ import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 
 public class ActionsWithOurElements {
     WebDriver webDriver;
@@ -18,7 +19,7 @@ public class ActionsWithOurElements {
         try {
             webElement.clear();
             webElement.sendKeys(text);
-            logger.info(text + "was inputted into element");
+            logger.info(text + " was inputted into element");
         }catch (Exception e){
             printErrorAndStopTest();
         }
@@ -27,7 +28,7 @@ public class ActionsWithOurElements {
     public void clickOnElement (WebElement webElement) {
         try {
             webElement.click();
-            logger.info("The button was clicked");
+            logger.info("The element was clicked");
         } catch (Exception e) {
             printErrorAndStopTest();
         }
@@ -43,6 +44,21 @@ public class ActionsWithOurElements {
             return webElement.isDisplayed() && webElement.isEnabled();
         }catch (Exception e){
             return false;
+        }
+    }
+    /**
+     * Method selects value in DD
+     * @param webElement
+     * @param value (Value ! not Text in DD)
+     */
+
+    public void selectValueInDD(WebElement webElement, String value) {
+        try{
+            Select select = new Select(webElement);
+            select.selectByValue(value);
+            logger.info(value + "was select in DD");
+        }catch (Exception e){
+            printErrorAndStopTest();
         }
     }
 }
