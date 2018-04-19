@@ -1,7 +1,6 @@
 package spareTest;
 
 import org.junit.Test;
-
 import parentTest.ParentTest;
 
 
