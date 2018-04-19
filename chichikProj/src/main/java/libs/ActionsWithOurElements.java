@@ -4,6 +4,8 @@ import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
+import pages.EditSparesPage;
 
 public class ActionsWithOurElements {
     WebDriver webDriver;
@@ -59,6 +61,23 @@ public class ActionsWithOurElements {
 
         }catch (Exception e){
             return false;
+        }
+    }
+
+    /**
+     * Method for selection value from drop down
+     * @param webElement
+     * @param value (VALUE ! NOT TEXT in DD)
+     */
+    public void selectValueInDD(WebElement webElement, String value) {
+        try {
+            Select select = new Select(webElement);
+            select.selectByValue(value);
+            logger.info(value + "was selected in DD");
+
+        }catch (Exception e){
+            printErrorAndStopTest();
+
         }
     }
 }
