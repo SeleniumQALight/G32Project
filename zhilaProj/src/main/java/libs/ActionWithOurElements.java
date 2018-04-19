@@ -4,6 +4,7 @@ import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 
 public class ActionWithOurElements {
     WebDriver webDriver;
@@ -44,6 +45,23 @@ public class ActionWithOurElements {
         } catch (Exception e) {
             return false;
         }
+    }
+
+/**
+ *Method selects value in DD
+ * @param webElement
+ * @param value (Value !not Text DD )
+ */
+
+    public void selectValueInDD(WebElement webElement,String value){
+        try{
+            Select select = new Select(webElement);
+            select.selectByValue(value);
+            logger.info(value + " was swlected in DD");
+        }catch(Exception e){
+            printErrorAndStopTest();
+        }
+
     }
 
 }

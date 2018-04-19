@@ -14,7 +14,7 @@ public class LoginPage extends ParentPage {
     private WebElement clickSubmitButton;
 
     public LoginPage(WebDriver webDriver) {
-        super(webDriver);
+        super(webDriver, "/login");
     }
 
 
