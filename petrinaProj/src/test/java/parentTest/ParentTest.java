@@ -6,8 +6,10 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import pajes.EditSparesPage;
 import pajes.HomePage;
 import pajes.LoginPage;
+import pajes.SparesPage;
 
 import java.io.File;
 import java.util.concurrent.TimeUnit;
@@ -17,6 +19,9 @@ public class ParentTest {
     WebDriver webDriver;
     protected LoginPage loginPage;
     protected HomePage homePage;
+    protected SparesPage sparesPage;
+    protected EditSparesPage editSparesPage;
+
 
     @Before
     public void setUp() {
@@ -30,6 +35,8 @@ public class ParentTest {
         webDriver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         loginPage = new LoginPage(webDriver);
         homePage = new HomePage(webDriver);
+        sparesPage = new SparesPage(webDriver);
+        editSparesPage = new EditSparesPage (webDriver);
     }
 
     @After
