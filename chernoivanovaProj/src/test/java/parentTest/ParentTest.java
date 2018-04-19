@@ -9,12 +9,13 @@ import pages.LoginPage;
 import java.io.File;
 import java.util.concurrent.TimeUnit;
 
-public class PaentTest {
+public class ParentTest {
     WebDriver webDriver;
     protected LoginPage loginPage;
 
     @Before
-    public void setUp() {
+    public void SetUp() {
+
         File file = new File("./src/drivers/chromedriver.exe");
         System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());
         webDriver = new ChromeDriver();
@@ -23,9 +24,9 @@ public class PaentTest {
 
         loginPage = new LoginPage(webDriver);
     }
+
     @After
-    public void testDown() {
+    public void tearDown(){
         webDriver.quit();
     }
-
 }

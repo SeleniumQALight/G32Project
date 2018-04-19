@@ -20,8 +20,18 @@ public class ActionWithOurElements {
             webElement.sendKeys(text);
             logger.info(text + " Was inputted into Element");
         } catch (Exception e) {
-            logger.error("Can not find element");
-            Assert.fail("Can not find element");
+            logger.error(webElement + " Can not find element");
+            Assert.fail(webElement + " Can not find element");
+        }
+    }
+
+    public void clickToButton(WebElement button) {
+        try {
+            button.click();
+            logger.info(button + " was clicked");
+        } catch (Exception e) {
+            logger.error("Can not find button " + button);
+            Assert.fail("Can not find button " + button);
         }
     }
 }
