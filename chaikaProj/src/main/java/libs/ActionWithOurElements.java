@@ -5,6 +5,7 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 
 public class ActionWithOurElements {
     WebDriver webDriver;
@@ -28,7 +29,7 @@ public class ActionWithOurElements {
     public void clickOnElement(WebElement webElement) {
         try {
             webElement.click();
-            logger.info("Button was clicked");
+            logger.info("Element was clicked");
         } catch (Exception e) {
             printErrorAndStopTest();
         }
@@ -44,6 +45,21 @@ public class ActionWithOurElements {
             return  webElement.isDisplayed() && webElement.isEnabled();
         }catch (Exception e){
             return false;
+        }
+    }
+
+    /**
+     * Method select value in DD
+     * @param webElement
+     * @param value (VALUE ! not Text in DD)
+     */
+    public void selectValueInDD(WebElement webElement, String value) {
+        try {
+            Select select = new Select(webElement);
+            select.selectByValue(value);
+            logger.info(value + " was select in DD");
+        }catch (Exception e){
+            printErrorAndStopTest();
         }
     }
 }
