@@ -11,7 +11,7 @@ public class HomePage extends ParentPage {
     private WebElement avatar;
     @FindBy (xpath=".//*[@id='dictionary']/a")
     private WebElement menuDictionary;
-    @FindBy (xpath=".//*[@id='spares'']")
+    @FindBy (id = "spares")
     private WebElement subMenuSpares;
     public HomePage(WebDriver webDriver) {
         super(webDriver,"/");
