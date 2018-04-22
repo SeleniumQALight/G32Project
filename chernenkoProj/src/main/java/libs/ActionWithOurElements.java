@@ -59,8 +59,9 @@ public class ActionWithOurElements {
 
     /**
      * Method select value in DD
+     *
      * @param webElement
-     * @param value (VALUE!! not Text in DD)
+     * @param value      (VALUE!! not Text in DD)
      */
     public void selectValueInDD(WebElement webElement, String value) {
         try {
@@ -72,4 +73,37 @@ public class ActionWithOurElements {
         }
     }
 
-}
+//    public void checkBox(WebElement webElement) {
+//        try {
+//            if (webElement.isSelected()) {
+//                logger.info("Checkbox: Element is already selected");
+//            } else {
+//                webElement.click();
+//                logger.info("Checkbox: Element was selected");
+//            }
+//            if (webElement.isSelected()){
+//                webElement.click();
+//                logger.info("Checkbox: Element was selected");
+//            } else {
+//                logger.info("Checkbox: Element is already selected");
+//            }
+//        } catch (Exception e) {
+//            printErrorAndStopTest();
+//        }
+//    }
+//
+//    public void uncheckBox(WebElement webElement) {
+//        try {
+//            if (webElement.isSelected()) {
+//                webElement.click();
+//                logger.info("Checkbox: Element was selected");
+//            } else {
+//                logger.info("Checkbox: Element is already selected");
+//            }
+//        } catch (Exception e) {
+//            printErrorAndStopTest();
+//        }
+    }
+
+
+

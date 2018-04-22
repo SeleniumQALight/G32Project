@@ -23,5 +23,6 @@ public class AddNewSpareTest extends ParentTest {
         editSpareePage.selectSpareType("4");
         editSpareePage.clickButtonCreate();
         sparesPage.checkCurrentUrl();
+
     }
 }

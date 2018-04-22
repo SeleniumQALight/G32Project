@@ -6,10 +6,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import pages.EditSparesPage;
-import pages.HomePage;
-import pages.LoginPage;
-import pages.SparesPage;
+import pages.*;
 
 import java.io.File;
 import java.util.concurrent.TimeUnit;
@@ -20,6 +17,9 @@ public class ParentTest {
     protected HomePage homePage;
     protected SparesPage sparesPage;
     protected EditSparesPage editSpareePage;
+    protected ProvidersPage providersPage;
+    protected EditProvidersPage editProvidersPage;
+
     Logger logger = Logger.getLogger(getClass());
 
     @Before
@@ -35,6 +35,8 @@ public class ParentTest {
         homePage = new HomePage(webDriver);
         sparesPage = new SparesPage(webDriver);
         editSpareePage = new EditSparesPage(webDriver);
+        providersPage = new ProvidersPage(webDriver);
+        editProvidersPage = new EditProvidersPage(webDriver);
     }
 
     @After
