@@ -52,16 +52,19 @@ public class ActionsWithOurElements {
 
     /**
      * Method select value from DropDown
+     *
      * @param webElement
-     * @param value (VALUE! not text in DropDown)
+     * @param value      (VALUE! not text in DropDown)
      */
     public void selectValueInDD(WebElement webElement, String value) {
-        try{
+        try {
             Select select = new Select(webElement);
             select.selectByValue(value);
             logger.info(value + " was select in DD");
-        }catch (Exception e){
+        } catch (Exception e) {
             printErrorAndStopTest();
-            }
+        }
     }
+
+
 }

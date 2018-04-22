@@ -18,7 +18,7 @@ public class ParentPage {
           this.webDriver = webDriver;
           actionsWithOurElements = new ActionsWithOurElements(webDriver);
           PageFactory.initElements(webDriver, this);
-          this.expectedUrl = expectedUrl;
+          this.expectedUrl = baseUrl + expectedUrl;
      }
      public String getCurrentUrl(){
        return webDriver.getCurrentUrl();

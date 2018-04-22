@@ -10,7 +10,7 @@ public class EditSparesPage extends ParentPage {
     public EditSparesPage(WebDriver webDriver) {
         super(webDriver, "/dictionary/spares/edit");
     }
-    @FindBy (xpath=".//*[@name=\"spares[spareName]\"]")
+    @FindBy (id = "spares_spareName")
     private  WebElement inputSpareName;
     @FindBy (xpath=".//*[@name=\"add\"]")
     private WebElement buttonCreate;
