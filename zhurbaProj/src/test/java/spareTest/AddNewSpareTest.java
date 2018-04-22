@@ -21,7 +21,7 @@ public class AddNewSpareTest extends ParentTest {
         sparesPage.checkCurrentUrl();
         sparesPage.clickOnButtonPlus();
         editSparesPage.checkCurrentUrl();
-        editSparesPage.enterSpareName();
+        editSparesPage.enterSpareName("Orehokol");
         editSparesPage.selectSpareType("4");
         editSparesPage.clickButtonCreate();
         sparesPage.checkCurrentUrl();
