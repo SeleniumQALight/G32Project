@@ -6,8 +6,10 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import pages.EditSparesPage;
 import pages.HomePage;
 import pages.LogInPage;
+import pages.SparesPage;
 
 import java.io.File;
 import java.util.concurrent.TimeUnit;
@@ -16,6 +18,8 @@ public class ParentTest {
     WebDriver webDriver;
     protected LogInPage logInPage;
     protected HomePage homePage;
+    protected SparesPage sparesPage;
+    protected EditSparesPage editSparesPage;
     Logger logger = Logger.getLogger(getClass());
     @Before
     public void setUp() {
@@ -29,6 +33,8 @@ public class ParentTest {
 
         logInPage = new LogInPage(webDriver);
         homePage = new HomePage(webDriver);
+        sparesPage = new SparesPage(webDriver);
+        editSparesPage = new EditSparesPage(webDriver);
     }
     @After
     public void tearDown(){

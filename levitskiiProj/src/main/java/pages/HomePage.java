@@ -14,7 +14,7 @@ public class HomePage extends ParentPage {
     @FindBy (xpath=".//*[@id='spares'']")
     private WebElement subMenuSpares;
     public HomePage(WebDriver webDriver) {
-        super(webDriver);
+        super(webDriver,"/");
     }
     public void clickElementDictionary() {
         actionsWithOurElements.clickOnElement(menuDictionary);
