@@ -1,5 +1,4 @@
 package pages;
-
 import libs.ActionWithOurElements;
 import org.apache.log4j.Logger;
 import org.junit.Assert;
