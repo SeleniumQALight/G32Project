@@ -12,8 +12,6 @@ public class EditSparesPage extends ParentPage {
     @FindBy(name = "add")
     private WebElement buttonCreate;
 
-    ///html/body/div/div/section[2]/div/div/div/form/div[2]/button
-
     public EditSparesPage(WebDriver webDriver) {
         super(webDriver, "/dictionary/spares/edit");
     }

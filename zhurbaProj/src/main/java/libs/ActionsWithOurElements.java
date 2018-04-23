@@ -49,14 +49,38 @@ public class ActionsWithOurElements {
 
     /**
      * Method selects value in DD
+     *
      * @param webElement
-     * @param value (VALUE! not text in DD)
+     * @param value      (VALUE! not text in DD)
      */
     public void selectValueInDD(WebElement webElement, String value) {
         try {
             Select select = new Select(webElement);
             select.selectByValue(value);
             logger.info(value + " was select in DD");
+        } catch (Exception e) {
+            printErrorAndStopTest();
+        }
+    }
+
+    private boolean isCheckedCheckbox(WebElement webElement) {
+        try {
+            return webElement.isSelected();
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    /**
+     * NeededState can be only "check" or "uncheck"
+     */
+    public void setCheckBoxToNeededState(WebElement webElement, String neededState) {
+        try {
+            if(!isCheckedCheckbox(webElement) & new String(neededState).equals("check")){
+                webElement.click();
+            }else if(isCheckedCheckbox(webElement) & new String(neededState).equals("uncheck")){
+                webElement.click();
+            }
         } catch (Exception e) {
             printErrorAndStopTest();
         }
