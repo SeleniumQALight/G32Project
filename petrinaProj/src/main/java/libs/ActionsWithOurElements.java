@@ -66,6 +66,29 @@ public class ActionsWithOurElements {
 
     public void setCheckBoxToNeededState (WebElement webElement, String neededState){
 
+        try{
+            boolean isCheckState = "check".equals(neededState);
+            boolean isUnCheckState = "uncheck".equals(neededState);
+            if (isCheckState || isUnCheckState){
+                if (webElement.isSelected() && isCheckState){
+                    logger.info("Check box is checked already");
+
+                }else if (webElement.isSelected() && isUnCheckState){
+                    clickOnElement(webElement);
+                } else if (!webElement.isSelected()&& isCheckState){
+                    clickOnElement(webElement);
+                }
+                else if (!webElement.isSelected()&& isUnCheckState){
+                    logger.info("Check box is unchecked already");
+                }
+            }else {
+                logger.error(neededState + "should be 'check' or ' uncheck'" );
+                Assert.fail(neededState + "should be 'check' or ' uncheck'" );
+            }
+
+        }catch (Exception e){
+            printErrorAndStopTest();
+        }
     }
 
 }

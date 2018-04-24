@@ -8,9 +8,10 @@ public class EditSparesPage extends ParentPage{
     @FindBy(tagName = "select")
     private WebElement typeOfSpareDD;
     @FindBy(id ="spares_spareName")
-    private WebElement spareName;
+    private WebElement inputSpareName;
     @FindBy (name = "add")
     private WebElement buttonCreate;
+
 
     public EditSparesPage(WebDriver webDriver) {
         super(webDriver, "/dictionary/spares/edit");
@@ -22,8 +23,8 @@ public class EditSparesPage extends ParentPage{
     }
 
 
-    public void enterSpareName() {
-        actionsWithOurElements.enterTextInToElement(spareName,"New element");
+    public void enterSpareName(String spareName) {
+        actionsWithOurElements.enterTextInToElement(inputSpareName, spareName);
     }
 
     public void clickButtonCreate() {

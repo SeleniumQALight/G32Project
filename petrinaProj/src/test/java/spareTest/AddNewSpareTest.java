@@ -19,7 +19,7 @@ public class AddNewSpareTest extends ParentTest {
         homePage.clickOnSubMenuSpares();
         sparesPage.ckeckCurrentUrl();
         editSparesPage.ckeckCurrentUrl();
-        editSparesPage.enterSpareName();
+        editSparesPage.enterSpareName("testSpare");
         editSparesPage.selectSpareType("4");
         editSparesPage.clickButtonCreate();
         sparesPage.ckeckCurrentUrl();
