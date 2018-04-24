@@ -10,11 +10,11 @@ public class AddNewSpareTest extends ParentTest {
         homePage.checkAvatarIsPresent();
         homePage.checkCurrentUrl();
         homePage.clickElementDictionary();
-        try {
-            Thread.sleep(4000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            Thread.sleep(4000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
         homePage.clickOnSubMenuSpares();
         sparesPage.checkCurrentUrl();
         sparesPage.clickOnButtonPlus();
