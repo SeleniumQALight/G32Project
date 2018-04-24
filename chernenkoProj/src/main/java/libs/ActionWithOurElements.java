@@ -2,17 +2,24 @@ package libs;
 
 import org.apache.log4j.Logger;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.util.List;
 
 public class ActionWithOurElements {
     WebDriver webDriver;
     Logger logger;
+    WebDriverWait webDriverWait15;
 
     public ActionWithOurElements(WebDriver webDriver) {
         this.webDriver = webDriver;
         logger = Logger.getLogger(getClass());
+        webDriverWait15 = new WebDriverWait(webDriver, 15);
     }
 
     public void enterTextIntoElement(WebElement webElement, String text) {
@@ -37,6 +44,7 @@ public class ActionWithOurElements {
 
     public void clickOnElement(WebElement webElement) {
         try {
+            webDriverWait15.until(ExpectedConditions.elementToBeClickable(webElement));
             webElement.click();
             logger.info("Element was clicked");
         } catch (Exception e) {
@@ -73,26 +81,6 @@ public class ActionWithOurElements {
         }
     }
 
-//    public void setCheckBoxToNeededState(WebElement webElement, String neededState) {
-//        try {
-//            if (webElement.isSelected()) {
-//                webElement.getAttribute(neededState);
-//                logger.info(neededState + " Element is already selected");
-//            } else {
-//                webElement.click();
-//                logger.info(neededState + " Element was selected");
-//            }
-//            if (webElement.isSelected()){
-//                webElement.click();
-//                logger.info("Checkbox: Element was selected");
-//            } else {
-//                logger.info("Checkbox: Element is already selected");
-//            }
-//        } catch (Exception e) {
-//            printErrorAndStopTest();
-//        }
-//    }
-
 
     public void setCheckBoxToNeededState(WebElement webElement, String neededState) {
         try {
@@ -116,7 +104,34 @@ public class ActionWithOurElements {
             printErrorAndStopTest();
         }
     }
+
+    public boolean isElementPresent(String locator) {
+       try{
+           WebElement webElement = webDriver.findElement(By.xpath(locator));
+           return isElementPresent(webElement);
+       }catch (Exception e){
+           return false;
+       }
+    }
+
+
+    public boolean isElementInList(String locator) {
+        try{
+            List<WebElement> listOfElements = webDriver.findElements(By.xpath(locator));
+            if(listOfElements.size()> 0){
+                return true;
+            }else {
+                return false;
+            }
+        }catch (Exception e){
+            return false;
+        }
+    }
+
+
 }
+
+
 
 
 

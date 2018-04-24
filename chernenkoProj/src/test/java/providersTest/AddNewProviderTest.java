@@ -10,11 +10,6 @@ public class AddNewProviderTest extends ParentTest {
         homePage.checkAvatarIsPresent();
         homePage.checkCurrentUrl();
         homePage.clickOnMenuDictionary();
-        try {
-            Thread.sleep(4000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
         homePage.clickOnSubMenuProviders();
         providersPage.checkCurrentUrl();
         providersPage.clickOnButtonPlus();
@@ -22,7 +17,7 @@ public class AddNewProviderTest extends ParentTest {
         editProvidersPage.enterCustName("aaa");
         editProvidersPage.enterCustAddress("aaa");
         editProvidersPage.enterCustPhone("111");
-        editProvidersPage.selectCheckBoxPrivatePerson("check");
+        editProvidersPage.selectCheckBoxPrivatePerson("uncheck");
         editProvidersPage.clickButtonCreate();
         providersPage.checkCurrentUrl();
 
