@@ -1,7 +1,6 @@
 package libs;
 
 import org.apache.log4j.Logger;
-import org.junit.After;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
