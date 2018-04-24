@@ -5,10 +5,10 @@ import org.openqa.selenium.WebDriver;
 import pages.SparesPage;
 import parentTest.ParentTest;
 
-public class AddNewSpareTest extends ParentTest{
+public class AddNewSpareTest extends ParentTest {
 
     @Test
-    public void addNewSpare(){
+    public void addNewSpare() {
         loginPage.userLogIn("Student", "909090");
         homePage.checkAvatarIsPresent();
         homePage.checkCurrentUrl();

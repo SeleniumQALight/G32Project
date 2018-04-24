@@ -2,6 +2,7 @@ package libs;
 
 import org.apache.log4j.Logger;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
@@ -80,4 +81,19 @@ public class ActionsWithOurElements {
 
         }
     }
+
+    public void checkCheckBox() {
+        WebElement checkedCheckBox = webDriver.findElement(By.xpath(""));
+        WebElement uncheckedCheckBox = webDriver.findElement(By.xpath(""));
+
+      if (uncheckedCheckBox.isSelected()){
+          clickOnElement(uncheckedCheckBox);
+      }
+      if (checkedCheckBox.isSelected()){
+          webDriver.quit();
+      }
+    }
+
+
+
 }
