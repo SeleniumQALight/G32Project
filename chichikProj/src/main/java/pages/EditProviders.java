@@ -10,7 +10,7 @@ public class EditProviders extends parentPage{
     }
 
     public void checkCheckBox(){
-        actionsWithOurElements.checkCheckBox();
+       // actionsWithOurElements.checkCheckBox();
 
     }
 }
