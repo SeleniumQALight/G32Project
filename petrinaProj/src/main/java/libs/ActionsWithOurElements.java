@@ -64,4 +64,8 @@ public class ActionsWithOurElements {
         }
     }
 
+    public void setCheckBoxToNeededState (WebElement webElement, String neededState){
+
+    }
+
 }

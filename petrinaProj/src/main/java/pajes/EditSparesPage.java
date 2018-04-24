@@ -7,6 +7,11 @@ import org.openqa.selenium.support.FindBy;
 public class EditSparesPage extends ParentPage{
     @FindBy(tagName = "select")
     private WebElement typeOfSpareDD;
+    @FindBy(id ="spares_spareName")
+    private WebElement spareName;
+    @FindBy (name = "add")
+    private WebElement buttonCreate;
+
     public EditSparesPage(WebDriver webDriver) {
         super(webDriver, "/dictionary/spares/edit");
     }
@@ -17,4 +22,11 @@ public class EditSparesPage extends ParentPage{
     }
 
 
+    public void enterSpareName() {
+        actionsWithOurElements.enterTextInToElement(spareName,"New element");
+    }
+
+    public void clickButtonCreate() {
+        actionsWithOurElements.clickOnElement(buttonCreate);
+    }
 }
