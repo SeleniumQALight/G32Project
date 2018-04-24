@@ -4,6 +4,7 @@ import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 
 public class ActionsWithOurElements {
     WebDriver webDriver;
@@ -20,8 +21,51 @@ public class ActionsWithOurElements {
            webElement.sendKeys(text);
            logger.info(text + "was inputted to elements");
         }catch (Exception e){
-            logger.error("Can't work with element");
-            Assert.fail("Can't work with element");
+            printErrorAndStopTest();
         }
     }
+
+    public void clickOnElement(WebElement webElement) {
+        try{
+            webElement.click();
+            logger.info("Element was clicked");
+        }catch (Exception e){
+            printErrorAndStopTest();
+        }
+    }
+
+    private void printErrorAndStopTest() {
+        logger.error("Can not work with element");
+        Assert.fail("Can not work with element");
+    }
+
+    public boolean isElementPresent(WebElement webElement) {
+        try{
+            return webElement.isDisplayed() && webElement.isEnabled();
+        }catch (Exception e){
+            return false;
+        }
+    }
+
+    /**
+     * Method selects value in DD
+     * @param webElement
+     * @param value (VALUE! not Text in DD)
+     */
+    public void selectValueInDD(WebElement webElement, String value) {
+
+        try {
+            Select select = new Select(webElement);
+            select.selectByValue(value);
+            logger.info(value + " was select in DD ");
+
+        }catch (Exception e){
+            printErrorAndStopTest();
+        }
+    }
+
+    public void setCheckBoxToNeededState (WebElement webElement, String neededState){
+
+    }
+
 }
