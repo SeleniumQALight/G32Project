@@ -82,16 +82,34 @@ public class ActionsWithOurElements {
         }
     }
 
-    public void checkCheckBox() {
-        WebElement checkedCheckBox = webDriver.findElement(By.xpath(""));
-        WebElement uncheckedCheckBox = webDriver.findElement(By.xpath(""));
+    /**
+     * Method for check/uncheck checkbox
+     * @param webElement
+     * @param neededState
+     */
+    public void setCheckBoxToNeededState(WebElement webElement, String neededState) {
+        try {
+            boolean isCheckState = "check".equals(neededState);
+            boolean isUnCheckState = "uncheck".equals(neededState);
+           if (isCheckState || isUnCheckState){
+               if (webElement.isSelected() && isCheckState){
+                   logger.info("Checkbox is already checked");
+               }else if (isUnCheckState){
+                   clickOnElement(webElement);
 
-      if (uncheckedCheckBox.isSelected()){
-          clickOnElement(uncheckedCheckBox);
-      }
-      if (checkedCheckBox.isSelected()){
-          webDriver.quit();
-      }
+               }else if (!webElement.isSelected() && isCheckState){
+                   clickOnElement(webElement);
+               }else if (!webElement.isSelected() && isUnCheckState){
+                   logger.info("Checkbox is unchecked");
+               }
+
+           }else {
+               logger.error(neededState + " should be 'check' or 'uncheck'");
+           }Assert.fail(neededState + " should be 'check' or 'uncheck'");
+
+        }catch (Exception e){
+            printErrorAndStopTest();
+        }
     }
 
 
