@@ -32,6 +32,7 @@ public class LogIn {
        Assert.assertTrue("Avatar is not present",isAvatarPresent());
     }
 
+
     @After
     public void afterClass(){
         webDriver.quit();
