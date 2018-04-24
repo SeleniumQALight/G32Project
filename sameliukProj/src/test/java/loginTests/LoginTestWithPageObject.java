@@ -1,6 +1,5 @@
 package loginTests;
 
-import org.junit.Assert;
 import org.junit.Test;
 import parentTest.ParentTest;
 
@@ -9,8 +8,8 @@ public class LoginTestWithPageObject extends ParentTest {
     public void validLogin() {
         loginPage.openPage();
         loginPage.enerLogin("Student");
-        loginPage.enterPassword("909090");
-        loginPage.submitAuthorisation();
+        loginPage.enterPass("909090");
+        loginPage.clickSubmitButton();
 
         checkAC("Avatar is not present", homePage.isAvatarPresent(), true);
     }
