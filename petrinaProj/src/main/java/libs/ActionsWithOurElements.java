@@ -2,17 +2,24 @@ package libs;
 
 import org.apache.log4j.Logger;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.util.List;
 
 public class ActionsWithOurElements {
     WebDriver webDriver;
     Logger logger;
+    WebDriverWait webDriverWait15;
 
     public ActionsWithOurElements(WebDriver webDriver) {
         this.webDriver = webDriver;
         logger = Logger.getLogger(getClass());
+        webDriverWait15 = new WebDriverWait(webDriver,15);
 
     }
     public void enterTextInToElement (WebElement webElement, String  text){
@@ -27,6 +34,8 @@ public class ActionsWithOurElements {
 
     public void clickOnElement(WebElement webElement) {
         try{
+
+            webDriverWait15.until(ExpectedConditions.elementToBeClickable(webElement));
             webElement.click();
             logger.info("Element was clicked");
         }catch (Exception e){
@@ -91,4 +100,25 @@ public class ActionsWithOurElements {
         }
     }
 
+    public boolean isElementPresent(String locator) {
+        try {
+            WebElement webElement = webDriver.findElement(By.xpath(locator));
+            return isElementPresent(webElement);
+        }catch (Exception e){
+            return false;
+        }
+    }
+
+    public boolean isElementInList(String locator) {
+        try {
+            List<WebElement> listOfElements= webDriver.findElements(By.xpath(locator));
+            if (listOfElements.size()>0){
+                return true;
+            }else {
+                return false;
+            }
+        }catch (Exception e){
+            return false;
+        }
+    }
 }
