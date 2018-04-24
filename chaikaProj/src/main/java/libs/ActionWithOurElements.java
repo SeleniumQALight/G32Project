@@ -5,6 +5,7 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 
 public class ActionWithOurElements {
@@ -42,24 +43,52 @@ public class ActionWithOurElements {
 
     public boolean isElementPresent(WebElement webElement) {
         try {
-            return  webElement.isDisplayed() && webElement.isEnabled();
-        }catch (Exception e){
+            return webElement.isDisplayed() && webElement.isEnabled();
+        } catch (Exception e) {
             return false;
         }
     }
 
     /**
      * Method select value in DD
+     *
      * @param webElement
-     * @param value (VALUE ! not Text in DD)
+     * @param value      (VALUE ! not Text in DD)
      */
     public void selectValueInDD(WebElement webElement, String value) {
         try {
             Select select = new Select(webElement);
             select.selectByValue(value);
             logger.info(value + " was select in DD");
-        }catch (Exception e){
+        } catch (Exception e) {
             printErrorAndStopTest();
         }
     }
+
+    public void seCheckBoxToNeededState(WebElement webElement, String neededState) {
+        try {
+            boolean isCheckState = "check".equals(neededState);
+            boolean isUnCheckState = "uncheck".equals(neededState);
+            if (isCheckState || isUnCheckState) {
+                if (webElement.isSelected() && isCheckState){
+                    logger.info("Check box is checked alredy");
+                }else  if (webElement.isSelected() && isUnCheckState){
+                    clickOnElement(webElement);
+                }else if (!webElement.isSelected() && isCheckState){
+                    clickOnElement(webElement);
+                }else  if (webElement.isSelected() && isUnCheckState){
+                    logger.info("Check box is unchecked alredy");
+                }
+            } else {
+                logger.error(neededState + " should be 'check' or 'unchek'");
+                Assert.fail(neededState + " should be 'check' or 'unchek'");
+            }
+        } catch (Exception e) {
+            printErrorAndStopTest();
+
+        }
+    }
 }
+
+
+
