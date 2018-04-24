@@ -22,7 +22,7 @@ public class AddNewProviderTest extends ParentTest {
         editProvidersPage.enterCustName("aaa");
         editProvidersPage.enterCustAddress("aaa");
         editProvidersPage.enterCustPhone("111");
-//        editProvidersPage.selectCheckBox();
+        editProvidersPage.selectCheckBoxPrivatePerson("check");
         editProvidersPage.clickButtonCreate();
         providersPage.checkCurrentUrl();
 

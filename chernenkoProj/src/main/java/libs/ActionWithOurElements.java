@@ -73,13 +73,14 @@ public class ActionWithOurElements {
         }
     }
 
-//    public void checkBox(WebElement webElement) {
+//    public void setCheckBoxToNeededState(WebElement webElement, String neededState) {
 //        try {
 //            if (webElement.isSelected()) {
-//                logger.info("Checkbox: Element is already selected");
+//                webElement.getAttribute(neededState);
+//                logger.info(neededState + " Element is already selected");
 //            } else {
 //                webElement.click();
-//                logger.info("Checkbox: Element was selected");
+//                logger.info(neededState + " Element was selected");
 //            }
 //            if (webElement.isSelected()){
 //                webElement.click();
@@ -91,19 +92,31 @@ public class ActionWithOurElements {
 //            printErrorAndStopTest();
 //        }
 //    }
-//
-//    public void uncheckBox(WebElement webElement) {
-//        try {
-//            if (webElement.isSelected()) {
-//                webElement.click();
-//                logger.info("Checkbox: Element was selected");
-//            } else {
-//                logger.info("Checkbox: Element is already selected");
-//            }
-//        } catch (Exception e) {
-//            printErrorAndStopTest();
-//        }
+
+
+    public void setCheckBoxToNeededState(WebElement webElement, String neededState) {
+        try {
+            boolean isCheckState = "check".equals(neededState);
+            boolean isUnCheckState = "uncheck".equals(neededState);
+            if (isCheckState || isUnCheckState) {
+                if(webElement.isSelected() && isCheckState ){
+                    logger.info("Checkbox is already checked");
+                }else if (webElement.isSelected() && isUnCheckState){
+                    clickOnElement(webElement);
+                }else  if (!webElement.isSelected() && isCheckState){
+                    clickOnElement(webElement);
+                }else  if(!webElement.isSelected() && isUnCheckState){
+                    logger.info("Checkbox is already unchecked");
+                }
+            } else {
+                logger.error(neededState + " Should be 'check' or 'uncheck' ");
+                Assert.fail(neededState + " Should be 'check' or 'uncheck' ");
+            }
+        } catch (Exception e) {
+            printErrorAndStopTest();
+        }
     }
+}
 
 
 
