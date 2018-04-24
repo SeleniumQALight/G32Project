@@ -1,11 +1,16 @@
 package parentTest;
 
 import loginTests.LogIn;
+import org.apache.log4j.Logger;
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import pages.EditSparesPage;
+import pages.HomePage;
 import pages.LoginPage;
+import pages.SparesPage;
 
 import java.io.File;
 import java.util.concurrent.TimeUnit;
@@ -14,6 +19,10 @@ public class ParentTest {
 
     WebDriver webDriver;
     protected LoginPage loginPage;
+    protected HomePage homePage;
+    protected SparesPage sparePage;
+    protected EditSparesPage editSparesPage;
+    Logger logger = Logger.getLogger(getClass());
 
     @Before
     public void setUp() {
@@ -24,11 +33,22 @@ public class ParentTest {
         webDriver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 
         loginPage = new LoginPage(webDriver);
+        homePage = new HomePage(webDriver);
+        sparePage = new SparesPage(webDriver);
+        sparePage = new SparesPage(webDriver);
     }
 
     @After
     public void tearDown() {
 
         webDriver.quit();
+    }
+
+    protected void checkAcceptanceCriteria(String message, boolean actual, boolean expected){
+        if (!(actual == expected)){
+            logger.error("Acceptance fails: " + message);
+        }
+        Assert.assertEquals(message, expected, actual);
+
     }
 }

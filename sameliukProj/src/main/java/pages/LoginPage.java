@@ -1,15 +1,21 @@
 package pages;
 
 import org.junit.Assert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 public class LoginPage extends ParentPage {
+    @FindBy (name = "_username")
+    private WebElement inputLogin;
+    @FindBy (id = "password")
+    private WebElement inputPass;
+    @FindBy (tagName = "button")
+    private WebElement buttonSubmit;
 
 
     public LoginPage(WebDriver webDriver) {
-        super(webDriver);
+        super(webDriver, "/login");
     }
 
 
@@ -25,17 +31,23 @@ public class LoginPage extends ParentPage {
     }
 
     public void enerLogin(String login) {
-        WebElement inputLogin = webDriver.findElement(By.name("_username"));
-        actionsWithOurElements.enterTextIntoElement(inputLogin, login);
+      //  WebElement inputLogin = webDriver.findElement(By.name("_username"));
+        actionsWithOurElements.enterTextIntoElement(inputLogin, login); //inputLogin объявлен через аннотацию @FindBy
     }
 
-    public void enterPassword(String password) {
-        WebElement inputPassword = webDriver.findElement(By.name("_password"));
-        actionsWithOurElements.enterTextIntoElement(inputPassword, password);
+    public void enterPass(String pass) {
+       // WebElement inputPassword = webDriver.findElement(By.name("_password"));
+        actionsWithOurElements.enterTextIntoElement(inputPass, pass); //inputPass объявлен через аннотацию @FindBy
     }
 
-    public void submitAuthorisation() {
-        WebElement submitButton = webDriver.findElement(By.xpath(".//button[@type='submit'] "));
-        actionsWithOurElements.click(submitButton);
+    public void clickSubmitButton() {
+       // WebElement buttonSubmit = webDriver.findElement(By.xpath(".//button[@type='submit'] "));
+        actionsWithOurElements.clickOnElement (buttonSubmit); //buttonSubmit объявлен через аннотацию @FindBy
+    }
+    public void userLogin(String login, String password) {
+        openPage();
+        enerLogin(login);
+        enterPass(password);
+        clickSubmitButton();
     }
 }
