@@ -11,7 +11,6 @@ import java.util.concurrent.TimeUnit;
 
 
 public class LogIn {
-
     WebDriver webDriver;
 
     @Before
