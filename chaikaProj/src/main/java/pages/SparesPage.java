@@ -24,4 +24,7 @@ public class SparesPage extends ParentPage{
         return actionWithOurElements.isElementInList(".//*text(='" + namaOfNewSpare + "']");
     }
 
+    public void clickOnSpare(String namaOfNewSpare) {
+        actionWithOurElements.isElementPresent(".//*text(='" + namaOfNewSpare + "']");
+    }
 }

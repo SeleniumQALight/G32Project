@@ -99,21 +99,22 @@ public class ActionWithOurElements {
     public boolean isElementPresent(String locator) {
         try {
             WebElement webElement =webDriver.findElement(By.xpath(locator));
-            return  isElementPresent(webElement)
+            return  isElementPresent(webElement);
         }catch (Exception e){
             return false;
         }
     }
 
     public boolean isElementInList(String locator) {
-        try{
+        try {
             List<WebElement> listOfElements = webDriver.findElements(By.xpath(locator));
-            if(listOfElements.size() > 0){
-                return  true;
+            if (listOfElements.size() > 0) {
+                return true;
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             return false;
         }
+        return false;
     }
 }
 
