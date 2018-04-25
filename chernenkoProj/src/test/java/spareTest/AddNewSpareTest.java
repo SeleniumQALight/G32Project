@@ -28,9 +28,8 @@ public class AddNewSpareTest extends ParentTest {
     @After
     public void deletingNewSpare(){
         while (sparesPage.isSpareInList(nameOfNewSpare)){
-//            sparesPage.clickOnSpare(nameOfNewSpare);
-//            editSpareePage.clickButtonDelete();
+            sparesPage.clickOnSpare(nameOfNewSpare);
+            editSpareePage.clickButtonDelete();
         }
-
     }
 }
