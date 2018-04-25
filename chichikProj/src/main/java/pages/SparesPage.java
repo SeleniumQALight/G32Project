@@ -10,6 +10,9 @@ public class SparesPage extends parentPage{
     @FindBy(xpath = ".//*[@data-original-title='Add']")
     private WebElement addButton;
 
+    @FindBy(xpath = "")
+    private WebElement clickNameOfNewSpare;
+
     public SparesPage(WebDriver webDriver) {
         super(webDriver, "/dictionary/spares");
     }
@@ -24,5 +27,10 @@ public class SparesPage extends parentPage{
 
     public boolean isSpareInList(String nameOfNewSpare) {
         return actionsWithOurElements.isElementInList(".//*[text()='" + nameOfNewSpare + "']");
+    }
+
+
+    public void clickOnSpare(String nameOfNewSpare) {
+        actionsWithOurElements.clickOnElement(clickNameOfNewSpare);
     }
 }
