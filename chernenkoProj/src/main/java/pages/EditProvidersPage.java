@@ -22,6 +22,8 @@ public class EditProvidersPage extends ParentPage {
 
     @FindBy(id = ".prov_cus_isOurFirm")
     private WebElement isOurFirmTypeOfChB;
+    @FindBy(xpath = ".//button[@type='submit'][contains(text(),'Удалить')]")
+    private WebElement buttonDelete;
 
 
     public EditProvidersPage(WebDriver webDriver) {
@@ -50,5 +52,9 @@ public class EditProvidersPage extends ParentPage {
 
     public void selectCheckBoxIsOurFirm(String neededState){
         actionWithOurElements.setCheckBoxToNeededState(isOurFirmTypeOfChB, neededState);
+    }
+
+    public void clickButtonDelete() {
+        actionWithOurElements.clickOnElement(buttonDelete);
     }
 }
