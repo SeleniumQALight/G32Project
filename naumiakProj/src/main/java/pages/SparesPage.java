@@ -11,10 +11,21 @@ public class SparesPage extends ParentPage{
 
     public SparesPage(WebDriver webDriver) {
         super(webDriver, "/dictionary/spares");
-
     }
 
     public void clickOnButtonAdd () {
         actionsWithOurElements.clickOnElement(buttonAdd);
+    }
+
+    public boolean isNewSpareAdded(String nameOfNewSpare) {
+        return actionsWithOurElements.isElementPresent(".//*[text()='" + nameOfNewSpare + "']");
+    }
+
+    public boolean isSpareInList(String nameOfNewSpare) {
+        return actionsWithOurElements.isElementInList(".//*[text()='" + nameOfNewSpare + "']");
+    }
+
+    public void clickOnSpare(String nameOfNewSpare) {
+        actionsWithOurElements.clickOnElement(".//*[text()='" + nameOfNewSpare + "']");
     }
 }
