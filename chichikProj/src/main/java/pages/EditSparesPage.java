@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class EditSparesPage extends parentPage {
 
-    @FindBy(id = ".//*[@id='spares_spareType']")
+    @FindBy(xpath = ".//*[@id='spares_spareType']")
     private WebElement typeOfSpareDD;
 
     @FindBy(name = "add")
@@ -16,7 +16,7 @@ public class EditSparesPage extends parentPage {
     private WebElement enterSpareName;
 
     @FindBy(name = "delete")
-    private WebElement clickDeleteButton;
+    private WebElement deleteButton;
 
 
     public EditSparesPage(WebDriver webDriver) {
@@ -38,6 +38,6 @@ public class EditSparesPage extends parentPage {
     }
 
     public void clickButtonDelete() {
-        actionsWithOurElements.clickOnElement(clickDeleteButton);
+        actionsWithOurElements.clickOnElement(deleteButton);
     }
 }

@@ -7,7 +7,7 @@ import pages.SparesPage;
 import parentTest.ParentTest;
 
 public class AddNewSpareTest extends ParentTest {
-    final String nameOfNewSpare = "newTestSpare";
+    final String nameOfNewSpare = "UniqueSpareName";
 
     @Test
     public void addNewSpare() {
@@ -17,6 +17,7 @@ public class AddNewSpareTest extends ParentTest {
         homePage.clickOnMenuDictionary();
         homePage.clickOnSubMenuSpare();
         sparePage.checkCurrentUrl();
+        sparePage.deletingSparesWithName(nameOfNewSpare);
         sparePage.clickAddButton();
         editSparesPage.checkCurrentUrl();
         editSparesPage.enterSpareName(nameOfNewSpare);
@@ -24,15 +25,15 @@ public class AddNewSpareTest extends ParentTest {
         editSparesPage.clickButtonCreate();
         sparePage.checkCurrentUrl();
 
+
         checkAcceptanceCriteria("new spare wasn't added", sparePage.isNewSpareAdded(nameOfNewSpare), true);
     }
+
     @After
-    public void deletingNewSpare(){
-        while (sparePage.isSpareInList(nameOfNewSpare)){
-            sparePage.clickOnSpare(nameOfNewSpare);
-            editSparesPage.clickButtonDelete();
+    public void deletingNewSpare() {
+        sparePage.deletingSparesWithName(nameOfNewSpare);
 
-        }
+
     }
-
 }
+

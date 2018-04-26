@@ -9,12 +9,14 @@ public class SparesPage extends parentPage{
 
     @FindBy(xpath = ".//*[@data-original-title='Add']")
     private WebElement addButton;
+    private EditSparesPage editSparesPage;
 
-    @FindBy(xpath = "")
-    private WebElement clickNameOfNewSpare;
+    //@FindBy(name = "")
+   // private WebElement clickNameOfNewSpare;
 
     public SparesPage(WebDriver webDriver) {
         super(webDriver, "/dictionary/spares");
+        editSparesPage = new EditSparesPage(webDriver);
     }
 
     public void clickAddButton(){
@@ -31,6 +33,15 @@ public class SparesPage extends parentPage{
 
 
     public void clickOnSpare(String nameOfNewSpare) {
-        actionsWithOurElements.clickOnElement(clickNameOfNewSpare);
+        actionsWithOurElements.clickOnElement(".//*[text()='" + nameOfNewSpare + "']");
+    }
+
+    public void deletingSparesWithName(String nameOfNewSpare){
+        while (isSpareInList(nameOfNewSpare)){
+            clickOnSpare(nameOfNewSpare);
+            editSparesPage.clickButtonDelete();
+            logger.info("Spare with name " + nameOfNewSpare + " was deleted");
+
+        }
     }
 }

@@ -148,4 +148,14 @@ public class ActionsWithOurElements {
            return false;
        }
     }
+
+    public void clickOnElement(String locator) {
+        try {
+            clickOnElement(webDriver.findElement(By.xpath(locator)));
+
+        }catch (Exception e){
+            printErrorAndStopTest();
+        }
+
+    }
 }
