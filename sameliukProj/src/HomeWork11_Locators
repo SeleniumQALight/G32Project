@@ -36,3 +36,11 @@ ServiceEdit.Apparat.selectElement=xpath(“.//*[text()='Сломан датчи�
 #ApparatEditRecord
 ApparatEditRecord.Button.Save=xpath(“.//button[@type='submit' and @name='save'] ”)
 ApparatEditRecord.Button.Delete=xpath(“.//button[@name='delete'] ”)
+
+#EditProviders
+EditProviders.Checkbox.PriatPerson=xpath(".//input[@id='prov_cus_proCustIsFl']")
+EditProviders.Checkbox.IsOurFirm=xpath(".//input[@id='prov_cus_isOurFirm']")
+
+#EditSpares
+EditSpares.input.SpareName=xpath(.//input[@id='spares_spareName'] ")
+EditSpare.Button.Create=xpath(“.//button[@name='add']  ”)
