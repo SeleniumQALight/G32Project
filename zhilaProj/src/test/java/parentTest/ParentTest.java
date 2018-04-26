@@ -42,6 +42,7 @@ public class ParentTest {
             DesiredCapabilities capabilities = DesiredCapabilities.internetExplorer();
             capabilities.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
             capabilities.setCapability("ignoreZoomSetting", true);
+            capabilities.setCapability("nativeEvents",false);
             capabilities.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
             webDriver = new InternetExplorerDriver();
             logger.info(" IE is started");

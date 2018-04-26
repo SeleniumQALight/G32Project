@@ -3,6 +3,7 @@ package libs;
 import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -38,7 +39,7 @@ public class ActionWithOurElements {
     public void clickOnElement(WebElement webElement) {
         try {
             webDriverWait15.until(ExpectedConditions.elementToBeClickable(webElement));
-            webElement.click();
+            webElement.sendKeys(Keys.ENTER);
             logger.info( "Element was clicked");
         } catch (Exception e) {
             printErrorAndStopTest();
