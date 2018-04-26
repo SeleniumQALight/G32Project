@@ -24,9 +24,10 @@ public class ActionsWithOurElements {
     }
     public void enterTextInToElement (WebElement webElement, String  text){
         try {
+            webDriverWait15.until(ExpectedConditions.visibilityOf(webElement));
            webElement.clear();
            webElement.sendKeys(text);
-           logger.info(text + "was inputted to elements");
+           logger.info(text + " was inputted to elements");
         }catch (Exception e){
             printErrorAndStopTest();
         }
@@ -91,8 +92,8 @@ public class ActionsWithOurElements {
                     logger.info("Check box is unchecked already");
                 }
             }else {
-                logger.error(neededState + "should be 'check' or ' uncheck'" );
-                Assert.fail(neededState + "should be 'check' or ' uncheck'" );
+                logger.error(neededState + " should be 'check' or ' uncheck'" );
+                Assert.fail(neededState + " should be 'check' or ' uncheck'" );
             }
 
         }catch (Exception e){
@@ -121,4 +122,14 @@ public class ActionsWithOurElements {
             return false;
         }
     }
+
+    public void clickOnElement(String locator) {
+        try{
+            clickOnElement(webDriver.findElement(By.xpath(locator)));
+
+        }catch (Exception e){
+            printErrorAndStopTest();
+        }
+    }
+
 }

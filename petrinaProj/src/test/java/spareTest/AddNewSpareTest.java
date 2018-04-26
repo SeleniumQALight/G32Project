@@ -6,15 +6,17 @@ import parentTest.ParentTest;
 
 
 public class AddNewSpareTest extends ParentTest {
-    final String nameOfNewSpare = "testSpare";
+    final String nameOfNewSpare = "firstone";
+
     @Test
-    public void addNewSpare(){
-        loginPage.userLogin("Student","909090");
+    public void addNewSpare() {
+        loginPage.userLogin("Student", "909090");
         homePage.checkAvatarIsPresent();
         homePage.ckeckCurrentUrl();
         homePage.clickOnMenuDictionary();
         homePage.clickOnSubMenuSpares();
         sparesPage.ckeckCurrentUrl();
+        sparesPage.deletingAllSparesWithName(nameOfNewSpare);
         sparesPage.clickOnButtonPlus();
         editSparesPage.ckeckCurrentUrl();
         editSparesPage.enterSpareName(nameOfNewSpare);
@@ -22,14 +24,12 @@ public class AddNewSpareTest extends ParentTest {
         editSparesPage.clickButtonCreate();
         sparesPage.ckeckCurrentUrl();
 
-        checkAC("New Spare wasn't added",sparesPage.isNewSpareAdded(nameOfNewSpare), true);
+        checkAC("New Spare wasn't added", sparesPage.isNewSpareAdded(nameOfNewSpare), true);
 
     }
+
     @After
-    public void deletingNewSpare(){
-        while (sparesPage.isSpareInList(nameOfNewSpare)){
-            sparesPage.clickOnSpare(nameOfNewSpare);
-            editSparesPage.clickButtonDelete();
-        }
+    public void deletingNewSpare() {
+        sparesPage.deletingAllSparesWithName(nameOfNewSpare);
     }
 }
