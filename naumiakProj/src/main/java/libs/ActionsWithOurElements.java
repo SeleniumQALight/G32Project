@@ -119,7 +119,8 @@ public class ActionsWithOurElements {
     public void clickOnElement(String locator) {
         try {
             webDriverWait15.until(ExpectedConditions.elementToBeClickable(By.xpath(locator)));
-            locator.click();
+            WebElement locatorOfElement = webDriver.findElement(By.xpath(locator));
+            locatorOfElement.click();
             logger.info("The element was clicked");
         } catch (Exception e) {
             printErrorAndStopTest();
