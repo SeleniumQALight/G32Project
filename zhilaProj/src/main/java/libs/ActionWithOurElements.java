@@ -26,6 +26,7 @@ public class ActionWithOurElements {
 
     public void enterTextInToElement(WebElement webElement, String text) {
         try {
+            webDriverWait15.until(ExpectedConditions.visibilityOf(webElement));
             webElement.clear();
             webElement.sendKeys(text);
             logger.info(text + " Was inputted into Element");

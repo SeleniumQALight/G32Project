@@ -15,6 +15,7 @@ public class AddNewSpareTest extends ParentTest {
         homePage.clickMenuDictionary();
         homePage.clickOnSubMenuSpare();
         sparesPage.checkCurrentUrl();
+        sparesPage.deletingAllSpares(nameOfNewSpare);
         sparesPage.clickAddButton();
         editSparesPage.checkCurrentUrl();
         editSparesPage.enterSpareName(nameOfNewSpare);
@@ -27,9 +28,6 @@ public class AddNewSpareTest extends ParentTest {
 
     @After
     public void deletingNewSpare(){
-    while (sparesPage.isNewSpareInList(nameOfNewSpare)) {
-        sparesPage.clickOnSpare(nameOfNewSpare);
-        editSparesPage.clickButtonDelete();
-    }
+        sparesPage.deletingAllSpares(nameOfNewSpare);
     }
 }
