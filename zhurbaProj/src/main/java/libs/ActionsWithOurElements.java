@@ -4,6 +4,7 @@ import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 
 public class ActionsWithOurElements {
     WebDriver webDriver;
@@ -20,20 +21,68 @@ public class ActionsWithOurElements {
             webElement.sendKeys(text);
             logger.info("\"" + text + "\"" + " was inputted into element SUCCESSFULLY.");
         } catch (Exception e) {
-            logger.error("Can't work with element.");
-            Assert.fail("Can't work with element.");
+            printErrorAndStopTest();
         }
     }
 
-    public void clickOntoTheButton(WebElement webElement) {
+    public void clickOnElement(WebElement webElement) {
         try {
             webElement.click();
-            logger.info("The button was clicked SUCCESSFULLY.");
+            logger.info("The element was clicked SUCCESSFULLY.");
         } catch (Exception e) {
-            logger.error("Can't click onto the button.");
-            Assert.fail("Can't click onto the button.");
+            printErrorAndStopTest();
         }
+    }
 
+    private void printErrorAndStopTest() {
+        logger.error("Can't work with element.");
+        Assert.fail("Can't work with element.");
+    }
 
+    public boolean isElementPresent(WebElement webElement) {
+        try {
+            return webElement.isDisplayed() && webElement.isEnabled();
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    /**
+     * Method selects value in DD
+     *
+     * @param webElement
+     * @param value      (VALUE! not text in DD)
+     */
+    public void selectValueInDD(WebElement webElement, String value) {
+        try {
+            Select select = new Select(webElement);
+            select.selectByValue(value);
+            logger.info(value + " was select in DD");
+        } catch (Exception e) {
+            printErrorAndStopTest();
+        }
+    }
+
+    private boolean isCheckedCheckbox(WebElement webElement) {
+        try {
+            return webElement.isSelected();
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    /**
+     * NeededState can be only "check" or "uncheck"
+     */
+    public void setCheckBoxToNeededState(WebElement webElement, String neededState) {
+        try {
+            if(!isCheckedCheckbox(webElement) & new String(neededState).equals("check")){
+                webElement.click();
+            }else if(isCheckedCheckbox(webElement) & new String(neededState).equals("uncheck")){
+                webElement.click();
+            }
+        } catch (Exception e) {
+            printErrorAndStopTest();
+        }
     }
 }
