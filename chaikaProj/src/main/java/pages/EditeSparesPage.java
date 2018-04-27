@@ -13,9 +13,11 @@ public class EditeSparesPage extends ParentPage{
 
         @FindBy(xpath = ".//input[@id='spares_spareName']")
         private WebElement enterName;
+        @FindBy(name = "delete")
+    private WebElement buttonDelete;
 
-        @FindBy(xpath = ".//*[@class='btn btn-info']")
-        private WebElement buttonDelete;
+//        @FindBy(xpath = ".//*[@class = 'btn btn-danger pull-right']")
+//        private WebElement buttonDelete;
 
     public EditeSparesPage(WebDriver webDriver) {
         super(webDriver, "/dictionary/spares/edit");
@@ -34,7 +36,7 @@ public class EditeSparesPage extends ParentPage{
     }
 
     public void clickButtonDelete() {
-        actionWithOurElements.isElementPresent(buttonDelete);
+        actionWithOurElements.clickOnElement(buttonDelete);
 
     }
 }

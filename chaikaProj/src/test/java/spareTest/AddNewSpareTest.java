@@ -5,7 +5,7 @@ import org.junit.Test;
 import parentTest.ParentTest;
 
 public class AddNewSpareTest extends ParentTest{
-    final  String namaOfNewSpare = "SuperSpare";
+    final  String nameOfNewSpare = "SuperS";
 
     @Test
     public void addNewSpare(){
@@ -15,23 +15,20 @@ public class AddNewSpareTest extends ParentTest{
         homePage.clickOnMenuDictionary();
         homePage.clickOnSubMenuSpares();
         sparesPage.checkCurrentUrl();
+        sparesPage.deletingAllSparesWithName(nameOfNewSpare);  //удаляем предварительно перед добавлением
         sparesPage.clickOnButtonPlus();
         editeSparesPage.checkCurrentUrl();
-        editeSparesPage.enterSpareName(namaOfNewSpare);
+        editeSparesPage.enterSpareName(nameOfNewSpare);
         editeSparesPage.selectSpareType("4");
         editeSparesPage.clickButtonCreate();
         sparesPage.checkCurrentUrl();
 
-        checkAC("New Spare is wasn't added", sparesPage.isNewSpareAdded(namaOfNewSpare), true); //проверка что занеслось
+        checkAC("New Spare is wasn't added", sparesPage.isNewSpareAdded(nameOfNewSpare), false); //проверка что занеслось
     }
 
     @After
     public void deletingNewSpare(){
-        while (sparesPage.isSpareInList(namaOfNewSpare)) {
-            sparesPage.clickOnSpare(namaOfNewSpare);
-            editeSparesPage.clickButtonDelete();
-        }
-
+        sparesPage.deletingAllSparesWithName(nameOfNewSpare);
     }
 }
 
