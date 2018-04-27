@@ -6,6 +6,8 @@ import parentTest.ParentTest;
 
 public class AddNewProviderTest extends ParentTest {
     final String nameOfCustName = "aaa";
+    final String nameOfCustAddress = "aaa";
+    final String numberOfCustPhone = "111";
 
     @Test
     public void addNewProviderTest(){
@@ -18,8 +20,8 @@ public class AddNewProviderTest extends ParentTest {
         providersPage.clickOnButtonPlus();
         editProvidersPage.checkCurrentUrl();
         editProvidersPage.enterCustName(nameOfCustName);
-        editProvidersPage.enterCustAddress("aaa");
-        editProvidersPage.enterCustPhone("111");
+        editProvidersPage.enterCustAddress(nameOfCustAddress);
+        editProvidersPage.enterCustPhone(numberOfCustPhone);
         editProvidersPage.selectCheckBoxPrivatePerson("check");
         editProvidersPage.clickButtonCreate();
         providersPage.checkCurrentUrl();
