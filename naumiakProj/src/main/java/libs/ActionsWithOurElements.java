@@ -21,10 +21,12 @@ public class ActionsWithOurElements {
         this.webDriver = webDriver;
         logger = Logger.getLogger(getClass());
         webDriverWait15 = new WebDriverWait(webDriver,15);
+
     }
 
     public void enterTextIntoElement (WebElement webElement, String text){
         try {
+            webDriverWait15.until(ExpectedConditions.visibilityOf(webElement));
             webElement.clear();
             webElement.sendKeys(text);
             logger.info(text + " was inputted into element");
@@ -118,10 +120,7 @@ public class ActionsWithOurElements {
 
     public void clickOnElement(String locator) {
         try {
-            webDriverWait15.until(ExpectedConditions.elementToBeClickable(By.xpath(locator)));
-            WebElement locatorOfElement = webDriver.findElement(By.xpath(locator));
-            locatorOfElement.click();
-            logger.info("The element was clicked");
+            clickOnElement(webDriver.findElement(By.xpath(locator)));
         } catch (Exception e) {
             printErrorAndStopTest();
         }
