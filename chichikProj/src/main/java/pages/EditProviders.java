@@ -8,8 +8,6 @@ import org.openqa.selenium.support.FindBy;
 public class EditProviders extends parentPage{
 
 
-    private  EditProviders editProviders;
-
     @FindBy(id = "prov_cus_proCustName")
     private WebElement inputProCustName;
 
@@ -22,9 +20,12 @@ public class EditProviders extends parentPage{
     @FindBy(name = "add")
     private WebElement createButton;
 
+    @FindBy(name = "delete")
+    private WebElement deleteButton;
+
     public EditProviders(WebDriver webDriver) {
         super(webDriver, "/dictionary/providers/edit");
-        editProviders = new EditProviders(webDriver);
+
 
     }
 
@@ -50,5 +51,9 @@ public class EditProviders extends parentPage{
 
     public void clickCreateButton(){
         actionsWithOurElements.clickOnElement(createButton);
+    }
+
+    public void clickButtonDelete() {
+        actionsWithOurElements.clickOnElement(deleteButton);
     }
 }

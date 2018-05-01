@@ -1,5 +1,6 @@
 package providerTest;
 
+import org.junit.After;
 import org.junit.Test;
 import parentTest.ParentTest;
 
@@ -8,7 +9,7 @@ public class AddNewProviderTest extends ParentTest {
     final String nameOfProvider = "AnyName";
 
     @Test
-    public void addNewProvider(){
+    public void addNewProvider() {
         loginPage.userLogIn("Student", "909090");
         homePage.checkAvatarIsPresent();
         homePage.checkCurrentUrl();
@@ -23,7 +24,14 @@ public class AddNewProviderTest extends ParentTest {
         editProviders.clickCreateButton();
         providersPage.isProviderAdded(nameOfProvider);
 
-
-
+        checkAcceptanceCriteria("new spare wasn't added", providersPage.isProviderAdded(nameOfProvider), true);
     }
+
+    @After
+    public void deleteProvider() {
+        providersPage.deleteProviderWithName(nameOfProvider);
+    }
+
+
 }
+
