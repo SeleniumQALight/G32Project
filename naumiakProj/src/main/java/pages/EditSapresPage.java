@@ -4,17 +4,21 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class EditeSparesPage extends ParentPage{
-    @FindBy(tagName = "select")
+public class EditSapresPage extends  ParentPage{
+
+    @FindBy (tagName = "select")
     private WebElement typeOfSpareDD;
-    @FindBy(id = "spares_spareName")
-    private WebElement inputSpareName;
-    @FindBy(name = "add")
+
+    @FindBy (id="spares_spareName")
+    private WebElement nameOfSpare;
+
+    @FindBy (name ="add")
     private WebElement buttonCreate;
-    @FindBy(name = "delete")
+
+    @FindBy (name = "delete")
     private WebElement buttonDelete;
 
-    public EditeSparesPage(WebDriver webDriver) {
+    public EditSapresPage(WebDriver webDriver) {
         super(webDriver, "/dictionary/spares/edit");
     }
 
@@ -23,7 +27,7 @@ public class EditeSparesPage extends ParentPage{
     }
 
     public void enterSpareName(String spareName) {
-        actionsWithOurElements.enterTextInToElement(inputSpareName, spareName);
+        actionsWithOurElements.enterTextIntoElement(nameOfSpare, spareName);
     }
 
     public void clickButtonCreate() {
