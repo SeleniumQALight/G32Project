@@ -5,14 +5,18 @@ import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ActionWithOurElements {
     WebDriver webDriver;
     Logger logger;
 
+
+
     public ActionWithOurElements(WebDriver webDriver) {
         this.webDriver = webDriver;
         logger = Logger.getLogger(getClass());
+
     }
 
     public void enterTextIntoElement(WebElement webElement, String text) {
@@ -37,6 +41,7 @@ public class ActionWithOurElements {
 
     public void clickOnElement(WebElement webElement) {
         try {
+
             webElement.click();
             logger.info("Element was clicked");
         } catch (Exception e) {

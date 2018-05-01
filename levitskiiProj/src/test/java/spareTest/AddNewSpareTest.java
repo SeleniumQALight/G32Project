@@ -1,29 +1,35 @@
 package spareTest;
 
+import org.junit.After;
 import org.junit.Test;
 import parentTest.ParentTest;
 
 public class AddNewSpareTest extends ParentTest {
+    final String nameOfNewSpare = "Levitskiy Test Spare";
     @Test
     public void addNewSpare(){
         logInPage.userLogIn("Student", "909090");
         homePage.checkAvatarIsPresent();
         homePage.checkCurrentUrl();
         homePage.clickElementDictionary();
-//        try {
-//            Thread.sleep(4000);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
         homePage.clickOnSubMenuSpares();
         sparesPage.checkCurrentUrl();
         sparesPage.clickOnButtonPlus();
         editSparesPage.checkCurrentUrl();
-        editSparesPage.enterSpareName("Levitskiy Test Spare");
+        editSparesPage.enterSpareName(nameOfNewSpare);
         editSparesPage.selectSpareType("4");
         editSparesPage.clickButtonCreate();
         sparesPage.checkCurrentUrl();
 
-
+        checkAC("New spare did not added", sparesPage.isNewSpareAdded(nameOfNewSpare), true);
     }
+    @After
+    public void deletingNewSpare(){
+        logInPage.userLogIn("Student", "909090");
+        while (sparesPage.isSpareInList(nameOfNewSpare)){
+            sparesPage.clickOnSpare(nameOfNewSpare);
+            editSparesPage.cliclButtonDelete();
+        }
+    }
+
 }
