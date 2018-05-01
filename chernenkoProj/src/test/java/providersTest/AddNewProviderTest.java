@@ -17,6 +17,7 @@ public class AddNewProviderTest extends ParentTest {
         homePage.clickOnMenuDictionary();
         homePage.clickOnSubMenuProviders();
         providersPage.checkCurrentUrl();
+        providersPage.deletingAllProvidersWithName(nameOfCustName);
         providersPage.clickOnButtonPlus();
         editProvidersPage.checkCurrentUrl();
         editProvidersPage.enterCustName(nameOfCustName);
@@ -33,10 +34,7 @@ public class AddNewProviderTest extends ParentTest {
 
     @After
     public void  deleteInNewPpovider(){
-        while (providersPage.isProviderInList(nameOfCustName)){
-            providersPage.clickOnProvider(nameOfCustName);
-            editProvidersPage.clickButtonDelete();
-        }
+        providersPage.deletingAllProvidersWithName(nameOfCustName);
     }
 
 }

@@ -11,8 +11,12 @@ public class SparesPage extends ParentPage {
     @FindBy(xpath = ".//*[text()='machine']")
     private WebElement nameOfNewSpareElementText;
 
+
+    private EditSparesPage editSparesPage;
+
     public SparesPage(WebDriver webDriver) {
         super(webDriver, "/dictionary/spares");
+        editSparesPage = new EditSparesPage(webDriver);
     }
 
     public void clickOnButtonPlus(){
@@ -28,7 +32,16 @@ public class SparesPage extends ParentPage {
     }
 
     public void clickOnSpare(String nameOfNewSpare) {
-        actionWithOurElements.clickOnElement(nameOfNewSpareElementText);
+        actionWithOurElements.clickOnElement(".//*[text()='" + nameOfNewSpare + "']");
+    }
+
+
+    public void deletingAllSparesWithName(String nameOfNewSpare){
+        while (isSpareInList(nameOfNewSpare)){
+            clickOnSpare(nameOfNewSpare);
+            editSparesPage.clickButtonDelete();
+            logger.info("Spare with name " + nameOfNewSpare + " was deleted");
+        }
     }
 
 }
