@@ -12,10 +12,7 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import pages.EditSparesPage;
-import pages.HomePage;
-import pages.LoginPage;
-import pages.SparesPage;
+import pages.*;
 
 import java.io.File;
 import java.util.concurrent.TimeUnit;
@@ -27,6 +24,8 @@ public class ParentTest {
     protected HomePage homePage;
     protected SparesPage sparePage;
     protected EditSparesPage editSparesPage;
+    protected ProvidersPage providersPage;
+    protected EditProviders editProviders;
     Logger logger = Logger.getLogger(getClass());
 
     private String browser = System.getProperty("browser");
@@ -66,6 +65,8 @@ public class ParentTest {
         sparePage = new SparesPage(webDriver);
         sparePage = new SparesPage(webDriver);
         editSparesPage = new EditSparesPage(webDriver);
+        providersPage = new ProvidersPage(webDriver);
+        editProviders = new EditProviders(webDriver);
     }
 
     @After

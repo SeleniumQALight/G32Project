@@ -5,6 +5,8 @@ import parentTest.ParentTest;
 
 public class AddNewProviderTest extends ParentTest {
 
+    final String nameOfProvider = "AnyName";
+
     @Test
     public void addNewProvider(){
         loginPage.userLogIn("Student", "909090");
@@ -12,5 +14,16 @@ public class AddNewProviderTest extends ParentTest {
         homePage.checkCurrentUrl();
         homePage.clickOnMenuDictionary();
         homePage.clickOnSubmenuProviders();
+        providersPage.checkCurrentUrl();
+        providersPage.clickAddButton();
+        editProviders.checkCurrentUrl();
+        editProviders.enterProCustName("AnyName");
+        editProviders.enterProCustAddress("anyAddress");
+        editProviders.enterProCustPhone("0123456789");
+        editProviders.clickCreateButton();
+        providersPage.isProviderAdded(nameOfProvider);
+
+
+
     }
 }
