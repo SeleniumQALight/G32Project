@@ -11,8 +11,6 @@ public class SparesPage extends parentPage{
     private WebElement addButton;
     private EditSparesPage editSparesPage;
 
-    //@FindBy(name = "")
-   // private WebElement clickNameOfNewSpare;
 
     public SparesPage(WebDriver webDriver) {
         super(webDriver, "/dictionary/spares");

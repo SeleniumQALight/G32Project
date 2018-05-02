@@ -26,9 +26,12 @@ public class ParentTest {
     protected EditSparesPage editSparesPage;
     protected ProvidersPage providersPage;
     protected EditProviders editProviders;
+    protected Installation installation;
+    protected EditInstallation editInstallation;
     Logger logger = Logger.getLogger(getClass());
 
     private String browser = System.getProperty("browser");
+
 
     @Before
     public void setUp() {
@@ -67,6 +70,8 @@ public class ParentTest {
         editSparesPage = new EditSparesPage(webDriver);
         providersPage = new ProvidersPage(webDriver);
         editProviders = new EditProviders(webDriver);
+        installation = new Installation(webDriver);
+        editInstallation = new EditInstallation(webDriver);
     }
 
     @After

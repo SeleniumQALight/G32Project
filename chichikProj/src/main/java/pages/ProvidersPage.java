@@ -15,7 +15,8 @@ public class ProvidersPage extends parentPage {
 
     public ProvidersPage(WebDriver webDriver) {
         super(webDriver, "/dictionary/providers");
-        providersPage = new ProvidersPage(webDriver);
+        //providersPage = new ProvidersPage(webDriver);
+        editProviders = new EditProviders(webDriver);
 
     }
 
@@ -36,7 +37,7 @@ public class ProvidersPage extends parentPage {
             while (isProviderAdded(nameOfProvider)) {
                 clickOnProvider(nameOfProvider);
                 editProviders.clickButtonDelete();
-                logger.info("Spare with name " + nameOfProvider + " was deleted");
+                logger.info("Provider with name " + nameOfProvider + " was deleted");
 
             }
         }

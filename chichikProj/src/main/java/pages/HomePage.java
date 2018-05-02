@@ -18,6 +18,9 @@ public class HomePage extends parentPage {
     @FindBy(xpath = ".//*[@id='prov_cus']/a")
     private WebElement subMenuProviders;
 
+    @FindBy(xpath = ".//*[@id='installation']")
+    private WebElement subMenuInstallation;
+
 
     public HomePage(WebDriver webDriver) {
         super(webDriver, "/");
@@ -42,5 +45,9 @@ public class HomePage extends parentPage {
 
     public void clickOnSubmenuProviders() {
         actionsWithOurElements.clickOnElement(subMenuProviders);
+    }
+
+    public void clickOnMenuInstallation(){
+        actionsWithOurElements.clickOnElement(subMenuInstallation);
     }
 }
