@@ -12,11 +12,11 @@ import java.util.Collection;
 @RunWith(Parameterized.class)
 public class LoginTestWithParameters extends ParentTest {
 
-    String login, pass;
+    String login, password;
 
-    public LoginTestWithParameters(String login, String pass) {
+    public LoginTestWithParameters(String login, String password) {
         this.login = login;
-        this.pass = pass;
+        this.password = password;
     }
 
     @Parameterized.Parameters(name = "Parameters are {0} and {1}")
@@ -31,7 +31,7 @@ public class LoginTestWithParameters extends ParentTest {
 
     @Test
     public void invalidLogIn(){
-        logInPage.userLogIn(login,pass);
+        logInPage.userLogIn(login, password);
         checkAC("Avatar should not be present",homePage.isAvatarPresent(),false);
 
     }
