@@ -20,6 +20,11 @@ public class EditProvidersPage extends ParentPage {
     @FindBy(id = "prov_cus_proCustIsFl")
     private WebElement privatePersonTypeOfChB;
 
+    @FindBy(id = ".prov_cus_isOurFirm")
+    private WebElement isOurFirmTypeOfChB;
+    @FindBy(xpath = ".//button[@type='submit'][contains(text(),'Удалить')]")
+    private WebElement buttonDelete;
+
 
     public EditProvidersPage(WebDriver webDriver) {
         super(webDriver, "/dictionary/providers/edit");
@@ -41,7 +46,15 @@ public class EditProvidersPage extends ParentPage {
         actionWithOurElements.clickOnElement(buttonCreate);
     }
 
-//    public void selectCheckBox() {
-//        actionWithOurElements.checkBox(privatePersonTypeOfChB);
-//    }
+    public void selectCheckBoxPrivatePerson(String neededState) {
+        actionWithOurElements.setCheckBoxToNeededState(privatePersonTypeOfChB, neededState);
+    }
+
+    public void selectCheckBoxIsOurFirm(String neededState){
+        actionWithOurElements.setCheckBoxToNeededState(isOurFirmTypeOfChB, neededState);
+    }
+
+    public void clickButtonDelete() {
+        actionWithOurElements.clickOnElement(buttonDelete);
+    }
 }

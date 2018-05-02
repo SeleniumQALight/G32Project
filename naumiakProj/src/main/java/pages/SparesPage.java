@@ -5,18 +5,16 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class SparesPage extends ParentPage{
-    @FindBy(xpath = ".//*[@data-original-title='Add']")
-    private WebElement buttonPlus;
 
-    private EditeSparesPage editeSparesPage;
+    @FindBy (xpath = ".//*[@data-original-title='Add']")
+    private WebElement buttonAdd;
 
     public SparesPage(WebDriver webDriver) {
         super(webDriver, "/dictionary/spares");
-        editeSparesPage = new EditeSparesPage(webDriver);
     }
 
-    public void clickOnButtonPlus(){
-        actionsWithOurElements.clickOnElement(buttonPlus);
+    public void clickOnButtonAdd () {
+        actionsWithOurElements.clickOnElement(buttonAdd);
     }
 
     public boolean isNewSpareAdded(String nameOfNewSpare) {
@@ -27,20 +25,7 @@ public class SparesPage extends ParentPage{
         return actionsWithOurElements.isElementInList(".//*[text()='" + nameOfNewSpare + "']");
     }
 
-
     public void clickOnSpare(String nameOfNewSpare) {
         actionsWithOurElements.clickOnElement(".//*[text()='" + nameOfNewSpare + "']");
     }
-
-    public void deletingAllSparesWithName(String nameOfNewSpare){
-        while (isSpareInList(nameOfNewSpare)){
-            clickOnSpare(nameOfNewSpare);
-            editeSparesPage.clickButtonDelete();
-            logger.info("Spare with name " + nameOfNewSpare + " was deleted ");
-        }
-    }
-
-
-
-
 }
