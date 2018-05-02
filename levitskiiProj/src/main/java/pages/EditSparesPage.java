@@ -7,13 +7,17 @@ import org.openqa.selenium.support.FindBy;
 public class EditSparesPage extends ParentPage {
     @FindBy (tagName = "select" )
     private WebElement typeOfSpareDD;
-    public EditSparesPage(WebDriver webDriver) {
-        super(webDriver, "/dictionary/spares/edit");
-    }
+    @FindBy (name = "delete")
+    private WebElement buttonDelete;
     @FindBy (id = "spares_spareName")
     private  WebElement inputSpareName;
     @FindBy (xpath=".//*[@name=\"add\"]")
     private WebElement buttonCreate;
+
+    public EditSparesPage(WebDriver webDriver) {
+        super(webDriver, "/dictionary/spares/edit");
+    }
+
 
     public void selectSpareType(String value) {
         actionsWithOurElements.selectValueInDD(typeOfSpareDD, value);
@@ -25,5 +29,9 @@ public class EditSparesPage extends ParentPage {
 
     public void clickButtonCreate() {
         actionsWithOurElements.clickOnElement(buttonCreate);
+    }
+
+    public void clickButtonDelete() {
+        actionsWithOurElements.clickOnElement(buttonDelete);
     }
 }

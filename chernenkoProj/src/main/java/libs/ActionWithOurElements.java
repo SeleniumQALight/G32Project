@@ -8,11 +8,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-<<<<<<< HEAD
-=======
 
 import java.util.List;
->>>>>>> b67773ca164633e2de7a4262eafb616501ca8d7f
+
 
 public class ActionWithOurElements {
     WebDriver webDriver;
@@ -24,11 +22,11 @@ public class ActionWithOurElements {
     public ActionWithOurElements(WebDriver webDriver) {
         this.webDriver = webDriver;
         logger = Logger.getLogger(getClass());
-<<<<<<< HEAD
 
-=======
+
+
         webDriverWait15 = new WebDriverWait(webDriver, 15);
->>>>>>> b67773ca164633e2de7a4262eafb616501ca8d7f
+
     }
 
     public void enterTextIntoElement(WebElement webElement, String text) {
@@ -53,11 +51,9 @@ public class ActionWithOurElements {
 
     public void clickOnElement(WebElement webElement) {
         try {
-<<<<<<< HEAD
 
-=======
             webDriverWait15.until(ExpectedConditions.elementToBeClickable(webElement));
->>>>>>> b67773ca164633e2de7a4262eafb616501ca8d7f
+
             webElement.click();
             logger.info("Element was clicked");
         } catch (Exception e) {

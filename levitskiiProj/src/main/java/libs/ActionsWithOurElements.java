@@ -25,6 +25,7 @@ public class ActionsWithOurElements {
 
     public void enterTextIntoElement(WebElement webElement, String text) {
         try {
+            webDriverWait15.until(ExpectedConditions.visibilityOf(webElement));
             webElement.clear();
             webElement.sendKeys(text);
             logger.info(text + " was inrupted into element");
@@ -122,6 +123,13 @@ public class ActionsWithOurElements {
     }
 
 
+    public void clickOnElement(String locator) {
+        try{
+            clickOnElement(webDriver.findElement(By.xpath(locator)));
+        }catch(Exception e){
+            printErrorAndStopTest();
+        }
+    }
 }
 
 
