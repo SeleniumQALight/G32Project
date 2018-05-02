@@ -24,6 +24,7 @@ public class ActionWithOurElements {
 
     public void enterTextIntoElement(WebElement webElement, String text) {
         try {
+            webDriverWait15.until(ExpectedConditions.visibilityOf(webElement));
             webElement.clear();
             webElement.sendKeys(text);
             logger.info(text + " was inputted into text");
@@ -129,6 +130,13 @@ public class ActionWithOurElements {
     }
 
 
+    public void clickOnElement(String locator) {
+        try{
+            clickOnElement(webDriver.findElement(By.xpath(locator)));
+        }catch (Exception e){
+            printErrorAndStopTest();
+        }
+    }
 }
 
 
