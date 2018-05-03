@@ -14,6 +14,9 @@ public class EditSparesPage extends ParentPage {
     @FindBy (name = "add")
     protected  WebElement addButton;
 
+    @FindBy  (name = "delete")
+    protected  WebElement deleteButton;
+
     public EditSparesPage(WebDriver webDriver) {
         super(webDriver, "/dictionary/spares/edit");
     }
@@ -21,8 +24,6 @@ public class EditSparesPage extends ParentPage {
     public void enterSpareName(String spare){
         actionWithOurElements.enterTextInToElement(spareName,spare);
     }
-
-
 
     public void selectSpareType(String value) {
         actionWithOurElements.selectValueInDD (typeOfSpareDD,value);
@@ -32,4 +33,7 @@ public class EditSparesPage extends ParentPage {
         actionWithOurElements.clickOnElement(addButton);
     }
 
+    public void clickButtonDelete() {
+        actionWithOurElements.clickOnElement(deleteButton);
+    }
 }

@@ -18,10 +18,32 @@ public class ActionsWithOurElements {
         try {
             webElement.clear();
             webElement.sendKeys(text);
-            logger.info(text + "was inputted into element");
+            logger.info(text + " was inputted into element");
         } catch (Exception e) {
-            logger.error("Can't work with element");
-            Assert.fail("Can't work with element");
+            printErrorAndStopTest();
+        }
+    }
+
+    public void pressButton(WebElement webElement) {
+        try {
+            webElement.click();
+            logger.info("Login button was pressed");
+        } catch (Exception e) {
+            printErrorAndStopTest();
+        }
+    }
+
+    private void printErrorAndStopTest() {
+        logger.error("Can't work with element");
+        Assert.fail("Can't work with element");
+    }
+
+
+    public boolean isElementPresent(WebElement webElement) {
+        try {
+            return webElement.isDisplayed() && webElement.isEnabled();
+        } catch (Exception e) {
+            return false;
         }
     }
 }

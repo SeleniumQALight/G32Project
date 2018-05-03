@@ -6,7 +6,10 @@ import org.junit.runners.Parameterized;
 import parentTest.ParentTest;
 
 import java.io.IOException;
+<<<<<<< HEAD
 import java.sql.Array;
+=======
+>>>>>>> ef37939dc54403717465f0dade3f318010916b5e
 import java.util.Arrays;
 import java.util.Collection;
 

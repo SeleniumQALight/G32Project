@@ -1,9 +1,12 @@
 package spareTest;
 
+import org.junit.After;
 import org.junit.Test;
 import parentTest.ParentTest;
 
 public class AddNewSpareTest extends ParentTest {
+    final String nameOfNewSpare = "Orehokol";
+
     @Test
     public void addNewSpare() {
         loginPage.userLogIn("Student", "909090");
@@ -11,22 +14,24 @@ public class AddNewSpareTest extends ParentTest {
         homePage.checkCurrentUrl();
         homePage.clickOnMenuDictionary();
 
-        try {
-            Thread.sleep(4000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
         homePage.clickOnSubMenuSpare();
         sparesPage.checkCurrentUrl();
+        sparesPage.deletingAllSparesWithName(nameOfNewSpare);
         sparesPage.clickOnButtonPlus();
         editSparesPage.checkCurrentUrl();
-        editSparesPage.enterSpareName("Orehokol");
+        editSparesPage.enterSpareName(nameOfNewSpare);
         editSparesPage.selectSpareType("4");
         editSparesPage.clickButtonCreate();
         sparesPage.checkCurrentUrl();
 
+        checkAC("New Spare wasn't added.", sparesPage.isNewSpareAdded(nameOfNewSpare), true);
     }
 
+    @After
+    public void deletingNewSapre() {
+        sparesPage.deletingAllSparesWithName(nameOfNewSpare);
+    }
+
+    ;
 
 }
