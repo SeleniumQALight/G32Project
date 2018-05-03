@@ -36,6 +36,7 @@ public class ParentTest {
         homePage = new HomePage(webDriver);
         sparesPage = new SparesPage(webDriver);
         editSparesPage = new EditSparesPage (webDriver);
+
     }
 
     @After
