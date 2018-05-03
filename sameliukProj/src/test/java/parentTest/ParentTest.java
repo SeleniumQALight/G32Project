@@ -11,10 +11,7 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import pages.EditSparesPage;
-import pages.HomePage;
-import pages.LoginPage;
-import pages.SparesPage;
+import pages.*;
 
 import java.io.File;
 import java.util.concurrent.TimeUnit;
@@ -25,6 +22,11 @@ public class ParentTest {
     protected HomePage homePage;
     protected SparesPage sparesPage;
     protected EditSparesPage editSparesPage;
+    protected ApparatPage apparatPage;
+    protected EditApparatPage editApparatPage;
+    protected ServicePage servicePage;
+    protected EditServicePage editServicePage;
+    protected EditAnyApparatPage editAnyApparatPage;
     Logger logger = Logger.getLogger(getClass());
     private String browser = System.getProperty("browser");
 
@@ -63,6 +65,12 @@ public class ParentTest {
         homePage = new HomePage(webDriver);
         sparesPage = new SparesPage(webDriver);
         editSparesPage = new EditSparesPage(webDriver);
+        apparatPage = new ApparatPage(webDriver);
+        editApparatPage = new EditApparatPage(webDriver);
+        servicePage = new ServicePage(webDriver);
+        editServicePage = new EditServicePage(webDriver);
+        editAnyApparatPage = new EditAnyApparatPage(webDriver);
+
 
     }
 
@@ -74,9 +82,9 @@ public class ParentTest {
     protected void checkAC(String message, boolean actual, boolean expected) {
         if (!(actual == expected)) {
             logger.error("AC failed:" + message);
-
         }
         Assert.assertEquals(message, expected, actual);
     }
+
 
 }

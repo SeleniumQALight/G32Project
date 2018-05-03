@@ -13,7 +13,7 @@ Home.Sidebar-menu. Dictionary.Deal=xpath(“.//a[@href='/deal'] ”)
 Home.Sidebar-menu.Dashboard=xpath(“.//a[@href='/statistic'] ”)
 
 #Apparat
-Apparat.Button.Add=xpath(“.//a[@href=’http://v3.test.itpmgroup.com/dictionary/apparat/edit’]”)
+Apparat.Button.Add=xpath(“.//*[@class='fa fa-plus']”)
 Apparat.Table.Record=xpath(“.//tr[.//td[contains(text(),'Сломан датчик')]] ”)
 Apparat.Table.Record=xpath(“.//tr[.//td[contains(text(),'Первый автомат(не работает)')]] ”)
 Apparat.Table.Record=xpath(“.//tr[.//td[contains(text(),'Третий автомат')]] ”)
@@ -21,6 +21,7 @@ Apparat.Table.Record=xpath(“.//tr[.//td[contains(text(),'Седьмой авт
 Apparat.Table.Record=xpath(“.//tr[.//td[contains(text(),'dfd')]] ”)
 Apparat.Table.Record=xpath(“.//tr[.//td[contains(text(),'QA Test Edited')]] ”)
 Apparat.Table.Record=xpath(“.//tr[.//td[2]] ”)
+Apparat.Table.Record=xpath(“.//tr[1]”)   - ПЕРВЫЙ ПО СПИСКУ
 
 #ApparatEdit
 ApparatEdit.Number.input.=xpath(“.//input[@id='apparat_apparatNumber'] ”)
@@ -28,9 +29,9 @@ ApparatEdit.Comment.input.=xpath(“.//input[@id='apparat_apparatComment'] ”)
 ApparatEdit.Button.Create.=xpath(“.//*[@name='add'] ”)
 
 #Service
-Service.Button.Add=xpath(“.//a[@href=’http://v3.test.itpmgroup.com/dictionary/service/edit’] ”)
+Service.Button.Add=xpath(“.//*[@class='fa fa-plus']”)
 #ServiceEdit
-ServiceEdit.Apparat.input=xpath(“.//select[@id='service_apparat_apparat'] ”)
+ServiceEdit.Apparat.input=xpath(“.//*[@name='service_apparat[apparat]'] ”)
 ServiceEdit.Apparat.selectElement=xpath(“.//*[text()='Сломан датчик'] ”)
 
 #ApparatEditRecord

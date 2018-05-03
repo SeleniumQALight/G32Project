@@ -138,4 +138,7 @@ public class ActionsWithOurElements {
             printErrorAndStopTest(e);
         }
     }
+    public void cllearField (WebElement webElement){
+        webElement.clear();
+    }
 }
