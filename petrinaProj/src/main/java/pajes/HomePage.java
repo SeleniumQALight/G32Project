@@ -13,7 +13,8 @@ public class HomePage extends ParentPage {
     @FindBy(id = "spares")
     private WebElement subMenuSpares;
 
-    public HomePage(WebDriver webDriver) { super(webDriver,"/");
+    public HomePage(WebDriver webDriver) {
+        super(webDriver, "/");
     }
 
     public boolean isAvatarPresent() {

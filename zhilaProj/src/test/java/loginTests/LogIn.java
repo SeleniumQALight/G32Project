@@ -1,4 +1,5 @@
 package loginTests;
+
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -31,6 +32,7 @@ public class LogIn {
        webDriver.findElement(By.tagName("button")).click();
        Assert.assertTrue("Avatar is not present",isAvatarPresent());
     }
+
 
     @After
     public void afterClass(){
