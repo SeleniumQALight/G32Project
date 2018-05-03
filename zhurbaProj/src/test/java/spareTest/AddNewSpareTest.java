@@ -32,6 +32,4 @@ public class AddNewSpareTest extends ParentTest {
         sparesPage.deletingAllSparesWithName(nameOfNewSpare);
     }
 
-    ;
-
 }
