@@ -4,12 +4,21 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 public class LogInPage extends ParentPage{
+    @FindBy(name ="_username")
+    private WebElement inputLogin;
+
+    @FindBy(id = "password")
+    private WebElement inputPassword;
+
+    @FindBy (tagName = "button")
+    private WebElement buttonSubmit;
 
 
     public LogInPage(WebDriver webDriver) {
-        super(webDriver);
+        super(webDriver, "/login");
     }
 
     public void openPage() {
@@ -22,15 +31,23 @@ public class LogInPage extends ParentPage{
         }
     }
         public void enterLogin (String login){
-            WebElement inputLogin = webDriver.findElement(By.name("_username"));
+  //          WebElement inputLogin = webDriver.findElement(By.name("_username"));
             actionsWithOurElements.enterTextIntoElement(inputLogin, login);
         }
-        public void enterPassword (String password){
-            WebElement inputPassword = webDriver.findElement(By.id("password"));
+        public void enterPass(String password){
+  //      WebElement inputPassword = webDriver.findElement(By.id("password"));
             actionsWithOurElements.enterTextIntoElement(inputPassword, password);
         }
-        public void clickButton (){
-        WebElement buttonVhod = webDriver.findElement(By.tagName("button"));
-        actionsWithOurElements.clickOnElement(buttonVhod);
+        public void clickSubmitButton(){
+   //     WebElement buttonSubmit = webDriver.findElement(By.tagName("button"));
+        actionsWithOurElements.clickOnElement(buttonSubmit);
         }
+
+    public void userLogIn(String logIn, String pass) {
+        openPage();
+        enterLogin(logIn);
+        enterPass(pass);
+        clickSubmitButton();
+    }
 }
+
