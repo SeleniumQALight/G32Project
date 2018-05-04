@@ -1,5 +1,6 @@
 package parentTest;
 
+import org.aeonbits.owner.ConfigFactory;
 import org.apache.log4j.Logger;
 import org.junit.After;
 import org.junit.Assert;
@@ -11,6 +12,8 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
+
+import libs.ConfigProperties;
 import pages.EditeSparesPage;
 import pages.HomePage;
 import pages.LoginPage;
@@ -27,6 +30,7 @@ public class ParentTest {
     protected EditeSparesPage editeSparesPage;
     Logger logger = Logger.getLogger(getClass());
     private String browser = System.getProperty("browser");
+    protected static ConfigProperties configProperties = ConfigFactory.create(ConfigProperties.class);
 
     @Before
     public void setUp() {
