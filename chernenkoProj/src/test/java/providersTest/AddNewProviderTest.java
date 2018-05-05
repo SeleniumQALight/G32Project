@@ -6,6 +6,8 @@ import parentTest.ParentTest;
 
 public class AddNewProviderTest extends ParentTest {
     final String nameOfCustName = "aaa";
+    final String nameOfCustAddress = "aaa";
+    final String numberOfCustPhone = "111";
 
     @Test
     public void addNewProviderTest(){
@@ -15,11 +17,12 @@ public class AddNewProviderTest extends ParentTest {
         homePage.clickOnMenuDictionary();
         homePage.clickOnSubMenuProviders();
         providersPage.checkCurrentUrl();
+        providersPage.deletingAllProvidersWithName(nameOfCustName);
         providersPage.clickOnButtonPlus();
         editProvidersPage.checkCurrentUrl();
         editProvidersPage.enterCustName(nameOfCustName);
-        editProvidersPage.enterCustAddress("aaa");
-        editProvidersPage.enterCustPhone("111");
+        editProvidersPage.enterCustAddress(nameOfCustAddress);
+        editProvidersPage.enterCustPhone(numberOfCustPhone);
         editProvidersPage.selectCheckBoxPrivatePerson("check");
         editProvidersPage.clickButtonCreate();
         providersPage.checkCurrentUrl();
@@ -31,10 +34,7 @@ public class AddNewProviderTest extends ParentTest {
 
     @After
     public void  deleteInNewPpovider(){
-        while (providersPage.isProviderInList(nameOfCustName)){
-            providersPage.clickOnProvider(nameOfCustName);
-            editProvidersPage.clickButtonDelete();
-        }
+        providersPage.deletingAllProvidersWithName(nameOfCustName);
     }
 
 }

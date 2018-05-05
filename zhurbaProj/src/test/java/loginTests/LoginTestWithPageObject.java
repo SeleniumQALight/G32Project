@@ -12,8 +12,6 @@ public class LoginTestWithPageObject extends ParentTest {
         loginPage.clickSubmitButton();
 
         checkAC("Avatar is NOT present", homePage.isAvatarPresent(), true);
-
-
     }
 
     @Test

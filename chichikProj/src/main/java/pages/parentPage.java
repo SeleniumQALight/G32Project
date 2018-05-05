@@ -21,7 +21,8 @@ public class parentPage {
       this.expectedUrl = baseUrl + expectedUrl;
    }
 
-   public String getCurrentUrl(){
+
+    public String getCurrentUrl(){
       return webDriver.getCurrentUrl();
    }
 

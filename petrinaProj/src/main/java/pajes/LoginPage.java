@@ -8,17 +8,18 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class LoginPage extends ParentPage {
-    @FindBy(name="_username")
+    @FindBy(name = "_username")
     private WebElement inputLogin;
 
-    @FindBy(id="password")
+    @FindBy(id = "password")
     private WebElement inputPass;
 
-    @FindBy(tagName="button")
+    @FindBy(tagName = "button")
     private WebElement buttonSubmit;
 
 
-    public LoginPage(WebDriver webDriver) { super(webDriver,"/login");
+    public LoginPage(WebDriver webDriver) {
+        super(webDriver, "/login");
     }
 
     public void openPage() {
@@ -31,14 +32,17 @@ public class LoginPage extends ParentPage {
         }
 
     }
-    public void enterLogin(String login){
-     //   WebElement inputLogin = webDriver.findElement(By.name("_username"));
+
+    public void enterLogin(String login) {
+        //   WebElement inputLogin = webDriver.findElement(By.name("_username"));
         actionsWithOurElements.enterTextInToElement(inputLogin, login);
     }
-    public void enterPass(String pass){
+
+    public void enterPass(String pass) {
         actionsWithOurElements.enterTextInToElement(inputPass, pass);
     }
-    public void clickSubmitButton(){
+
+    public void clickSubmitButton() {
         actionsWithOurElements.clickOnElement(buttonSubmit);
     }
 
