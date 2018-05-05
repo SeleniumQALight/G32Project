@@ -13,13 +13,9 @@ public class AddNewSpareTest extends ParentTest {
         homePage.checkAvatarIsPresent();
         homePage.checkCurrentURL();
         homePage.clickOnMenuDictionary();
-//        try {
-//            Thread.sleep(4000);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
         homePage.clickOnSubmenuSpare();
         sparesPage.checkCurrentURL();
+        sparesPage.deletingAllSparesWithName(nameOfNewSpare);
         sparesPage.clickOnButtonAdd();
         editSapresPage.checkCurrentURL();
         editSapresPage.enterSpareName(nameOfNewSpare);
@@ -31,10 +27,14 @@ public class AddNewSpareTest extends ParentTest {
 
     @After
     public void deletingNewSpare (){
-        while (sparesPage.isSpareInList(nameOfNewSpare)){
-            sparesPage.clickOnSpare(nameOfNewSpare);
-            editSapresPage.clickButtonDelete();
-        }
+        sparesPage.deletingAllSparesWithName(nameOfNewSpare);
     }
 
 }
+
+
+//        try {
+//            Thread.sleep(4000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }

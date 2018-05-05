@@ -9,8 +9,12 @@ public class SparesPage extends ParentPage{
     @FindBy (xpath = ".//*[@data-original-title='Add']")
     private WebElement buttonAdd;
 
+    private EditSparesPage editSapresPage;
+
+
     public SparesPage(WebDriver webDriver) {
         super(webDriver, "/dictionary/spares");
+        editSapresPage = new EditSparesPage(webDriver);
     }
 
     public void clickOnButtonAdd () {
@@ -28,4 +32,13 @@ public class SparesPage extends ParentPage{
     public void clickOnSpare(String nameOfNewSpare) {
         actionsWithOurElements.clickOnElement(".//*[text()='" + nameOfNewSpare + "']");
     }
+    public void deletingAllSparesWithName(String nameOfNewSpare){
+        while (isSpareInList(nameOfNewSpare)){
+            clickOnSpare(nameOfNewSpare);
+            editSapresPage.clickButtonDelete();
+            logger.info("Spare with name " + nameOfNewSpare + " was deleted");
+        }
+    }
+
+
 }
