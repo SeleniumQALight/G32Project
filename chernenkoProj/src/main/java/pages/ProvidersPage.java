@@ -10,8 +10,11 @@ public class ProvidersPage extends ParentPage {
     @FindBy(xpath = ".//*[text()='aaa']")
     private WebElement nameOfNewProviderElementText;
 
+    private EditSparesPage editProvidersPage;
+
     public ProvidersPage(WebDriver webDriver) {
         super(webDriver,"/dictionary/providers");
+        editProvidersPage = new EditSparesPage(webDriver);
     }
 
     public void clickOnButtonPlus(){
@@ -28,6 +31,13 @@ public class ProvidersPage extends ParentPage {
 
     public void clickOnProvider(String nameOfCustName) {
         actionWithOurElements.clickOnElement(nameOfNewProviderElementText);
+    }
 
+    public void deletingAllProvidersWithName(String nameOfCustName){
+        while (isProviderInList(nameOfCustName)){
+            clickOnProvider(nameOfCustName);
+            editProvidersPage.clickButtonDelete();
+            logger.info("Provider with name " + nameOfCustName + " was deleted");
+        }
     }
 }

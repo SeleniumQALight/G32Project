@@ -23,8 +23,28 @@ public class ActionsWithOurElements {
             logger.info(text + "was inputted into element");
 
         } catch (Exception e) {
-            logger.error("Can not work with element");
-            Assert.fail("Can not work with element");
+            printErrorAndStopTest();
+        }
+    }
+    public void clickOnElement(WebElement webElement) {
+        try{
+            webElement.click();
+            logger.info("Button was clicked");
+        }catch (Exception e){
+            printErrorAndStopTest();
+        }
+    }
+
+    private void printErrorAndStopTest() {
+        logger.error("Can not work with element");
+        Assert.fail("Can not work with element");
+    }
+
+    public boolean isElementPresent(WebElement webElement) {
+        try{
+            return webElement.isDisplayed() && webElement.isEnabled();
+        } catch (Exception e){
+            return false;
         }
     }
 }
