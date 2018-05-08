@@ -57,7 +57,7 @@ public class ParentTest {
 
 
         webDriver.manage().window().maximize();
-        webDriver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+        webDriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
         logInPage = new LogInPage(webDriver);
         homePage = new HomePage(webDriver);
