@@ -45,6 +45,18 @@
       <artifactId>owner</artifactId>
       <version>1.0.4</version>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
+    <dependency>
+      <groupId>io.rest-assured</groupId>
+      <artifactId>rest-assured</artifactId>
+      <version>3.0.0</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.json/json -->
+    <dependency>
+      <groupId>org.json</groupId>
+      <artifactId>json</artifactId>
+      <version>20180130</version>
+    </dependency>
     <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
     <dependency>
       <groupId>mysql</groupId>
@@ -56,6 +68,9 @@
     <resources>
       <resource>
         <directory>src</directory>
+      </resource>
+      <resource>
+        <directory>src/main/java</directory>
       </resource>
     </resources>
   </build>
