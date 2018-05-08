@@ -35,8 +35,7 @@ public class LoginPage extends ParentPage{
     public void enterLogin(String login){
         actionWithOurElements.enterTextInToElement(inputLogin, login);
     }
-
-    public void enterPass(String pass){
+    public void enterPass(String pass) {
         actionWithOurElements.enterTextInToElement(inputPass, pass);
     }
     public  void clickSubmitButton(){
