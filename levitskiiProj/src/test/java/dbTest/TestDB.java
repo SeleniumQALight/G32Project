@@ -38,6 +38,8 @@ public class TestDB {
         List<Map<String,String>> dataFromSeleniumTable_1 =
                 dbMySql.selectTable("select * from seleniumTable where login = 'LevitskiyTest'");
         logger.info(" Result = " + dataFromSeleniumTable_1);
+ //       List<ArrayList> dataFromSeleniumTable_1 =dbMySql.selectTable("select * from seleniumTable where login = 'LevitskiyTest'");
+   //     logger.info(" Result = " + dataFromSeleniumTable_1.get(1).get(2));
 
         UtilsForDB utilsForDB = new UtilsForDB();
         logger.info(utilsForDB.getPassForLogin("LevitskiyTest"));
