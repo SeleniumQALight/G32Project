@@ -1,5 +1,7 @@
 package parentTest;
 
+import libs.ConfigProperties;
+import org.aeonbits.owner.ConfigFactory;
 import org.apache.log4j.Logger;
 import org.junit.After;
 import org.junit.Assert;
@@ -11,7 +13,7 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import pages.EditSparesPage;
+import pages.EditeSparesPage;
 import pages.HomePage;
 import pages.LoginPage;
 import pages.SparesPage;
@@ -24,9 +26,10 @@ public class ParentTest {
     protected LoginPage loginPage;
     protected HomePage homePage;
     protected SparesPage sparesPage;
-    protected EditSparesPage editSparesPage;
+    protected EditeSparesPage editeSparesPage;
     Logger logger=Logger.getLogger(getClass());
     private String browser = System.getProperty("browser");
+    protected static ConfigProperties configProperties = ConfigFactory.create(ConfigProperties.class);
 
 
     @Before
@@ -55,8 +58,7 @@ public class ParentTest {
             webdriver = new FirefoxDriver(profile);
             logger.info(" FireFox is started");
 
-        }
-        {
+
         }
         webdriver.manage().window().maximize();
         webdriver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
@@ -64,7 +66,7 @@ public class ParentTest {
         loginPage = new LoginPage(webdriver);
         homePage=new HomePage(webdriver,"/");
         sparesPage = new SparesPage((webdriver));
-        editSparesPage=new EditSparesPage(webdriver);
+        editeSparesPage =new EditeSparesPage(webdriver);
 
     }
 

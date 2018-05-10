@@ -29,7 +29,7 @@ public class LoginTestWithParametres extends ParentTest{
 
     @Test
     public void invalidLogin(){
-        loginPage.userLogin(login,pass);
+        loginPage.userLogIn(login,pass);
 
         checkAC("Avatar should not be present", homePage.isAvatarPresent(),false);
     }
