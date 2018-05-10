@@ -1,5 +1,6 @@
 package parentTest;
 
+import io.qameta.allure.Step;
 import loginTests.LogIn;
 import org.apache.log4j.Logger;
 import org.junit.After;
@@ -80,6 +81,7 @@ public class ParentTest {
         webDriver.quit();
     }
 
+    @Step
     protected void checkAcceptanceCriteria(String message, boolean actual, boolean expected) {
         if (!(actual == expected)) {
             logger.error("Acceptance fails: " + message);
