@@ -14,4 +14,5 @@ import spareTest.AddNewSpareTest;
 )
 
 public class SuitSmoke {
+
 }
