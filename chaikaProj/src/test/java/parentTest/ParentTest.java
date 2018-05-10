@@ -1,5 +1,6 @@
 package parentTest;
 
+import io.qameta.allure.Step;
 import libs.ConfigProperties;
 import org.aeonbits.owner.ConfigFactory;
 import org.apache.log4j.Logger;
@@ -74,7 +75,7 @@ public class ParentTest {
     public void tearDown() {
         webDriver.quit();
     }
-
+    @Step
     protected void checkAC(String message, boolean actual, boolean expected) {
         if (!(actual == expected)) {
             logger.error("AC failed:" + message);
