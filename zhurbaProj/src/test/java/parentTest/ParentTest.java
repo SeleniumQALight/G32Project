@@ -1,6 +1,6 @@
 package parentTest;
 
-import com.sun.xml.internal.ws.policy.AssertionSet;
+import io.qameta.allure.Step;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -75,6 +75,7 @@ public class ParentTest {
         webDriver.quit();
     }
 
+    @Step
     protected void checkAC(String message, boolean expected, boolean actual){
         if(!(actual==expected)) {
             logger.error("AC failed: " + message);
