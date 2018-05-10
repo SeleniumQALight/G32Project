@@ -1,5 +1,6 @@
 package parentTest;
 
+import io.qameta.allure.Step;
 import org.aeonbits.owner.ConfigFactory;
 import org.apache.log4j.Logger;
 import org.junit.After;
@@ -76,6 +77,7 @@ public class ParentTest {
     }
 
 
+    @Step
     protected void checkAC(String message, boolean actual, boolean expected){
         if (!(actual == expected)){
             logger.error("AC failed:" + message);
