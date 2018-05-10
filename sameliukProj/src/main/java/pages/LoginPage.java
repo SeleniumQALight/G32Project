@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -18,7 +19,7 @@ public class LoginPage extends ParentPage {
         super(webDriver, "/login");
     }
 
-
+    @Step
     public void openPage() {
         try {
             webDriver.get("http://v3.test.itpmgroup.com");
@@ -29,21 +30,22 @@ public class LoginPage extends ParentPage {
             Assert.fail("Can not open LoginPage");
         }
     }
-
+    @Step
     public void enerLogin(String login) {
       //  WebElement inputLogin = webDriver.findElement(By.name("_username"));
         actionsWithOurElements.enterTextIntoElement(inputLogin, login); //inputLogin объявлен через аннотацию @FindBy
     }
-
+    @Step
     public void enterPass(String pass) {
        // WebElement inputPassword = webDriver.findElement(By.name("_password"));
         actionsWithOurElements.enterTextIntoElement(inputPass, pass); //inputPass объявлен через аннотацию @FindBy
     }
-
+    @Step
     public void clickSubmitButton() {
        // WebElement buttonSubmit = webDriver.findElement(By.xpath(".//button[@type='submit'] "));
         actionsWithOurElements.clickOnElement (buttonSubmit); //buttonSubmit объявлен через аннотацию @FindBy
     }
+    @Step
     public void userLogin(String login, String password) {
         openPage();
         enerLogin(login);
