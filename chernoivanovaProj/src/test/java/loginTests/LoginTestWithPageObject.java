@@ -9,7 +9,7 @@ public class LoginTestWithPageObject extends ParentTest {
     public void validLogIn (){
         loginPage.openPage();
         loginPage.enterLogin("Student");
-        loginPage.enterPass("909091");
+        loginPage.enterPass("909090");
         loginPage.clickSubmitButton();
         //Assert.assertTrue("Avatar is not present", homePage.isAvatarPresent());
         checkAC(" Avatar is not present", homePage.isAvatarPresent(),true);
@@ -17,7 +17,7 @@ public class LoginTestWithPageObject extends ParentTest {
 
     @Test
     public void invalidLogIn (){
-        loginPage.userLogIn("Student","906090");
+        loginPage.userLogIn("Student","909090");
 
         checkAC("Avatar should not be present",homePage.isAvatarPresent(),false);
     }
