@@ -8,7 +8,7 @@ public class AddNewSpareTest extends ParentTest{
     final String nameOfNewSpare ="testSpare";
     @Test
     public void addNewSpare(){
-        loginPage.userLogin("Student", "909090");
+        loginPage.userLogIn("Student", "909090");
         homePage.checkAvatarIsPresent();
         homePage.checkCurrentUrl();
         homePage.clickOnMenuDictionary();
@@ -19,12 +19,12 @@ public class AddNewSpareTest extends ParentTest{
 //        }
         homePage.clickOnSubMenuSpares();
         sparesPage.checkCurrentUrl();
-        sparesPage.clickOnButtonPlus();
-        editSparesPage.checkCurrentUrl();
         sparesPage.deletingAllSparesWithName(nameOfNewSpare);
-        editSparesPage.enterSpareName(nameOfNewSpare);
-        editSparesPage.selectSpareType("4");
-        editSparesPage.clickButtonCreate();
+        sparesPage.clickOnButtonPlus();
+        editeSparesPage.checkCurrentUrl();
+        editeSparesPage.enterSpareName(nameOfNewSpare);
+        editeSparesPage.selectSpareType("4");
+        editeSparesPage.clickButtonCreate();
         sparesPage.checkCurrentUrl();
         checkAC("New speare wasn`t added", sparesPage.isNewSpareAdded(nameOfNewSpare), true);
         }

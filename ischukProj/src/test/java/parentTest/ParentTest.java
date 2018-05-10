@@ -1,9 +1,18 @@
 package parentTest;
 
+import io.qameta.allure.Attachment;
+import io.qameta.allure.Step;
+import libs.ConfigProperties;
+import org.aeonbits.owner.ConfigFactory;
 import org.apache.log4j.Logger;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Rule;
+import org.junit.rules.TestWatcher;
+import org.junit.runner.Description;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -11,7 +20,7 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import pages.EditSparesPage;
+import pages.EditeSparesPage;
 import pages.HomePage;
 import pages.LoginPage;
 import pages.SparesPage;
@@ -24,9 +33,10 @@ public class ParentTest {
     protected LoginPage loginPage;
     protected HomePage homePage;
     protected SparesPage sparesPage;
-    protected EditSparesPage editSparesPage;
+    protected EditeSparesPage editeSparesPage;
     Logger logger=Logger.getLogger(getClass());
     private String browser = System.getProperty("browser");
+    protected static ConfigProperties configProperties = ConfigFactory.create(ConfigProperties.class);
 
 
     @Before
@@ -55,8 +65,7 @@ public class ParentTest {
             webdriver = new FirefoxDriver(profile);
             logger.info(" FireFox is started");
 
-        }
-        {
+
         }
         webdriver.manage().window().maximize();
         webdriver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
@@ -64,14 +73,15 @@ public class ParentTest {
         loginPage = new LoginPage(webdriver);
         homePage=new HomePage(webdriver,"/");
         sparesPage = new SparesPage((webdriver));
-        editSparesPage=new EditSparesPage(webdriver);
+        editeSparesPage =new EditeSparesPage(webdriver);
 
     }
 
     @After
     public void tearDown() {
-        webdriver.quit();
+    //    webdriver.quit();screen short for fail test
     }
+    @Step
     protected void checkAC(String massage, boolean actual, boolean expected){
         if (!(actual== expected)){
             logger.error("AC failed:" + massage);
@@ -80,4 +90,38 @@ public class ParentTest {
         Assert.assertEquals(massage,expected, actual);
 
         }
+//  screen short for fail test
+    @Rule
+    public TestWatcher watchman = new TestWatcher() {
+        String fileName;
+
+        @Override
+        protected void failed(Throwable e, Description description) {
+            screenshot();
+        }
+
+        @Attachment(value = "Page screenshot", type = "image/png")
+        public byte[] saveScreenshot(byte[] screenShot) {
+            return screenShot;
+        }
+
+        public void screenshot() {
+            if (webdriver == null) {
+                logger.info("Driver for screenshot not found");
+                return;
+            }
+
+            saveScreenshot(((TakesScreenshot) webdriver).getScreenshotAs(OutputType.BYTES));
+
+        }
+        @Override
+        protected void finished(Description description) {
+            logger.info(String.format("Finished test: %s::%s", description.getClassName(), description.getMethodName()));
+            try {
+                webdriver.quit();
+            } catch (Exception e) {
+                logger.error(e);
+            }
+        }
+    };
 }

@@ -32,6 +32,7 @@ public class LoginPage extends ParentPage {
     public void enterLogin(String login) {
        // WebElement inputLogin = webDriver.findElement(By.name("_username")); by annotation @FindBy(name="_username")
         actionsWithOurElements.enterTextInToElement(inputLogin, login);
+
     }
     public void enterPass(String pass){
        // WebElement inputPass = webDriver.findElement(By.id("password")); by @FindBy(id="password")
@@ -42,11 +43,12 @@ public class LoginPage extends ParentPage {
         actionsWithOurElements.clickOnElement(buttonSubmit);
     }
 
-    public void userLogin(String login, String pass) {
+    public void userLogIn(String login, String pass) {
         openPage();
         enterLogin(login);
         enterPass(pass);
         clickSubmitButton();
+
 
 
     }

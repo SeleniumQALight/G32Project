@@ -14,7 +14,6 @@ import java.util.List;
 
 public class ActionsWithOurElements {
     WebDriver webDriver;
-    Logger clickOnElement;
     Logger logger;
     WebDriverWait webDriverWait15;
 
@@ -31,17 +30,19 @@ public class ActionsWithOurElements {
             webDriverWait15.until(ExpectedConditions.visibilityOf(webElement));
             webElement.clear();
             webElement.sendKeys(text);
-            clickOnElement.info(text + "was inputted into element");
+            logger.info(text + "was inputted into element");
         } catch (Exception e) {
             printErrorAndStopTest();
         }
+
+
     }
 
     public void clickOnElement(WebElement webElement) {
         try {
             webDriverWait15.until(ExpectedConditions.elementToBeClickable(webElement));
             webElement.click();
-            clickOnElement.info("Element was clicked");
+            logger.info("Element was clicked");
 
         } catch (Exception e) {
             printErrorAndStopTest();
@@ -50,7 +51,7 @@ public class ActionsWithOurElements {
     }
 
     private void printErrorAndStopTest() {
-        clickOnElement.error("Can not work with element");
+        logger.error("Can not work with element");
         Assert.fail("Can not work with element");
     }
 
@@ -61,6 +62,8 @@ public class ActionsWithOurElements {
             return false;
         }
     }
+
+
     /**
      * Method select value in DD
      *
