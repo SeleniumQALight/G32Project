@@ -1,5 +1,6 @@
 package pajes;
 
+import io.qameta.allure.Step;
 import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -21,7 +22,7 @@ public class LoginPage extends ParentPage {
     public LoginPage(WebDriver webDriver) {
         super(webDriver, "/login");
     }
-
+    @Step
     public void openPage() {
         try {
             webDriver.get("http://v3.test.itpmgroup.com");
@@ -32,20 +33,22 @@ public class LoginPage extends ParentPage {
         }
 
     }
+    @Step
 
     public void enterLogin(String login) {
         //   WebElement inputLogin = webDriver.findElement(By.name("_username"));
         actionsWithOurElements.enterTextInToElement(inputLogin, login);
     }
-
+    @Step
     public void enterPass(String pass) {
         actionsWithOurElements.enterTextInToElement(inputPass, pass);
     }
-
+    @Step
     public void clickSubmitButton() {
         actionsWithOurElements.clickOnElement(buttonSubmit);
     }
 
+    @Step
     public void userLogin(String login, String pass) {
         openPage();
         enterLogin(login);
