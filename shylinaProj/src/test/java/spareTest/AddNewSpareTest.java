@@ -4,7 +4,7 @@ import org.junit.After;
 import org.junit.Test;
 import parentTest.ParentTest;
 
-public class addNewSpareTest extends ParentTest {
+public class AddNewSpareTest extends ParentTest {
     final String nameOfNewSpare = "testSpare8";
 
     @Test
