@@ -1,5 +1,5 @@
 TC #1.
-Summary: Data input into the list of devices.
+Summary: data input into the list of devices.
 Preconditions:
 1.The main page of http://v3.test.itpmgroup.com/dashboard is opened.
 2. The user is registered on this website.
@@ -15,7 +15,7 @@ The new device "Номер: 26032018; Коммментарий: NewApparat"
 has been added to the "Список аппаратов" list.
 
 TC #2.
-Summary: Data input into the list of "Сотрудники".
+Summary: data input into the list of "Сотрудники".
 Preconditions:
 1.The main page of http://v3.test.itpmgroup.com/dashboard is opened.
 2. The user is registered on this website.
@@ -32,7 +32,7 @@ The new collaborator "Сотрудник:Naugthon Patric; Телефон:+132371
 has been added to the "Список сотрудников" list.
 
 TC #3.
-Summary: Data input into the list of "Запчасти".
+Summary: data input into the list of "Запчасти".
 Preconditions:
 1.The main page of http://v3.test.itpmgroup.com/dashboard is opened.
 2. The user is registered on this website.
@@ -48,7 +48,7 @@ The new spare part "Наименование:SuperSpare; Тип:INS-Del"
 has been added to the "Список запчастей" list.
 
 TC #4.
-Summary: Data input into the list of "Стороны сделок".
+Summary: data input into the list of "Стороны сделок".
 Preconditions:
 1.The main page of http://v3.test.itpmgroup.com/dashboard is opened.
 2. The user is registered on this website.
@@ -66,7 +66,7 @@ The  new counterparty "Наименование:QATestLab; Адрес:Kyiv; Те
 has been added to the "Список контрагентов" list.
 
 TC #5.
-Summary: Data input into the list of "Типы сделок".
+Summary: data input into the list of "Типы сделок".
 Preconditions:
 1.The main page of http://v3.test.itpmgroup.com/dashboard is opened.
 2. The user is registered on this website.
