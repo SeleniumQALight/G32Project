@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -11,6 +12,8 @@ public class EditSparesPage extends ParentPage {
     private WebElement spareName;
     @FindBy (xpath = ".//button[@name='add']")
     private WebElement buttonCreate;
+    @FindBy (xpath = ".//button[@name='delete']")
+    private WebElement buttonDelete;
 
     public EditSparesPage(WebDriver webDriver) {
         super(webDriver, "/dictionary/spares/edit");
@@ -25,5 +28,9 @@ public class EditSparesPage extends ParentPage {
 
     public void clickButtonCreate() {
         actionsWithOurElements.clickOnElement(buttonCreate);
+    }
+
+    public void clickButtonDelete() {
+        actionsWithOurElements.clickOnElement(buttonDelete);
     }
 }
