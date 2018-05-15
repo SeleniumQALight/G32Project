@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -32,18 +33,22 @@ public class LoginPage extends ParentPage {
         }
     }
 
+    @Step
     public void enterLogin(String login) {
         actionsWithOurElements.enterTextIntoElement(inputLogin, login);
     }
 
+    @Step
     public void enterPass(String pass) {
         actionsWithOurElements.enterTextIntoElement(inputLogin, pass);
     }
 
+    @Step
     public void clickSubmitButton() {
         actionsWithOurElements.clickOnElement(buttonSubmit);
     }
 
+    @Step
     public void userLogin(String login, String pass) {
         openPage();
         enterLogin(login);
