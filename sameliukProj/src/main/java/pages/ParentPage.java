@@ -18,16 +18,17 @@ public class ParentPage {
         this.webDriver = webDriver;
         actionsWithOurElements = new ActionsWithOurElements(webDriver);
         PageFactory.initElements(webDriver, this); //Нужно для элементов описанных @FindBy
-        this.expectedURL = baseURL + expectedURL;
+        this.expectedURL = baseURL + expectedURL; // "http://v3.test.itpmgroup.com" + "/"
     }
 
-    public String getCurrentURL() {
+    private String getCurrentURL() {
         return webDriver.getCurrentUrl();
     }
 
     public void checkCurrentURL() {
         try {
-            Assert.assertEquals("Url is not expeced", expectedURL, getCurrentURL());
+            Assert.assertEquals("Url is not expected", expectedURL, getCurrentURL());
+            logger.info("URL was checked: " + expectedURL);
         } catch (Exception e) {
             logger.error("Cannot get URL");
             Assert.fail("Cannot get URL");
