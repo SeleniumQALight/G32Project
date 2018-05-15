@@ -42,4 +42,7 @@ public class TestDB {
         logger.info(utilsForDB.getPassForLogin("OZZ"));
     }
 
+//    List<ArrayList> dataFromSeleniumTable_1 =dbMySql.selectTable("select * from seleniumTable where login = 'G32Taras'");
+//    logger.info(" Result = " + dataFromSeleniumTable_1.get(1).get(2));
+
 }
