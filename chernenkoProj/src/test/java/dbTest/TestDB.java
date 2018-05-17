@@ -9,6 +9,7 @@ import org.junit.Test;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -30,9 +31,9 @@ public class TestDB {
        logger.info("FirstPass = " + dataFromSeleniumTable.get(1));
 //       int effectedRowsdbMySql=dbMySql.changeTable("INSERT INTO seleniumTable VALUES (2,'Olena','pass')");
 //       logger.info(" Effected = " + effectedRowsdbMySql);
-        List<Map<String,String>> dataFromSeleniumTable_1 =
+        List<ArrayList> dataFromSeleniumTable_1 =
                 dbMySql.selectTable("select * from seleniumTable where Login = 'Olena'");
-        logger.info(" Result = " + dataFromSeleniumTable_1);
+        logger.info(" Result = " + dataFromSeleniumTable_1.get(1).get(2));
 
         UtilsForDB utilsForDB = new UtilsForDB();
         logger.info(utilsForDB.getPassForLogin("Olena"));

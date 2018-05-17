@@ -2,12 +2,14 @@ package loginTests;
 
 
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 import parentTest.ParentTest;
 
 public class LoginTestWithPageObject extends ParentTest{
 
     @Test
+//    @Ignore
     public void validLogin(){
         loginPage.openPage();
         loginPage.enterLogin("Student");
