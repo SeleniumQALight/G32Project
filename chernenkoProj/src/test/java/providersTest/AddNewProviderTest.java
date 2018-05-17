@@ -33,7 +33,7 @@ public class AddNewProviderTest extends ParentTest {
     }
 
     @After
-    public void  deleteInNewPpovider(){
+    public void deleteInNewProvider(){
         providersPage.deletingAllProvidersWithName(nameOfCustName);
     }
 

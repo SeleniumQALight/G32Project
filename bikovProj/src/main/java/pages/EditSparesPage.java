@@ -15,6 +15,9 @@ public class EditSparesPage extends ParentPage {
     @FindBy(xpath = "//button[@type='submit']")
     private WebElement buttonCreate;
 
+    @FindBy(name = "delete")
+    private WebElement buttonDelete;
+
     public EditSparesPage(WebDriver webDriver) {
         super(webDriver, "/dictionary/spares/edit");
     }
@@ -29,5 +32,9 @@ public class EditSparesPage extends ParentPage {
 
     public void clickButtonCreate() {
         actionsWithOurElements.clickOnElement(buttonCreate);
+    }
+
+    public void clickButtonDelete() {
+        actionsWithOurElements.clickOnElement(buttonDelete);
     }
 }
