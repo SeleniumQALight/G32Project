@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -21,6 +22,7 @@ public class LoginPage extends ParentPage {
         super (webDriver, "/logon");
     }
 
+    @Step
     public void openPage() {
         try {
             webDriver.get("http://v3.test.itpmgroup.com");
@@ -31,21 +33,25 @@ public class LoginPage extends ParentPage {
         }
     }
 
+    @Step
     public void enterLogin(String login){
 //        WebElement inputLogin = webDriver.findElement(By.name("_username"));                                          // declared in annotation '@FindBy'
         actionsWithOurElements.enterTextInToElement(inputLogin, login);
     }
 
+    @Step
     public void enterPassword(String password){
 //        WebElement inputPassword = webDriver.findElement(By.id("password"));                                          // declared in annotation '@FindBy'
         actionsWithOurElements.enterTextInToElement(inputPassword, password);
     }
 
+    @Step
     public void clickSubmitButton(){
 //        WebElement buttonSubmit = webDriver.findElement(By.tagName("button"));                                        -- declared in annotation '@FindBy'
         actionsWithOurElements.clickOnElement(buttonSubmit);
     }
 
+    @Step
     public void userLogIn(String login, String password) {
         openPage();
         enterLogin(login);
