@@ -17,6 +17,7 @@ import static libs.Utils.getDateAndTimeFormated;
 public class TestRestAssured {
     MainRestSteps mainRestSteps = new MainRestSteps();
     @Test
+    @Ignore
     public void getCursDetails() {
 
         Response response = mainRestSteps.getRequestToPrivatApiAndVerifyStatusCode();
