@@ -1,6 +1,5 @@
 package pages;
 
-import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -14,7 +13,6 @@ public class SparesPage extends ParentPage{
         super(webDriver, "/dictionary/spares");
         editSparesPage = new EditSparesPage(webDriver);
     }
-    @Step
     public void clickOnButtonPlus(){
         actionsWithOurElements.clickOnElement(buttonPlus);
     }
@@ -22,15 +20,15 @@ public class SparesPage extends ParentPage{
     public boolean isNewSpareAdded(String nameOfNewSpare) {
         return actionsWithOurElements.isElementPresent(".//*[text()='" + nameOfNewSpare + "']");
     }
-    @Step
+
     public boolean isSpareInList(String nameOfNewSpare) {
         return actionsWithOurElements.isElementInList(".//*[text()='" + nameOfNewSpare +"']");
     }
-    @Step
+
     public void clickOnSpare(String nameOfNewSpare) {
         actionsWithOurElements.clickOnElement(".//*[text()='" + nameOfNewSpare +"']");
     }
-    @Step
+
     public void deletingAllSparesWithName (String nameOfNewSpare) {
         while (isSpareInList(nameOfNewSpare)){
             clickOnSpare(nameOfNewSpare);

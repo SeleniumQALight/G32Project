@@ -9,7 +9,7 @@ public class LoginTestWithPageObject extends ParentTest {
     public void validLogIn(){
         loginPage.openPage();
         loginPage.enterLogIn("Student");
-        loginPage.enterPass("906090");
+        loginPage.enterPass("909090");
         loginPage.clickSubmitButton();
 
         checkAcceptanceCriteria("avatar is not present", homePage.isAvatarPresent(), true);

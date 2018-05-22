@@ -2,14 +2,12 @@ package loginTests;
 
 
 import org.junit.Assert;
-import org.junit.Ignore;
 import org.junit.Test;
 import parentTest.ParentTest;
 
 public class LoginTestWithPageObject extends ParentTest{
 
     @Test
-//    @Ignore
     public void validLogin(){
         loginPage.openPage();
         loginPage.enterLogin("Student");
@@ -21,7 +19,7 @@ public class LoginTestWithPageObject extends ParentTest{
 
     @Test
     public void invalidLogin(){
-        loginPage.userLogin("Student","909090");
+        loginPage.userLogin("Student","906090");
 
         checkAC("Avatar should not be present",homePage.isAvatarapresent(),false);
     }
